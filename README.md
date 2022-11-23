@@ -4,7 +4,7 @@ Appium - Java - TestNG - SauceLabs - Test Rail framework for mobile testing.
 
 This is a framework for testing Mobile applications on mobile devices, both Android and iOS. 
 Use Appium as a basis, and the code is written in Java. It also uses testng to manipulate test cases. 
-Execution of the tests themselves is performed at Sauce Labs, and the results are stored and displayed in Xray.
+Execution of the tests themselves is performed at Sauce Labs, BrowserStack and Local dervices and the results are stored and displayed in Xray.
 
 ____________________________________________________________
 
