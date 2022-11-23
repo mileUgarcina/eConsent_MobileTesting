@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Email">
+
+    <parameter name="deviceParameter" value="localiOSimulatorSCapsWeb"/>
+<!--    <parameter name="deviceParameter" value="remoteiOSCapsWeb"/>-->
+    <parameter name="platformParameter" value="iOS"/>
+    <parameter name="browserName" value="Safari"/>
+
+    <parameter name="user" value="Participant"/>
+    <parameter name="crete_Xray_Test_Run" value="false"/>
+    <parameter name="unactivatedUsername" value="mobile.automation+unactivated_ios@florencehc.com"/>
+    <parameter name="unactivatedPassword" value="Unactivated123*"/>
+    <parameter name="incorrectUsername" value="incorrect"/>
+    <parameter name="incorrectPassword" value="incorrect"/>
+    <parameter name="additionalUsername" value="mobile.automation+lar_ios@florencehc.com"/>
+    <parameter name="additionalPassword" value="Password123*"/>
+    <parameter name="emptyUsername" value=""/>
+    <parameter name="emptyPassword" value=""/>
+
+    <test name="Email">
+        <classes>
+            <class name="testing.appium.eConsentTesting.Web.email.Email">
+
+                <methods>
+                    <include name="participant_Auth_Mobile_Sign_In_Account_active_email"/>
+
+                </methods>
+
+            </class>
+        </classes>
+    </test>
+</suite>
+
+

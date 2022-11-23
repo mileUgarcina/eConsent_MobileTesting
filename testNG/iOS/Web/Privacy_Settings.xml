@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Privacy Settings">
+
+<!--    <parameter name="deviceParameter" value="localiOSimulatorSCapsWeb"/>-->
+    <parameter name="deviceParameter" value="remoteiOSCapsWeb"/>
+    <parameter name="platformParameter" value="iOS"/>
+    <parameter name="browserName" value="Safari"/>
+
+    <parameter name="user" value="Participant"/>
+    <parameter name="crete_Xray_Test_Run" value="false"/>
+
+
+    <test name="Privacy Settings">
+        <classes>
+            <class name="testing.appium.eConsentTesting.Web.user_Menu.Privacy_Settings">
+
+                <methods>
+                    <include name="participant_App_Mobile_User_Menu_Privacy_Settings_Opened"/>
+<!--                    <include name="participant_App_Mobile_User_Menu_Privacy_Settings_Privacy_Policy_Link"/>  TODO Privacy Policy Does not work on iOS-->
+                    <include name="participant_App_Mobile_User_Menu_Privacy_Settings_Back_Button_with_no_changes_made"/>
+<!--                    <include name="participant_App_Mobile_User_Menu_Privacy_Settings_Back_Button_with_changes_made"/> TODO Alert Msg handling on iOS-->
+                    <include name="participant_App_Mobile_User_Menu_Privacy_Settings_Updated_Reload"/>
+                    <include name="participant_App_Mobile_User_Menu_Privacy_Settings_Updated_Save"/>
+
+<!--                    <include name="participant_App_Mobile_User_Menu_Privacy_Settings_Updated_Cancel"/> Dalibor believes that this test is not needed-->
+                </methods>
+
+            </class>
+        </classes>
+    </test>
+</suite>
+
+

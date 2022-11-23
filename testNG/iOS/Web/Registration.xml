@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Test Set - Registration">
+
+
+<!--    <parameter name="deviceParameter" value="localiOSimulatorSCapsWeb"/>-->
+    <parameter name="deviceParameter" value="remoteiOSCapsWeb"/>
+    <parameter name="platformParameter" value="iOS"/>
+    <parameter name="browserName" value="Safari"/>
+    <parameter name="user" value="Participant"/>
+    <parameter name="crete_Xray_Test_Run" value="false"/>
+
+
+
+    <test name="Registration">
+        <classes>
+            <class name="testing.appium.eConsentTesting.Web.sign_Up.Registration">
+
+                <methods>
+                    <include name="participant_Auth_Mobile_Sign_Up_Register_With_Participant_Invited_to_the_Study_Info_Messages"/>
+                    <include name="participant_Auth_Mobile_Sign_Up_Register_With_Participant_Invited_to_the_Study_Only_First_And_Last_Name"/>
+                    <include name="participant_Auth_Mobile_Sign_Up_Register_With_Participant_Invited_to_the_Study_Invalid_Password"/>
+                    <include name="participant_Auth_Mobile_Sign_Up_Register_With_Participant_Invited_to_the_Study_Valid_Password"/>
+                    <include name="participant_Auth_Mobile_Sign_Up_Register_With_Participant_Invited_to_the_Study_Show_Password"/>
+                    <include name="participant_Auth_Mobile_Sign_Up_Error_States_Mandatory_Fields_Empty"/>
+                    <include name="participant_Auth_Mobile_Sign_Up_Error_States_Mandatory_Fields_Invalid_Enter"/>
+                    <include name="participant_Auth_Mobile_Sign_Up_Error_States_Mandatory_Fields_Clear"/>
+                    <include name="participant_Auth_Mobile_Sign_Up_Error_States_Wrong_Confirmation_Password"/>
+                    <include name="participant_Auth_Mobile_Sign_Up_Privacy_Policy_Action"/>
+                    <include name="participant_Auth_Mobile_Sign_Up_Terms_and_Conditions_Action"/>
+                    <include name="participant_Auth_Mobile_Sign_Up_Register_With_Participant_not_Invited_to_the_Study"/>
+                    <include name="participant_Auth_Mobile_Sign_Up_Register_With_the_Expired_Token"/>
+                    <include name="participant_Auth_Mobile_Sign_Up_Additional_Signer_Creates_Account"/>
+                    <include name="participant_Auth_Mobile_Sign_Up_Register_With_Participant_Invited_to_the_Study"/>
+                </methods>
+
+            </class>
+        </classes>
+    </test>
+</suite>
+
+

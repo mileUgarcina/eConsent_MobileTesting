@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Menu">
+
+
+<!--    <parameter name="deviceParameter" value="localiOSimulatorSCapsWeb"/>-->
+    <parameter name="deviceParameter" value="remoteiOSCapsWeb"/>
+    <parameter name="platformParameter" value="iOS"/>
+    <parameter name="browserName" value="Safari"/>
+
+    <parameter name="user" value="Participant"/>
+    <parameter name="crete_Xray_Test_Run" value="false"/>
+
+    <test name="Menu">
+        <classes>
+            <class name="testing.appium.eConsentTesting.Web.user_Menu.Menu">
+
+                <methods>
+                    <include name="participant_App_Mobile_User_Menu_Dropdown_Menu_opened"/>
+                    <include name="participant_App_Mobile_User_Menu_Menu_closed"/>
+                </methods>
+
+            </class>
+        </classes>
+    </test>
+</suite>
+
+

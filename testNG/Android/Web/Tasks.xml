@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Test Set - Tasks">
+
+<!--Device Parameter-->
+<!--    <parameter name="deviceParameter" value="localAndroidCapsWeb"/>-->
+<!--    <parameter name="deviceParameter" value="SauceLabs_Android_RealDevice_Web"/>-->
+    <parameter name="deviceParameter" value="BrowserStack_Android_RealDevice_Web"/>
+    <parameter name="platformParameter" value="Android"/>
+    <parameter name="browserName" value="Chrome"/>
+<!--TC Parameter-->
+    <parameter name="user" value="Participant"/>
+    <parameter name="crete_Xray_Test_Run" value="false"/>
+
+
+    <test name="Tasks">
+        <classes>
+            <class name="testing.appium.eConsentTesting.Web.landing_Page.Tasks">
+
+                <methods>
+                    <include name="participant_App_Mobile_Home_Page_No_Assigned_Tasks"/>
+<!--                    <include name="participant_App_Mobile_Home_Page_View_Tasks_Action"/>-->
+<!--                    <include name="participant_App_Mobile_Home_Page_Resume_Tasks_Action"/>-->
+<!--                    <include name="participant_App_Mobile_Home_Page_Resume_Tasks_when_Declined_study_is_manually_Activated"/> TODO-->
+<!--                    <include name="participant_App_Mobile_Home_Page_View_All_Action"/>-->
+<!--                    <include name="participant_App_Mobile_Study_Details_Page_View_Tasks_Action"/>-->
+<!--                    <include name="participant_App_Mobile_Study_Details_Page_Resume_Tasks_Action"/>-->
+                </methods>
+
+            </class>
+        </classes>
+    </test>
+</suite>
+
+

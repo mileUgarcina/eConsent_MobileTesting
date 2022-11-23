@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Account Lock">
+
+<!--Device Parameter-->
+<!--    <parameter name="deviceParameter" value="localAndroidCapsWeb"/>-->
+<!--    <parameter name="deviceParameter" value="SauceLabs_Android_RealDevice_Web"/>-->
+    <parameter name="deviceParameter" value="BrowserStack_Android_RealDevice_Web"/>
+    <parameter name="platformParameter" value="Android"/>
+    <parameter name="browserName" value="Chrome"/>
+<!--TC Parameter-->
+    <parameter name="user" value="Participant"/>
+    <parameter name="crete_Xray_Test_Run" value="false"/>
+
+    <test name="Account Lock">
+        <classes>
+            <class name="testing.appium.eConsentTesting.Web.sign_In.Account_Lock">
+
+                <methods>
+                    <include name="participant_Auth_Mobile_Participant_account_locked_temporarily"/>
+                    <include name="participant_Auth_Mobile_Participant_account_locked_permanently"/>
+                    <include name="participant_Auth_Mobile_Participant_signs_in_after_permanent_lockout"/>
+                    <include name="participant_Auth_Mobile_Additional_signer_account_locked_temporarily"/>
+                    <include name="participant_Auth_Mobile_Additional_signer_account_locked_permanently"/>
+                    <include name="participant_Auth_Mobile_Additional_signer_signs_in_after_permanent_lockout"/>
+                </methods>
+
+            </class>
+        </classes>
+    </test>
+</suite>
+
+

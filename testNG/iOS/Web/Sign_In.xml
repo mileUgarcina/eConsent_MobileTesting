@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Test Set - Sign In">
+
+<!--Device Parameter-->
+<!--    <parameter name="deviceParameter" value="localiOSimulatorSCapsWeb"/>-->
+    <parameter name="deviceParameter" value="SauceLabs_iOS_RealDevice_Web"/>
+<!--    <parameter name="deviceParameter" value="BrowserStack_iOS_RealDevice_Web"/>-->
+    <parameter name="platformParameter" value="iOS"/>
+    <parameter name="browserName" value="Safari"/>
+<!--TC Parameter-->
+    <parameter name="user" value="Participant"/>
+    <parameter name="crete_Xray_Test_Run" value="false"/>
+    <parameter name="unactivatedUsername" value="mobile.automation+unactivated_android@florencehc.com"/>
+    <parameter name="unactivatedPassword" value="Unactivated123*"/>
+    <parameter name="incorrectUsername" value="incorrect"/>
+    <parameter name="incorrectPassword" value="incorrect"/>
+    <parameter name="additional_LAR_Username" value="mobile.automation+lar_android@florencehc.com"/>
+    <parameter name="additional_LAR_Password" value="Password123*"/>
+    <parameter name="additional_LAR_FirstName" value="Active_LAR"/>
+    <parameter name="additional_LAR_MiddleName" value="Appium"/>
+    <parameter name="additional_LAR_LastName" value="Android"/>
+    <parameter name="emptyUsername" value=""/>
+    <parameter name="emptyPassword" value=""/>
+
+    <test name="Sign In">
+        <classes>
+            <class name="testing.appium.eConsentTesting.Web.sign_In.Sign_In">
+
+                <methods>
+                    <include name="participant_Auth_Mobile_Sign_in_with_incorrect_email"/>
+                    <include name="Participant_Auth_Mobile_Sign_in_with_incorrect_password"/>
+                    <include name="participant_Auth_Mobile_Sign_In_Fields_respond_with_valid_data"/>
+                    <include name="participant_Auth_Mobile_Sign_In_Fields_respond_with_invalid_data"/>
+                    <include name="participant_Auth_Mobile_Sign_In_Fields_respond_with_cleared_data"/>
+                    <include name="participant_Auth_Mobile_Sign_In_Show_Password"/>
+                    <include name="participant_Auth_Mobile_Sign_In_Privacy_Policy_Link"/>
+                    <include name="participant_Auth_Mobile_Sign_In_Terms_And_Conditions_Link"/>
+                    <include name="participant_Auth_Mobile_Sign_In_Forgot_Password_Link"/>
+                    <include name="participant_Auth_Mobile_Sign_In_Forgot_password_action_with_populated_Email_field"/>
+                    <include name="participant_Auth_Mobile_Sign_in_with_inactive_participant"/>
+                    <include name="participant_Auth_Mobile_Sign_in_with_inactive_Additional_Signer"/>
+                    <include name="participant_Auth_Mobile_Sign_in_with_participant"/>
+                    <include name="participant_Auth_Mobile_Sign_In_Additional_Signer"/>
+                </methods>
+
+            </class>
+        </classes>
+    </test>
+</suite>
+
+
