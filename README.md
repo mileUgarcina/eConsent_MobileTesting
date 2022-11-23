@@ -19,14 +19,6 @@ ____________________________________________________________
 
 ## Project Links
 
-* [Test Rail Suite](https://testrail.ebs.crealogix.net/index.php?/suites/view/26331&group_by=cases:section_id&group_order=asc&group_id=5623651)
-* [Test Rail Report](https://testrail.ebs.crealogix.net/index.php?/projects/overview/53)
-* [SauceLabs Android App - MEP Conversational Dev](https://app.eu-central-1.saucelabs.com/live/app-testing/file/a90c36db-e14f-4d75-a3f1-629649ba2817/device)
-* [SauceLabs iOS App - MEP Conversational Dev](https://app.eu-central-1.saucelabs.com/live/app-testing/file/119b032f-e9f0-40c6-a1d7-889cfe1ed328/device)
-* [SauceLabs Android App - MEP Conversational QA](https://app.eu-central-1.saucelabs.com/live/app-testing/file/4e07541c-d0b2-4436-9f47-c91999213296/device)
-* [SauceLabs iOS App - MEP Conversational QA](https://app.eu-central-1.saucelabs.com/live/app-testing/file/988236bb-3793-4697-96bf-56fcdd193ad6/device)
-* [SauceLabs Android App - MEP Conversational SIT](https://app.eu-central-1.saucelabs.com/live/app-testing/file/46acc854-80ba-460b-a36d-da3d29bc0cf8/device)
-* [SauceLabs iOS App - MEP Conversational SIT](https://app.eu-central-1.saucelabs.com/live/app-testing/file/7bd2c05f-44a9-4560-8c79-fcf084019381/device)
 
 ____________________________________________________________
 ## Run Test 
