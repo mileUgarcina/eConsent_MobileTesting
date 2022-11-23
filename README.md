@@ -1,5 +1,5 @@
 Documentation in Progress
-# MEP Conversational Mobile Testing
+# Florence eConsent Mobile Testing
 Appium - Java - TestNG - SauceLabs - Test Rail framework for mobile testing.
 
 This is a framework for testing Mobile applications on mobile devices, both Android and iOS. 
@@ -9,7 +9,7 @@ Execution of the tests themselves is performed at Sauce Labs, and the results ar
 ____________________________________________________________
 
 ## Install
-* Java 8
+* Java 13 or higher
 * Gradle
 * Appium
 * Xcode (optional)
@@ -19,9 +19,6 @@ ____________________________________________________________
 
 ## Project Links
 
-* [MEP Conversational Use Cases](https://collaborate.crealogix.com/confluence/pages/viewpage.action?spaceKey=CAI&title=Use+Cases)
-* [MEP Conversational Jira ](https://e-banking.crealogix.com/jira/projects/CAIC/summary)
-* [MEP Conversational Repository ](https://bitbucket.ebs.crealogix.net:8443/projects/MEP/repos/clx-mep-deploy/browse)
 * [Test Rail Suite](https://testrail.ebs.crealogix.net/index.php?/suites/view/26331&group_by=cases:section_id&group_order=asc&group_id=5623651)
 * [Test Rail Report](https://testrail.ebs.crealogix.net/index.php?/projects/overview/53)
 * [SauceLabs Android App - MEP Conversational Dev](https://app.eu-central-1.saucelabs.com/live/app-testing/file/a90c36db-e14f-4d75-a3f1-629649ba2817/device)
@@ -30,12 +27,6 @@ ____________________________________________________________
 * [SauceLabs iOS App - MEP Conversational QA](https://app.eu-central-1.saucelabs.com/live/app-testing/file/988236bb-3793-4697-96bf-56fcdd193ad6/device)
 * [SauceLabs Android App - MEP Conversational SIT](https://app.eu-central-1.saucelabs.com/live/app-testing/file/46acc854-80ba-460b-a36d-da3d29bc0cf8/device)
 * [SauceLabs iOS App - MEP Conversational SIT](https://app.eu-central-1.saucelabs.com/live/app-testing/file/7bd2c05f-44a9-4560-8c79-fcf084019381/device)
-* [WEB App -  MEP Conversational Dev](https://conversational-dev-auth.clx-cloud.com/auth/realms/clx/protocol/openid-connect/auth?client_id=tenantselector&redirect_uri=https%3A%2F%2Fconversational-dev.clx-cloud.com%2Fdemo%2Fadvisor%2Flogin%2F&response_type=code&scope=email+openid&state=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTM5MDU1NzQsImlhdCI6MTY1MzkwMzc3NCwic3RhdGUiOiJodHRwczovL2NvbnZlcnNhdGlvbmFsLWRldi5jbHgtY2xvdWQuY29tL2RlbW8vIn0.dawNPMi7crslNc3dfHe5io6rp8DxVGqEow39rcKfCLU)
-* [WEB App -  MEP Conversational QA](https://conversational-qa-auth.clx-cloud.com/auth/realms/clx/protocol/openid-connect/auth?client_id=tenantselector&redirect_uri=https%3A%2F%2Fconversational-qa.clx-cloud.com%2Fdemo%2Fadvisor%2Flogin%2F&response_type=code&scope=email+openid&state=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTM5MDU2MjQsImlhdCI6MTY1MzkwMzgyNCwic3RhdGUiOiJodHRwczovL2NvbnZlcnNhdGlvbmFsLXFhLmNseC1jbG91ZC5jb20vZGVtby91c2VyL2dyb3Vwcy82MjQ4NTA2ZjZjMDk5MzJhNGY3ZDZjMzAifQ.vNy7BUaL2q93-KZhQSifMm76HljvbXtu-kliWvw8tiM)
-* [WEB App -  MEP Conversational SIT](https://conversational-sit-auth.clx-cloud.com/auth/realms/clx/protocol/openid-connect/auth?client_id=tenantselector&redirect_uri=https%3A%2F%2Fconversational-sit.clx-cloud.com%2Fdemo%2Fadvisor%2Flogin%2F&response_type=code&scope=email+openid&state=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTE2NjI2NTUsImlhdCI6MTY1MTY2MDg1NSwic3RhdGUiOiJodHRwczovL2NvbnZlcnNhdGlvbmFsLXNpdC5jbHgtY2xvdWQuY29tL2RlbW8vdXNlci9jaGFubmVscy82MjcyNTY2MGQyNzc4MTc5MDM3ZDRlMDQvZGV0YWlscyJ9.Nj3ey9kHpzY78RE7chTzkWpV2sCVj1IDOlOOCL0q6vo)
-* [Keycloak Admin Console Dev](https://conversational-dev-auth.clx-cloud.com/auth/realms/master/protocol/openid-connect/auth?client_id=security-admin-console&redirect_uri=https%3A%2F%2Fconversational-dev-auth.clx-cloud.com%2Fauth%2Fadmin%2Fmaster%2Fconsole%2F&state=597b41cc-3ac0-4f80-9d68-33cd17e405e3&response_mode=fragment&response_type=code&scope=openid&nonce=196fb2a1-4931-424b-8ed7-2de26e42d048&code_challenge=sHDb5vStgybXEGc16TgH5f1xnv9KGKKLJd1FSLs_yCc&code_challenge_method=S256)
-* [Keycloak Admin Console QA](https://conversational-qa-auth.clx-cloud.com/auth/realms/master/protocol/openid-connect/auth?client_id=security-admin-console&redirect_uri=https%3A%2F%2Fconversational-qa-auth.clx-cloud.com%2Fauth%2Fadmin%2Fmaster%2Fconsole%2F%23%2Frealms%2Fclx&state=551b97ce-fa6b-40ba-8ad6-877fbb20272b&response_mode=fragment&response_type=code&scope=openid&nonce=c848d995-610b-4ac7-add3-7f6dccde33bf&code_challenge=0deFKBUI8Bp_FCVReE7Gk9MZ8iibqmnS-JEbhIHURus&code_challenge_method=S256)
-* [Keycloak Admin Console SIT](https://conversational-sit-auth.clx-cloud.com/auth/realms/master/protocol/openid-connect/auth?client_id=security-admin-console&redirect_uri=https%3A%2F%2Fconversational-qa-auth.clx-cloud.com%2Fauth%2Fadmin%2Fmaster%2Fconsole%2F%23%2Frealms%2Fclx&state=551b97ce-fa6b-40ba-8ad6-877fbb20272b&response_mode=fragment&response_type=code&scope=openid&nonce=c848d995-610b-4ac7-add3-7f6dccde33bf&code_challenge=0deFKBUI8Bp_FCVReE7Gk9MZ8iibqmnS-JEbhIHURus&code_challenge_method=S256)
 
 ____________________________________________________________
 ## Run Test 
@@ -52,8 +43,8 @@ ____________________________________________________________
 
 #### Dev Environment
 
-*  **./gradlew clean test -Pregression_Android_Dev** --> Start regression testing for Android device on Dev environment
-*  **./gradlew clean test -PsmokeTest_Android_Dev** --> Start smoke testing for Android device on Dev environment
+*  **./gradlew clean test -Pregression_Android_UATv** --> Start regression testing for Android device on Dev environment
+*  **./gradlew clean test -PsmokeTest_Android_UAT** --> Start smoke testing for Android device on Dev environment
 
 #### SIT Environment
 
@@ -71,8 +62,8 @@ ____________________________________________________________
 
 #### Dev Environment
 
-*  **./gradlew clean test -Pregression_iOS_Dev**  --> Start regression testing for iOS device on Dev environment
-*  **./gradlew clean test -PsmokeTest_iOS_Dev**  --> Start smoke testing for iSO device on Dev environment
+*  **./gradlew clean test -Pregression_iOS_UAT**  --> Start regression testing for iOS device on Dev environment
+*  **./gradlew clean test -PsmokeTest_iOS_UAT**  --> Start smoke testing for iSO device on Dev environment
 
 
 #### SIT Environment
@@ -93,8 +84,8 @@ ____________________________________________________________
 
 #### Dev Environment
 
-*  **./gradlew clean test -Pregression_Android_Dev & ./gradlew clean test -Pregression_iOS_Dev** --> Start parallel regression testing for Android and iOS device on Dev environment
-*  **./gradlew clean test -PsmokeTest_Android_Dev & ./gradlew clean test -PsmokeTest_iOS_Dev** --> Start parallel smoke testing for Android and iOS device on Dev environment
+*  **./gradlew clean test -Pregression_Android_UAT & ./gradlew clean test -Pregression_iOS_Dev** --> Start parallel regression testing for Android and iOS device on Dev environment
+*  **./gradlew clean test -PsmokeTest_Android_UAT & ./gradlew clean test -PsmokeTest_iOS_Dev** --> Start parallel smoke testing for Android and iOS device on Dev environment
 
 
 #### SIT Environment
