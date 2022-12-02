@@ -1,6 +1,6 @@
 package testing.appium.eConsentTesting.Web.sign_In;
 
-import org.apache.commons.codec.digest.DigestUtils;
+import org.apache.commons.codec.DecoderException;
 import testing.appium.eConsentTesting.Web.BaseTestSetWeb;
 import testing.appium.helpers.TcRetry;
 import testing.appium.helpers.jiraTicket.Bug;
@@ -10,15 +10,14 @@ import org.testng.annotations.*;
 import testing.appium.runner.TestListener_Xray;
 
 import java.io.UnsupportedEncodingException;
-import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
+import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
-import java.security.Signature;
-import java.util.Arrays;
-import java.util.Base64;
+
 
 import static testing.appium.helpers.TCLogger.LoggerInformation;
 import static testing.appium.helpers.Utils.*;
+
+import static testing.appium.runner.databaseSiding.eConsentAPI.SHAHashing;
 import static testing.appium.runner.databaseSiding.eConsentAPI.seedData_API;
 import static testing.appium.runner.propertyFile.DataProvider.environmentData.*;
 import static testing.appium.runner.propertyFile.DataProvider.*;
@@ -40,9 +39,8 @@ public class Sign_In extends BaseTestSetWeb {
 
     @BeforeClass(alwaysRun=true,
                   description = "Wait for the application to boot up")
-    public void precondition() throws NoSuchAlgorithmException, UnsupportedEncodingException {
+    public void precondition() throws NoSuchAlgorithmException, UnsupportedEncodingException, InvalidKeyException, DecoderException {
 
-        seedData_API();
 
         sip.loadWebPage(appUrl + SIGN_IN_PAGE_LINK);
     }

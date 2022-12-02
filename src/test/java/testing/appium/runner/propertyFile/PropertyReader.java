@@ -344,27 +344,44 @@ public class PropertyReader {
                 properties.load(input);
                 input.close();
             } catch (Exception ex) {
-                TCLogger.LoggerStep_Failed("2File Input Stream -iOS_dev_testRailRunId- failed: ", ex.getMessage(), true);
+                TCLogger.LoggerStep_Failed("File Input Stream -iOS_dev_testRailRunId- failed: ", ex.getMessage(), true);
             }
         }
         public static String get(String keyName) {return properties.getProperty(keyName);}
     }
 
 
-public static class xRayRunIdiOSSit {
-    private static Properties properties;
+    public static class xRayRunIdiOSSit {
+        private static Properties properties;
 
-    static {
-        try {
-            String path = "src/main/resources/iOS_UAT_xRayRunId.properties";
-            FileInputStream input = new FileInputStream(path);
-            properties = new Properties();
-            properties.load(input);
-            input.close();
-        } catch (Exception ex) {
-            TCLogger.LoggerStep_Failed("2File Input Stream -iOS_sit_testRailRunId- failed: ", ex.getMessage(), true);
+        static {
+            try {
+                String path = "src/main/resources/iOS_UAT_xRayRunId.properties";
+                FileInputStream input = new FileInputStream(path);
+                properties = new Properties();
+                properties.load(input);
+                input.close();
+            } catch (Exception ex) {
+                TCLogger.LoggerStep_Failed("File Input Stream -iOS_sit_testRailRunId- failed: ", ex.getMessage(), true);
+            }
         }
+        public static String get(String keyName) {return properties.getProperty(keyName);}
     }
-    public static String get(String keyName) {return properties.getProperty(keyName);}
-}
+
+    public static class eConsentAPI_Data {
+        private static Properties properties;
+
+        static {
+            try {
+                String path = "src/main/resources/eConsentAPI_Data.properties";
+                FileInputStream input = new FileInputStream(path);
+                properties = new Properties();
+                properties.load(input);
+                input.close();
+            } catch (Exception ex) {
+                TCLogger.LoggerStep_Failed("File Input Stream -eConsentAPI_Data- failed: ", ex.getMessage(), true);
+            }
+        }
+        public static String get(String keyName) {return properties.getProperty(keyName);}
+    }
 }

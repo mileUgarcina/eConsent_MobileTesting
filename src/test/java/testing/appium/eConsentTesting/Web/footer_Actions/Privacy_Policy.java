@@ -63,7 +63,6 @@ public class Privacy_Policy extends BaseTestSetWeb {
 
         testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
 
-
         originalWindow = assert_oneWindowTabIsPresent(driver);
         mp.clickOn_privacyPolicyBtn();
         switchingTabs(driver, 10, originalWindow);

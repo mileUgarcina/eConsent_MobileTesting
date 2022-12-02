@@ -22,7 +22,6 @@
                     <include name="participant_App_Mobile_Home_Page_View_All_Action"/>
                     <include name="participant_App_Mobile_Study_Details_Page_View_Tasks_Action"/>
                     <include name="participant_App_Mobile_Study_Details_Page_Resume_Tasks_Action"/>
-
                 </methods>
 
             </class>

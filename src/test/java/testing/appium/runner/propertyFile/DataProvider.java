@@ -589,7 +589,6 @@ public class DataProvider {
         public static String iOS_BUNDLE_ID = PropertyReader.EnvironmentReader.get("iOSBundleId") + ENVIRONMENT;
         public static String ANDROID_BUNDLE_ID = PropertyReader.EnvironmentReader.get("androidBundleId") + ENVIRONMENT;
 
-
     }
 
     /**
@@ -628,8 +627,11 @@ public class DataProvider {
         public static String TEST_RUN_TEST_DESCRIPTION = PropertyReader.xRayReader.get("testRun_description");
         public static String TEST_PLAN_KEY = PropertyReader.xRayReader.get("testPlanKey");
         public static String TEST_KEY = PropertyReader.xRayReader.get("testKey");
+    }
 
-
+    public static class eConsentAPI_Data {
+        public static String AUTH_SERVICE_KEY_ID = PropertyReader.eConsentAPI_Data.get("participant_auth_service_key_id");
+        public static String AUTH_SERVICE_TOKEN = PropertyReader.eConsentAPI_Data.get("token");
 
     }
 
