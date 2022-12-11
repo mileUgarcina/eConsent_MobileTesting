@@ -102,8 +102,8 @@ Folder contains testNG XML files
     - [Set2_Channels_Client_AndroidRealDevice.xml](testNG/Android/Client/Set2_Channels_Client_AndroidRealDevice.xml)
     - [Set3_Assistant_Client_AndroidRealDevice.xml](testNG/Android/Client/Set3_Assistant_Client_AndroidRealDevice.xml)
     - [SmokeTest_Client_AndroidRealDevice.xml](testNG/Android/Client/SmokeTest_Client_AndroidRealDevice.xml)
-  - [Regression_Android_Suite.xml](testNG/Android/Web/Regression_Android_Suite.xml)
-  - [Smoke_Android_Suite.xml](testNG/Android/Web/Smoke_Android_Suite.xml)
+  - [Regression_Android_Suite.xml](testNG/Android/Regression_Android_Suite.xml)
+  - [Smoke_Android_Suite.xml](testNG/Android/Smoke_Android_Suite.xml)
 * iOS
   - Advisor
     - [Set1_Conversations_Advisor_iOSRealDevice.xml](testNG/iOS/Advisor/Set1_Conversations_Advisor_iOSRealDevice.xml)
@@ -115,8 +115,8 @@ Folder contains testNG XML files
     - [Set2_Channels_Client_iOSRealDevice.xml](testNG/iOS/Client/Set2_Channels_Client_iOSRealDevice.xml)
     - [Set3_Assistant_Client_iOSRealDevice.xml](testNG/iOS/Client/Set3_Assistant_Client_iOSRealDevice.xml)
     - [SmokeTest_Client_iOSRealDevice.xml](testNG/iOS/Client/SmokeTest_Client_iOSRealDevice.xml)
-  - [Regression_iOS_Suite.xml](testNG/iOS/Web/Regression_iOS_Suite.xml)
-  - [Smoke_iOS_Suite.xml](testNG/iOS/Web/Smoke_iOS_Suite.xml)
+  - [Regression_iOS_Suite.xml](testNG/iOS/Regression_iOS_Suite.xml)
+  - [Smoke_iOS_Suite.xml](testNG/iOS/Smoke_iOS_Suite.xml)
 
 ### testNG parameter 
 * name="platformParameter" - Parameter for setting desire capability 

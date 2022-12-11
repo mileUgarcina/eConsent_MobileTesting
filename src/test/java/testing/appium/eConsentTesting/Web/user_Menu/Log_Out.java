@@ -6,7 +6,7 @@ import testing.appium.eConsentTesting.Web.BaseTestSetWeb;
 import testing.appium.helpers.TcRetry;
 import testing.appium.helpers.jiraTicket.Bug;
 import testing.appium.helpers.testCaseId.TcID;
-import testing.appium.runner.TestListener_Xray;
+import testing.appium.runner.TestListener;
 
 import static testing.appium.runner.propertyFile.DataProvider.environmentData.SIGN_IN_PAGE_LINK;
 import static testing.appium.runner.propertyFile.DataProvider.environmentData.appEnvironment;
@@ -14,7 +14,7 @@ import static testing.appium.runner.propertyFile.DataProvider.firstName;
 import static testing.appium.runner.propertyFile.DataProvider.*;
 
 
-@Listeners(TestListener_Xray.class)
+@Listeners(TestListener.class)
 public class Log_Out extends BaseTestSetWeb {
 
     static private final String appUrl = appEnvironment();

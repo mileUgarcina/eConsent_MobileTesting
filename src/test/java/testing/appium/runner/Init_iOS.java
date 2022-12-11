@@ -41,11 +41,11 @@ public class Init_iOS extends BaseInitConfig {
                 break;
             case "BrowserStack_iOS_RealDevice_App":
                 browserStack_iOS_RealDevice_App(browserName, suiteName, testRailParameter);
-                LoggerInformation("Capabilities set for BrowserStack iOS - App, OS: " + DataProvider.SliOSConfigData.platformVersionSliOSSimulator());
+                LoggerInformation("Capabilities set for BrowserStack iOS - App, OS: " + DataProvider.SliOSConfigData.platformVersionSliOSRealDevice());
                 break;
             case "BrowserStack_iOS_RealDevice_Web":
                 browserStack_iOS_RealDevice_Web(browserName, suiteName, testRailParameter);
-                LoggerInformation("Capabilities set for BrowserStack iOS - Web, OS: " + DataProvider.SliOSConfigData.platformVersionSliOSSimulator());
+                LoggerInformation("Capabilities set for BrowserStack iOS - Web, OS: " + DataProvider.SliOSConfigData.platformVersionSliOSRealDevice());
                 break;
             case "localiOSimulatorSCapsWeb":
                 localiOSimulatorSCapsWeb();

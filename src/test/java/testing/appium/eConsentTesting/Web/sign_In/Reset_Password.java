@@ -6,7 +6,7 @@ import testing.appium.eConsentTesting.Web.BaseTestSetWeb;
 import testing.appium.helpers.TcRetry;
 import testing.appium.helpers.jiraTicket.Bug;
 import testing.appium.helpers.testCaseId.TcID;
-import testing.appium.runner.TestListener_Xray;
+import testing.appium.runner.TestListener;
 
 import static testing.appium.helpers.TCLogger.LoggerInformation;
 import static testing.appium.helpers.Utils.*;
@@ -14,7 +14,7 @@ import static testing.appium.runner.propertyFile.DataProvider.password;
 import static testing.appium.runner.propertyFile.DataProvider.tcData.*;
 
 
-@Listeners(TestListener_Xray.class)
+@Listeners(TestListener.class)
 public class Reset_Password extends BaseTestSetWeb {
 
 //        TODO waiting for TC Data

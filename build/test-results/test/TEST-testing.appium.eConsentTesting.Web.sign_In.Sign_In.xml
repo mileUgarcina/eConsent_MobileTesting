@@ -1,26 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="testing.appium.eConsentTesting.Web.sign_In.Sign_In" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-11-30T12:44:01" hostname="Miles-MacBook-Pro.local" time="3.975">
+<testsuite name="testing.appium.eConsentTesting.Web.sign_In.Sign_In" tests="1" skipped="1" failures="0" errors="0" timestamp="2022-12-11T16:52:16" hostname="Miles-MacBook-Pro.local" time="35.707">
   <properties/>
-  <testcase name="participant_Auth_Mobile_Sign_in_with_incorrect_email[0](Participant, Android, incorrect, incorrect, org.testng.TestRunner@5b024e87)" classname="testing.appium.eConsentTesting.Web.sign_In.Sign_In" time="3.975"/>
-  <system-out><![CDATA[2022-11-30 13:44:00.707  Action-->  Enter URL: https://us-participant-auth.se.uatv2.researchbinders.com/#/sign-in?language=en
-2022-11-30 13:44:00.713  Waiting--> For the Application to Load
-2022-11-30 13:44:01.681  Information-->  Application is Running
-2022-11-30 13:44:01.713  Waiting--> To be Clickable element: "Username Input Field"
-2022-11-30 13:44:02.819  Action-->  Send Text:  "incorrect"  on element: "Username Input Field"
-2022-11-30 13:44:02.821  Waiting--> To be Clickable element: "Password Input Field"
-2022-11-30 13:44:04.488  Action-->  Send Text:  "incorrect"  on element: "Password Input Field"
-2022-11-30 13:44:05.246  Waiting--> To be Visible element: "Sign in Button"
-2022-11-30 13:44:05.405  Assert-->  Verification successful - element: "Sign in Button" is Disabled
-2022-11-30 13:44:05.407  Waiting--> To be Visible element: "Username Input field"
-2022-11-30 13:44:05.500  Assert-->  Verification successful - element: "Username Input field" color is: rgba(229, 28, 35, 1) = Red
-2022-11-30 13:44:05.500  Waiting--> To be Visible element: "Username Error Message"
-2022-11-30 13:44:05.597  Assert-->  Verification successful. expected: Required == actual: Required
-2022-11-30 13:44:05.597  Waiting--> To be Visible element: "Password Input field"
-2022-11-30 13:44:05.686  Assert-->  Verification successful - element: "Password Input field" color is: rgba(185, 21, 27, 1) = Red
---- Test Case - participant_Auth_Mobile_Sign_in_with_incorrect_email -- Finish --> {color:#36b37e}*PASSED*{color} ---\n
-?[32m------------ >>>[ Test PASSED: participant_Auth_Mobile_Sign_in_with_incorrect_email ]<<< ------------?[0m
-2022-11-30 13:44:05.697  Information-->  Postcondition procedure for TC: participant_Auth_Mobile_Sign_in_with_incorrect_email
-2022-11-30 13:44:05.990  Action-->  Refresh Web Page
+  <testcase name="participant_Auth_Mobile_Sign_In_Privacy_Policy_Link" classname="testing.appium.eConsentTesting.Web.sign_In.Sign_In" time="35.707">
+    <skipped/>
+  </testcase>
+  <system-out><![CDATA[2022-12-11 17:52:16.139  Action-->  Enter URL: https://us-participant-auth.se.qav2.researchbinders.com/#/sign-in?language=en
+2022-12-11 17:52:16.140  Waiting--> For the Application to Load
+2022-12-11 17:52:16.471  Information-->  Application is Running
+2022-12-11 17:52:16.502  Waiting--> To be Visible element: "Sign in Page Title"
+2022-12-11 17:52:16.733  Assert-->  Verification successful - element: "Sign in Page Title" is Present
+2022-12-11 17:52:16.963  Information-->  One Tab is Present: 369.1
+2022-12-11 17:52:18.421  Action-->  Scrolling down -Start:596px -End:8px
+2022-12-11 17:52:18.422  Waiting--> To be Clickable element: "Privacy Policy"
+2022-12-11 17:52:18.985  Action-->  Click on element: "Privacy Policy"
+2022-12-11 17:52:18.985  Waiting--> For New Tab to be Visible element
+2022-12-11 17:52:29.604 *Step FAILED-->*  {color:#FF0000}No New Tab - Expected condition failed: waiting for number of open windows to be 2 (tried for 10 second(s) with 500 milliseconds interval){color}
+--- Test Case - participant_Auth_Mobile_Sign_In_Privacy_Policy_Link -- Finish --> {color:#FF0000}*FAILED*{color}  ---\n
+\n --- *Test Environment* ---  \nTest Execution video: [BrowserStack Execution Video|https://automate.browserstack.com/sessions/8ffff02e2037761ad313303f42debc45038b8772/video?token=eElZRXg3aGdJdXh3UmVLVi9Jdm9BYXdDZEh4dmhSaGg3bFNmR2VoV000ZnhsaEtDdytRNHdid1JwMTRaa1VXRVhtZTVxSXhEd0gwWGRMbHVKeEFPamc9PS0tL3k3N29RMmVqMU1BOGRBQnhmbFliZz09--1b184369d05a697ca221bfc1cc7cc7c75fdd8479&source=rest_api&diff=-1]\nExecution name: eConsent - Participant - QA - iOS --  Test Set - Sign In\nDevice name: iPhone 14 Pro\nPlatform: ios\nOS version: 16.0\nApp Name: Florence - eBinders\nEnvironment: QA\nApp Version: https://us-participant-auth.se.qav2.researchbinders.com
+2022-12-11 17:52:30.139  Information-->  Xray Run ID: null
+--- Test Case - participant_Auth_Mobile_Sign_In_Privacy_Policy_Link -- Finish --> {color:#FF0000}*FAILED*{color}  ---\n
+2022-12-11 17:52:52.185  Action-->  Driver quit
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

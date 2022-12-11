@@ -8,8 +8,6 @@
     <parameter name="browserName" value="Safari"/>
 
     <parameter name="user" value="Participant"/>
-    <parameter name="crete_Xray_Test_Run" value="false"/>
-
 
     <test name="Privacy Settings">
         <classes>

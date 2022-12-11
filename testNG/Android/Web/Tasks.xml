@@ -10,7 +10,6 @@
     <parameter name="browserName" value="Chrome"/>
 <!--TC Parameter-->
     <parameter name="user" value="Participant"/>
-    <parameter name="crete_Xray_Test_Run" value="false"/>
 
 
     <test name="Tasks">

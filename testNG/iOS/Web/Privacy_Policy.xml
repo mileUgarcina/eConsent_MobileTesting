@@ -9,7 +9,6 @@
     <parameter name="browserName" value="Safari"/>
 <!--TC Parameter-->
     <parameter name="user" value="Participant"/>
-    <parameter name="crete_Xray_Test_Run" value="false"/>
 
     <test name="Privacy Policy">
         <classes>

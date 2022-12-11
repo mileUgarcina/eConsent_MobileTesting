@@ -4,8 +4,13 @@ package testing.appium.runner.propertyFile;
 import ch.clx.testing.appium.runner.Config;
 import testing.appium.helpers.Utils;
 
+import java.util.ArrayList;
+import java.util.Random;
+
 import static testing.appium.helpers.TCLogger.*;
 import static testing.appium.helpers.Utils.jasyptDecodingString;
+import static testing.appium.runner.propertyFile.DataProvider.SlAndroidConfigData.platformVersionSlAndroid;
+import static testing.appium.runner.propertyFile.DataProvider.SliOSConfigData.platformVersionSliOSRealDevice;
 import static testing.appium.runner.propertyFile.DataProvider.environmentData.*;
 import static testing.appium.runner.sauceLabs.SauceLabsAPI.appVersionBuild;
 import static testing.appium.runner.sauceLabs.SauceLabsAPI.slAppId;
@@ -19,11 +24,129 @@ public class DataProvider {
 
 
     /**
-     * Data Provider for Environment variable
+     * Data Provider for Environment variable (QA/FATE/UAT/PRODUCTION)
      */
     public static String ENVIRONMENT = System.getProperty("env");
 
+    /**
+     * Data Provider for Platform Parameter (iOS/Android)
+     */
+    public static String PLATFORM_PARAMETER = System.getProperty("platformParameter");
+
+    /**
+     * Data Provider for Test Run variable (regression/smoke)
+     */
+    public static String TEST_RUN = System.getProperty("testRun");
+
+
+    /**
+     * Data Provider for Random String (5 characters)
+     */
     public static String randomString =  Utils.randomString(5);
+
+
+    /**
+     * Get Random iOS 16 device from the list
+     * List of devices from <a href="https://www.browserstack.com/list-of-browsers-and-platforms/automate">...</a>
+     */
+    public static String get_iOS_16_Device_BrowserStack() {
+
+        ArrayList<String> iOS_16_devices=new ArrayList<String>();
+        iOS_16_devices.add("iPhone 11 Pro Max");
+        iOS_16_devices.add("iPhone 12 Pro");
+        iOS_16_devices.add("iPhone 12 Mini");
+        iOS_16_devices.add("iPhone 12 Pro Max");
+        iOS_16_devices.add("iPhone 14 Pro");
+        iOS_16_devices.add("iPhone 14");
+        iOS_16_devices.add("iPhone 14 Pro Max");
+        iOS_16_devices.add("iPhone 14 Plus");
+
+        Random randomizer = new Random();
+        return iOS_16_devices.get(randomizer.nextInt(iOS_16_devices.size()));
+    }
+
+
+    /**
+     * Get Random iOS 15 device from the list
+     *  * List of devices from <a href="https://www.browserstack.com/list-of-browsers-and-platforms/automate">...</a>
+     */
+    public static String get_iOS_15_Device_BrowserStack() {
+
+        ArrayList<String> iOS_15_devices=new ArrayList<String>();
+        iOS_15_devices.add("iPhone 13 Pro");
+//        iOS_15_devices.add("iPhone 13");
+//        iOS_15_devices.add("Phone XR");
+//        iOS_15_devices.add("iPhone XS");
+//        iOS_15_devices.add("Phone 11 Pro");
+
+
+        Random randomizer = new Random();
+        return iOS_15_devices.get(randomizer.nextInt(iOS_15_devices.size()));
+    }
+
+    /**
+     * Get Random iOS device from the BrowserStack list
+     */
+
+    public static String get_iOS_Device_BrowserStack(){
+        String get_iOS_Device = null;
+        if(platformVersionSliOSRealDevice().contains("16")){
+            get_iOS_Device = get_iOS_16_Device_BrowserStack();
+        }else if(platformVersionSliOSRealDevice().contains("15")){
+            get_iOS_Device = get_iOS_15_Device_BrowserStack();
+        }
+        return get_iOS_Device;
+    }
+
+    /**
+     * Get Random Android 12 device from the list
+     * List of devices from <a href="https://www.browserstack.com/list-of-browsers-and-platforms/automate">...</a>
+     */
+    public static String get_Android_12_Device_BrowserStack() {
+
+        ArrayList<String> android_12_devices=new ArrayList<String>();
+        android_12_devices.add("Samsung Galaxy S22");
+        android_12_devices.add("Samsung Galaxy S22+");
+        android_12_devices.add("Samsung Galaxy S22 Ultra");
+        android_12_devices.add("Samsung Galaxy S21");
+        android_12_devices.add("Google Pixel 6");
+        android_12_devices.add("Google Pixel 6 Pro");
+        android_12_devices.add("Google Pixel 5");
+
+        Random randomizer = new Random();
+        return android_12_devices.get(randomizer.nextInt(android_12_devices.size()));
+    }
+
+    /**
+     * Get Random Android 13 device from the list
+     *  * List of devices from <a href="https://www.browserstack.com/list-of-browsers-and-platforms/automate">...</a>
+     */
+    public static String get_Android_13_Device_BrowserStack() {
+
+        ArrayList<String> android_12_devices=new ArrayList<String>();
+        android_12_devices.add("Google Pixel 7 Pro");
+        android_12_devices.add("Google Pixel 7");
+        android_12_devices.add("Google Pixel 6 Pro");
+
+        Random randomizer = new Random();
+        return android_12_devices.get(randomizer.nextInt(android_12_devices.size()));
+    }
+
+
+    /**
+     * Get Random Android device from the BrowserStack list
+     */
+
+    public static String get_Android_Device_BrowserStack(){
+        String get_Android_Device = null;
+        if(platformVersionSlAndroid().contains("13")){
+            get_Android_Device = get_Android_13_Device_BrowserStack();
+        }else if(platformVersionSlAndroid().contains("12")){
+            get_Android_Device = get_Android_12_Device_BrowserStack();
+        }
+        return get_Android_Device;
+    }
+
 
     /**
      * Data Provider for Local Android Configuration
@@ -232,7 +355,13 @@ public class DataProvider {
     public static class browserStackAuthorisationData {
         public static String BROWSERSTACK_USERNAME = PropertyReader.browserStackAuthorisationDataReader.get("browserstack_username");
         public static String BROWSERSTACK_ACCESSKEY = jasyptDecodingString(DEV_TEAM, PropertyReader.browserStackAuthorisationDataReader.get("browserstack_accessKey"));
+        public static String BROWSERSTACK_TOKEN = jasyptDecodingString(DEV_TEAM, PropertyReader.browserStackAuthorisationDataReader.get("browserstack_token"));
+        public static String BROWSERSTACK_TRACKING_ID = PropertyReader.browserStackAuthorisationDataReader.get("browserstack_tracking_id");
+        public static String BROWSERSTACK_SESSION = PropertyReader.browserStackAuthorisationDataReader.get("browserstack_session");
         public static String BROWSERSTACK_URL = PropertyReader.browserStackAuthorisationDataReader.get("browserStack_url");
+        public static String BROWSERSTACK_GET_APP_ID_URL = PropertyReader.browserStackAuthorisationDataReader.get("browserStack_getAppID_url");
+        public static String BROWSERSTACK_GET_TEST_RUN_DETAILS = PropertyReader.browserStackAuthorisationDataReader.get("browserStack_getTestRunDetails");
+
     }
 
 
@@ -553,6 +682,7 @@ public class DataProvider {
         public static String SIGN_IN_PAGE_LINK = PropertyReader.EnvironmentReader.get("signInPageLink");
         public static String PRIVACY_SETTINGS_PAGE_LINK = PropertyReader.EnvironmentReader.get("privacySettingsPageLink");
         public static String PROFILE_SETTINGS_PAGE_LINK = PropertyReader.EnvironmentReader.get("profileSettingsPageLink");
+        public static String HEALTH_CHECK_API = PropertyReader.EnvironmentReader.get("healthCheckAPI");
 
 
 
@@ -623,9 +753,12 @@ public class DataProvider {
         public static String XRAY_EXECUTION_URL = PropertyReader.xRayReader.get("xRay_execution_url");
         public static String TEST_RUN_TEST_ENVIRONMENTS_ANDROID = PropertyReader.xRayReader.get("testRun_testEnvironments_Android");
         public static String TEST_RUN_TEST_ENVIRONMENTS_IOS = PropertyReader.xRayReader.get("testRun_testEnvironments_iOS");
-        public static String TEST_RUN_TEST_SUMMARY = PropertyReader.xRayReader.get("testRun_summary");
-        public static String TEST_RUN_TEST_DESCRIPTION = PropertyReader.xRayReader.get("testRun_description");
-        public static String TEST_PLAN_KEY = PropertyReader.xRayReader.get("testPlanKey");
+        public static String REGRESSION_TEST_RUN_TEST_SUMMARY = PropertyReader.xRayReader.get("regression_testRun_summary");
+        public static String REGRESSION_TEST_RUN_TEST_DESCRIPTION = PropertyReader.xRayReader.get("regression_testRun_description");
+        public static String REGRESSION_TEST_PLAN_KEY = PropertyReader.xRayReader.get("regression_testPlan_key");
+        public static String SMOKE_TEST_RUN_TEST_SUMMARY = PropertyReader.xRayReader.get("smoke_testRun_summary");
+        public static String SMOKE_TEST_RUN_TEST_DESCRIPTION = PropertyReader.xRayReader.get("smoke_testRun_description");
+        public static String SMOKE_TEST_PLAN_KEY = PropertyReader.xRayReader.get("smoke_testPlan_key");
         public static String TEST_KEY = PropertyReader.xRayReader.get("testKey");
     }
 
@@ -653,41 +786,59 @@ public class DataProvider {
      * Data Provider for TestRail RunId data Android QA Env
      */
     public static class testrailRunIdDataAndroidQa {
-        public static String XRAY_RUN_ID_ANDROID_QA = PropertyReader.xRayIdAndroidQa.get("xRayRunIdData");
+        //        Regression
+        public static String XRAY_RUN_ID_ANDROID_QA_REGRESSION = PropertyReader.xRayIdAndroidQaRegression.get("xRayRunIdData");
+        //        Smoke
+        public static String XRAY_RUN_ID_ANDROID_QA_SMOKE = PropertyReader.xRayIdAndroidQaSmoke.get("xRayRunIdData");
     }
 
     /**
      * Data Provider for TestRail RunId data Android FATE Env
      */
     public static class testrailRunIdDataAndroidDev {
-        public static String XRAY_RUN_ID_ANDROID_FATE = PropertyReader.xRayAndroidFate.get("xRayRunIdData");
+        //        Regression
+        public static String XRAY_RUN_ID_ANDROID_FATE_REGRESSION = PropertyReader.xRayAndroidFateRegression.get("xRayRunIdData");
+        //        Smoke
+        public static String XRAY_RUN_ID_ANDROID_FATE_SMOKE= PropertyReader.xRayAndroidFateSmoke.get("xRayRunIdData");
     }
 
     /**
      * Data Provider for TestRail RunId data Android UAT Env
      */
     public static class testrailRunIdDataAndroidSit {
-        public static String XRAY_RUN_ID_ANDROID_UAT = PropertyReader.xRayAndroidUat.get("xRayRunIdData");
+        //        Regression
+        public static String XRAY_RUN_ID_ANDROID_UAT_REGRESSION = PropertyReader.xRayAndroidUatRegression.get("xRayRunIdData");
+        //        Smoke
+        public static String XRAY_RUN_ID_ANDROID_UAT_SMOKE = PropertyReader.xRayAndroidUatSmoke.get("xRayRunIdData");
     }
 
     /**
      * Data Provider for TestRail RunId data iOS QA Env
      */
     public static class testrailRunIdDataiOSqa {
-        public static String XRAY_RUN_ID_IOS_QA = PropertyReader.xRayRunIdiOSQa.get("xRayRunIdData");
+        //        Regression
+        public static String XRAY_RUN_ID_IOS_QA_REGRESSION = PropertyReader.xRayRunIdiOSQaRegression.get("xRayRunIdData");
+        //        Smoke
+        public static String XRAY_RUN_ID_IOS_QA_SMOKE = PropertyReader.xRayRunIdiOSQaSmoke.get("xRayRunIdData");
     }
 
     /**
      * Data Provider for TestRail RunId data iOS FATE Env
      */
     public static class testrailRunIdDataiOSdev {
-        public static String XRAY_RUN_ID_IOS_FATE = PropertyReader.xRayRunIdiOSFate.get("xRayRunIdData");
+        //        Regression
+        public static String XRAY_RUN_ID_IOS_FATE_REGRESSION = PropertyReader.xRayRunIdiOSFateRegression.get("xRayRunIdData");
+        //        Smoke
+        public static String XRAY_RUN_ID_IOS_FATE_SMOKE = PropertyReader.xRayRunIdiOSFateSmoke.get("xRayRunIdData");
     }
 
     /**
      * Data Provider for TestRail RunId data iOS Sit UAT
      */
     public static class testrailRunIdDataiOSSit {
-        public static String XRAY_RUN_ID_IOS_UAT = PropertyReader.xRayRunIdiOSSit.get("xRayRunIdData");
+        //        Regression
+        public static String XRAY_RUN_ID_IOS_UAT_REGRESSION = PropertyReader.xRayRunIdiOSUatRegression.get("xRayRunIdData");
+        //        Smoke
+        public static String XRAY_RUN_ID_IOS_UAT_SMOKE = PropertyReader.xRayRunIdiOSUatSmoke.get("xRayRunIdData");
     }
 }

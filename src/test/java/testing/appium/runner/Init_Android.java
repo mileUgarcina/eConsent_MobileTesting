@@ -74,7 +74,7 @@ public class Init_Android extends BaseInitConfig {
 
         if (driver.get() == null) {
             driver.set(new AndroidDriver(appiumUrl, capabilities));
-            System.out.println("Caps: " + capabilities);
+//            System.out.println("Caps: " + capabilities);
         }
         return driver.get();
     }

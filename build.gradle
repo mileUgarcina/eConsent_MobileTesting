@@ -211,117 +211,268 @@ sourceSets {
 task generateConfig() {
   doLast() {
 
-    // Delete all generated sources as some depend on this code
-    // and we cannot change their dependencies.
+      // Delete all generated sources as some depend on this code
+      // and we cannot change their dependencies.
 //    file("${buildDir}/generated").deleteDir()
 
-    if(
-            project.hasProperty('Regression_Android_QA') ||
-            project.hasProperty('Regression_iOS_QA') ||
-            project.hasProperty('Smoke_Android_QA') ||
-            project.hasProperty('Smoke_iOS_QA') ||
 
-            project.hasProperty('Registration_Android_QA') ||
-            project.hasProperty('Registration_iOS_QA') ||
-            project.hasProperty('Sign_In_Android_QA') ||
-            project.hasProperty('Sign_In_iOS_QA') ||
-            project.hasProperty('Request_Password_Android_QA') ||
-            project.hasProperty('Request_Password_iOS_QA') ||
-            project.hasProperty('Account_Lock_Android_QA') ||
-            project.hasProperty('Account_Lock_iOS_QA') ||
-            project.hasProperty('Reset_Password_Android_QA') ||
-            project.hasProperty('Reset_Password_iOS_QA') ||
-            project.hasProperty('Menu_Android_QA') ||
-            project.hasProperty('Menu_iOS_QA') ||
-            project.hasProperty('Log_Out_Android_QA') ||
-            project.hasProperty('Log_Out_iOS_QA') ||
-            project.hasProperty('Profile_Settings_Android_QA') ||
-            project.hasProperty('Profile_Settings_iOS_QA') ||
-            project.hasProperty('Privacy_Settings_Android_QA') ||
-            project.hasProperty('Privacy_Settings_iOS_QA') ||
-            project.hasProperty('Privacy_Policy_Android_QA') ||
-            project.hasProperty('Privacy_Policy_iOS_QA') ||
-            project.hasProperty('Tasks_Android_QA') ||
-            project.hasProperty('Tasks_iOS_QA') ||
-            project.hasProperty('Session_Activity_Android_QA') ||
-            project.hasProperty('Session_Activity_iOS_QA') ||
 
-            project.hasProperty('Email_Android_QA') ||
-            project.hasProperty('Email_iOS_QA')
-    ){
-        tasks.withType(Test){systemProperties = ["env": "QA"]}
+//    QA
+//    Android
+//    Test Sets
+      if (
+                      project.hasProperty('Registration_Android_QA') ||
+                      project.hasProperty('Sign_In_Android_QA') ||
+                      project.hasProperty('Request_Password_Android_QA') ||
+                      project.hasProperty('Account_Lock_Android_QA') ||
+                      project.hasProperty('Reset_Password_Android_QA') ||
+                      project.hasProperty('Menu_Android_QA') ||
+                      project.hasProperty('Log_Out_Android_QA') ||
+                      project.hasProperty('Profile_Settings_Android_QA') ||
+                      project.hasProperty('Privacy_Settings_Android_QA') ||
+                      project.hasProperty('Privacy_Policy_Android_QA') ||
+                      project.hasProperty('Tasks_Android_QA') ||
+                      project.hasProperty('Session_Activity_Android_QA')
+      ) {
+          tasks.withType(Test) {
+                     systemProperty "env", "QA"
+                     systemProperty "testRun", "null"
+                     systemProperty "platformParameter", "Android"
+          }
+// Smoke Test Plan - QA
+      } else if (
+                    project.hasProperty('Smoke_Android_QA')
+      ) {
+          tasks.withType(Test) {
+                    systemProperty "env", "QA"
+                    systemProperty "testRun", "smoke"
+                    systemProperty "platformParameter", "Android"
+          }
+//   Regression Test Plan - QA
+      } else if (
+                    project.hasProperty('Regression_Android_QA')
+      ) {
+          tasks.withType(Test) {
+                      systemProperty "env", "QA"
+                      systemProperty "testRun", "regression"
+                      systemProperty "platformParameter", "Android"
+          }
+
+//    QA
+//    iOS
+//    Test Sets
+      } else if (
+                      project.hasProperty('Registration_iOS_QA') ||
+                      project.hasProperty('Sign_In_iOS_QA') ||
+                      project.hasProperty('Request_Password_iOS_QA') ||
+                      project.hasProperty('Account_Lock_iOS_QA') ||
+                      project.hasProperty('Reset_Password_iOS_QA') ||
+                      project.hasProperty('Menu_iOS_QA') ||
+                      project.hasProperty('Log_Out_iOS_QA') ||
+                      project.hasProperty('Profile_Settings_iOS_QA') ||
+                      project.hasProperty('Privacy_Settings_iOS_QA') ||
+                      project.hasProperty('Privacy_Policy_iOS_QA') ||
+                      project.hasProperty('Tasks_iOS_QA') ||
+                      project.hasProperty('Session_Activity_iOS_QA')
+      ) {
+          tasks.withType(Test) {
+                      systemProperty "env", "QA"
+                      systemProperty "testRun", "null"
+                      systemProperty "platformParameter", "iOS"
+          }
+
+// Smoke Test Plan - QA
+      } else if (
+                     project.hasProperty('Smoke_iOS_QA')
+      ) {
+          tasks.withType(Test) {
+                      systemProperty "env", "QA"
+                      systemProperty "testRun", "smoke"
+                      systemProperty "platformParameter", "iOS"
+          }
+
+//   Regression Test Plan - QA
+      } else if (
+                     project.hasProperty('Regression_iOS_QA')
+        ) {
+            tasks.withType(Test) {
+                      systemProperty "env", "QA"
+                      systemProperty "testRun", "regression"
+                      systemProperty "platformParameter", "iOS"
+            }
+
+
+
+
+
+//    FATE
+//    Test Sets
+//     Android
     }else if(
-            project.hasProperty('Regression_Android_FATE') ||
-            project.hasProperty('Regression_iOS_FATE') ||
-            project.hasProperty('Smoke_Android_FATE') ||
-            project.hasProperty('Smoke_iOS_FATE') ||
-
             project.hasProperty('Registration_Android_FATE') ||
-            project.hasProperty('Registration_iOS_FATE') ||
             project.hasProperty('Sign_In_Android_FATE') ||
-            project.hasProperty('Sign_In_iOS_FATE') ||
             project.hasProperty('Request_Password_Android_FATE') ||
-            project.hasProperty('Request_Password_iOS_FATE') ||
             project.hasProperty('Account_Lock_Android_FATE') ||
-            project.hasProperty('Account_Lock_iOS_FATE') ||
             project.hasProperty('Reset_Password_Android_FATE') ||
-            project.hasProperty('Reset_Password_iOS_FATE') ||
             project.hasProperty('Menu_Android_FATE') ||
-            project.hasProperty('Menu_iOS_FATE') ||
             project.hasProperty('Log_Out_Android_FATE') ||
-            project.hasProperty('Log_Out_iOS_FATE') ||
             project.hasProperty('Profile_Settings_Android_FATE') ||
-            project.hasProperty('Profile_Settings_iOS_FATE') ||
             project.hasProperty('Privacy_Settings_Android_FATE') ||
-            project.hasProperty('Privacy_Settings_iOS_FATE') ||
             project.hasProperty('Privacy_Policy_Android_FATE') ||
-            project.hasProperty('Privacy_Policy_iOS_FATE') ||
             project.hasProperty('Tasks_Android_FATE') ||
-            project.hasProperty('Tasks_iOS_FATE') ||
-            project.hasProperty('Session_Activity_Android_FATE') ||
-            project.hasProperty('Session_Activity_iOS_FATE') ||
-
-            project.hasProperty('Email_Android_FATE') ||
-            project.hasProperty('Email_iOS_FATE')
-
+            project.hasProperty('Session_Activity_Android_FATE')
     ){
-        tasks.withType(Test){systemProperties = ["env": "FATE"]}
+          tasks.withType(Test) {
+              systemProperty "env", "FATE"
+              systemProperty "testRun", "null"
+              systemProperty "platformParameter", "Android"
+          }
+// Smoke Test Plan - FATE
+      } else if (
+              project.hasProperty('Smoke_Android_FATE')
+      ) {
+          tasks.withType(Test) {
+              systemProperty "env", "FATE"
+              systemProperty "testRun", "smoke"
+              systemProperty "platformParameter", "Android"
+          }
+//   Regression Test Plan - FATE
+      } else if (
+              project.hasProperty('Regression_Android_FATE')
+      ) {
+          tasks.withType(Test) {
+              systemProperty "env", "FATE"
+              systemProperty "testRun", "regression"
+              systemProperty "platformParameter", "Android"
+          }
+
+
+//    FATE
+//    Test Sets
+//     iOS
+      }else if(
+                      project.hasProperty('Registration_iOS_FATE') ||
+                      project.hasProperty('Sign_In_iOS_FATE') ||
+                      project.hasProperty('Request_Password_iOS_FATE') ||
+                      project.hasProperty('Account_Lock_iOS_FATE') ||
+                      project.hasProperty('Reset_Password_iOS_FATE') ||
+                      project.hasProperty('Menu_iOS_FATE') ||
+                      project.hasProperty('Log_Out_iOS_FATE') ||
+                      project.hasProperty('Profile_Settings_iOS_FATE') ||
+                      project.hasProperty('Privacy_Settings_iOS_FATE') ||
+                      project.hasProperty('Privacy_Policy_iOS_FATE') ||
+                      project.hasProperty('Tasks_iOS_FATE') ||
+                      project.hasProperty('Session_Activity_iOS_FATE')
+      ){
+          tasks.withType(Test) {
+                    systemProperty "env", "FATE"
+                    systemProperty "testRun", "null"
+                    systemProperty "platformParameter", "iOS"
+          }
+// Smoke Test Plan - FATE
+      } else if (
+                    project.hasProperty('Smoke_iOS_FATE')
+      ) {
+          tasks.withType(Test) {
+                    systemProperty "env", "FATE"
+                    systemProperty "testRun", "smoke"
+                    systemProperty "platformParameter", "iOS"
+          }
+//   Regression Test Plan - FATE
+      } else if (
+                    project.hasProperty('Regression_iOS_FATE')
+      ) {
+          tasks.withType(Test) {
+                    systemProperty "env", "FATE"
+                    systemProperty "testRun", "regression"
+                    systemProperty "platformParameter", "iOS"
+          }
+
+
+
+//    UAT
+//    Test Sets
+//    Android
     }else if(
-            project.hasProperty('Regression_Android_UAT') ||
-            project.hasProperty('Regression_iOS_UAT') ||
-            project.hasProperty('Smoke_Android_UAT') ||
-            project.hasProperty('Smoke_iOS_UAT') ||
-
             project.hasProperty('Registration_Android_UAT') ||
-            project.hasProperty('Registration_iOS_UAT') ||
             project.hasProperty('Sign_In_Android_UAT') ||
-            project.hasProperty('Sign_In_iOS_UAT') ||
             project.hasProperty('Request_Password_Android_UAT') ||
-            project.hasProperty('Request_Password_iOS_UAT') ||
             project.hasProperty('Account_Lock_Android_UAT') ||
-            project.hasProperty('Account_Lock_iOS_UAT') ||
             project.hasProperty('Reset_Password_Android_UAT') ||
-            project.hasProperty('Reset_Password_iOS_UAT') ||
             project.hasProperty('Menu_Android_UAT') ||
-            project.hasProperty('Menu_iOS_UAT') ||
             project.hasProperty('Log_Out_Android_UAT') ||
-            project.hasProperty('Log_Out_iOS_UAT') ||
             project.hasProperty('Profile_Settings_Android_UAT') ||
-            project.hasProperty('Profile_Settings_iOS_UAT') ||
             project.hasProperty('Privacy_Settings_Android_UAT') ||
-            project.hasProperty('Privacy_Settings_iOS_UAT') ||
             project.hasProperty('Privacy_Policy_Android_UAT') ||
-            project.hasProperty('Privacy_Policy_iOS_UAT') ||
             project.hasProperty('Tasks_Android_UAT') ||
-            project.hasProperty('Tasks_iOS_UAT') ||
-            project.hasProperty('Session_Activity_Android_UAT') ||
-            project.hasProperty('Session_Activity_iOS_UAT') ||
-
-            project.hasProperty('Email_Android_UAT') ||
-            project.hasProperty('Email_iOS_UAT')
+            project.hasProperty('Session_Activity_Android_UAT')
     ){
-        tasks.withType(Test){systemProperties = ["env": "UAT"]}
+          tasks.withType(Test) {
+              systemProperty "env", "UAT"
+              systemProperty "testRun", "null"
+              systemProperty "platformParameter", "Android"
+          }
+// Smoke Test Plan - FATE
+      } else if (
+              project.hasProperty('Smoke_Android_UAT')
+      ) {
+          tasks.withType(Test) {
+              systemProperty "env", "UAT"
+              systemProperty "testRun", "smoke"
+              systemProperty "platformParameter", "Android"
+          }
+//   Regression Test Plan - FATE
+      } else if (
+              project.hasProperty('Regression_Android_UAT')
+      ) {
+          tasks.withType(Test) {
+              systemProperty "env", "UAT"
+              systemProperty "testRun", "regression"
+              systemProperty "platformParameter", "Android"
+          }
+
+//    UAT
+//    Test Sets
+//    iOS
+  }else if(
+                    project.hasProperty('Registration_iOS_UAT') ||
+                    project.hasProperty('Sign_In_iOS_UAT') ||
+                    project.hasProperty('Request_Password_iOS_UAT') ||
+                    project.hasProperty('Account_Lock_iOS_UAT') ||
+                    project.hasProperty('Reset_Password_iOS_UAT') ||
+                    project.hasProperty('Menu_iOS_UAT') ||
+                    project.hasProperty('Log_Out_iOS_UAT') ||
+                    project.hasProperty('Profile_Settings_iOS_UAT') ||
+                    project.hasProperty('Privacy_Settings_iOS_UAT') ||
+                    project.hasProperty('Privacy_Policy_iOS_UAT') ||
+                    project.hasProperty('Tasks_iOS_UAT') ||
+                    project.hasProperty('Session_Activity_iOS_UAT')
+    ){
+          tasks.withType(Test) {
+                    systemProperty "env", "UAT"
+                    systemProperty "testRun", "null"
+                    systemProperty "platformParameter", "iOS"
+          }
+// Smoke Test Plan - UAT
+  } else if (
+                     project.hasProperty('Smoke_iOS_UAT')
+    ) {
+        tasks.withType(Test) {
+                     systemProperty "env", "UAT"
+                     systemProperty "testRun", "smoke"
+                     systemProperty "platformParameter", "iOS"
+        }
+//   Regression Test Plan - UAT
+    } else if (
+                     project.hasProperty('Regression_iOS_UAT')
+    ) {
+          tasks.withType(Test) {
+                    systemProperty "env", "UAT"
+                    systemProperty "testRun", "regression"
+                    systemProperty "platformParameter", "iOS"
+          }
       }
+
 
 //    def target = project.hasProperty("target") ? project.getProperty("target") : targetEnvironment
     def config = new groovy.json.JsonSlurper().parseText(file("./config/settings.json").text)
