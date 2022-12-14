@@ -1,0 +1,24 @@
+version: v1.0
+name: Android QA
+
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+
+execution_time_limit:
+  minutes: 60
+
+auto_cancel:
+  running:
+    when: true
+
+blocks:
+  - name: Android QA
+    dependencies: []
+    task:
+      jobs:
+        - name: Android QA
+          commands:
+            - checkout
+            - docker compose up android-qa

@@ -1,0 +1,38 @@
+version: "3"
+
+x-image-config: &image-config
+  image: gradle:6.0-jdk13
+  working_dir: /application
+  volumes:
+    - .:/application:cached
+
+services:
+  # QA
+  #
+  android-qa:
+    <<: *image-config
+    command: "gradle clean test -Pregression_Android_QA"
+
+  ios-qa:
+    <<: *image-config
+    command: "gradle clean test -PRegression_iOS_QA"
+
+  # FATE
+  #
+  android-fate:
+    <<: *image-config
+    command: "gradle clean test -Pregression_Android_FATE"
+
+  ios-fate:
+    <<: *image-config
+    command: "gradle clean test -PRegression_iOS_FATE"
+
+  # UAT
+  #
+  android-uat:
+    <<: *image-config
+    command: "gradle clean test -PRegression_Android_UAT"
+
+  ios-uat:
+    <<: *image-config
+    command: "gradle clean test -PRegression_iOS_UAT"
