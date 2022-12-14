@@ -1,0 +1,42 @@
+version: v1.0
+name: qa-eConsent-MobileWeb
+
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+
+execution_time_limit:
+  minutes: 15
+
+auto_cancel:
+  running:
+    when: true
+
+blocks:
+  - name: Noop
+    dependencies: []
+    task:
+      jobs:
+        - name: noop
+          commands:
+            - echo 'true'
+
+promotions:
+  - name: iOS QA
+    pipeline_file: ios-qa.yaml
+
+  - name: Android QA
+    pipeline_file: android-qa.yaml
+
+  - name: iOS FATE
+    pipeline_file: ios-fate.yaml
+
+  - name: Android FATE
+    pipeline_file: android-fate.yaml
+
+  - name: iOS UAT
+    pipeline_file: ios-uat.yaml
+
+  - name: Android UAT
+    pipeline_file: android-uat.yaml

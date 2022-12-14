@@ -2,8 +2,8 @@ Documentation in Progress
 # Florence eConsent Mobile Testing
 Appium - Java - TestNG - SauceLabs - Test Rail framework for mobile testing.
 
-This is a framework for testing Mobile applications on mobile devices, both Android and iOS. 
-Use Appium as a basis, and the code is written in Java. It also uses testng to manipulate test cases. 
+This is a framework for testing Mobile applications on mobile devices, both Android and iOS.
+Use Appium as a basis, and the code is written in Java. It also uses testng to manipulate test cases.
 Execution of the tests themselves is performed at Sauce Labs, BrowserStack and Local dervices and the results are stored and displayed in Xray.
 
 ____________________________________________________________
@@ -21,14 +21,13 @@ ____________________________________________________________
 
 
 ____________________________________________________________
-## Run Test 
+## Run Test
 
 - command for Mac OS terminal --> context
 
 ### _Android Test_
 
 #### QE Environment
-
 
 *  **./gradlew clean test -Pregression_Android_QA** --> Start regression testing for Android device on QA environment
 *  **./gradlew clean test -PsmokeTest_Android_QA** --> Start smoke testing for Android device on QA environment
@@ -38,10 +37,10 @@ ____________________________________________________________
 *  **./gradlew clean test -Pregression_Android_UATv** --> Start regression testing for Android device on Dev environment
 *  **./gradlew clean test -PsmokeTest_Android_UAT** --> Start smoke testing for Android device on Dev environment
 
-#### SIT Environment
+#### UAT Environment
 
-*  **./gradlew clean test -Pregression_Android_SIT** --> Start regression testing for Android device on SIT environment
-*  **./gradlew clean test -PsmokeTest_Android_SIT** --> Start smoke testing for Android device on SIT environment
+*  **./gradlew clean test -Pregression_Android_UAT** --> Start regression testing for Android device on UAT environment
+*  **./gradlew clean test -PsmokeTest_Android_UAT** --> Start smoke testing for Android device on UAT environment
 
 
 ### _iOS Test_
@@ -52,21 +51,15 @@ ____________________________________________________________
 *  **./gradlew clean test -PsmokeTest_iOS_QA**  --> Start smoke testing for iOS device on QA environment
 
 
-#### Dev Environment
+#### UAT Environment
 
-*  **./gradlew clean test -Pregression_iOS_UAT**  --> Start regression testing for iOS device on Dev environment
-*  **./gradlew clean test -PsmokeTest_iOS_UAT**  --> Start smoke testing for iSO device on Dev environment
-
-
-#### SIT Environment
-
-*  **./gradlew clean test -Pregression_iOS_SIT**  --> Start regression testing for iOS device on SIT environment
-*  **./gradlew clean test -PsmokeTest_iOS_SIT**  --> Start smoke testing for iSO device on SIT environment
+*  **./gradlew clean test -Pregression_iOS_UAT**  --> Start regression testing for iOS device on UAT environment
+*  **./gradlew clean test -PsmokeTest_iOS_UAT**  --> Start smoke testing for iSO device on UAT environment
 
 
 
 
-### _Parallel Execution_ 
+### _Parallel Execution_
 
 #### QE Environment
 
@@ -80,10 +73,10 @@ ____________________________________________________________
 *  **./gradlew clean test -PsmokeTest_Android_UAT & ./gradlew clean test -PsmokeTest_iOS_Dev** --> Start parallel smoke testing for Android and iOS device on Dev environment
 
 
-#### SIT Environment
+#### UAT Environment
 
-* **./gradlew clean test -Pregression_Android_SIT & ./gradlew clean test -Pregression_iOS_SIT** --> Start parallel regression testing for Android and iOS device on SIT environment
-* **./gradlew clean test -PsmokeTest_Android_SIT & ./gradlew clean test -PsmokeTest_iOS_SIT** --> Start parallel smoke testing for Android and iOS device on SIT environment
+* **./gradlew clean test -Pregression_Android_UAT & ./gradlew clean test -Pregression_iOS_UAT** --> Start parallel regression testing for Android and iOS device on UAT environment
+* **./gradlew clean test -PsmokeTest_Android_UAT & ./gradlew clean test -PsmokeTest_iOS_UAT** --> Start parallel smoke testing for Android and iOS device on UAT environment
 ____________________________________________________________
 
 
@@ -117,8 +110,8 @@ Folder contains testNG XML files
   - [Regression_iOS_Suite.xml](testNG/iOS/Web/Regression_iOS_Suite.xml)
   - [Smoke_iOS_Suite.xml](testNG/iOS/Web/Smoke_iOS_Suite.xml)
 
-### testNG parameter 
-* name="platformParameter" - Parameter for setting desire capability 
+### testNG parameter
+* name="platformParameter" - Parameter for setting desire capability
   - [value="remoteAndroidCapsEmulator"](src/test/java/ch/clx/testing/appium/runner/Init_Android.java)
   - [value="remoteAndroidCapsDefault"](src/test/java/ch/clx/testing/appium/runner/Init_Android.java)
   - [value="localAndroidCaps"](src/test/java/ch/clx/testing/appium/runner/Init_Android.java)
@@ -169,7 +162,7 @@ Serves for Ci CD pipeline main data file . The following, for all three environm
 * OSVersionRealDevice
 * OSVersionSimulator
 * Admin Username
-* Admin Password 
+* Admin Password
 * Client Username
 * Client Password
 ____________________________________________________________
@@ -179,7 +172,7 @@ ____________________________________________________________
 
 They include configuration data for Sauce Labs, Test Rail and Test Data
 
-### *testRailRunId.properties 
+### *testRailRunId.properties
 is used to store the Test Rail Run ID number
 * [Android_dev_testRailRunId.properties](src/main/resources/Android_dev_testRailRunId.properties)
 * [Android_qa_testRailRunId.properties](src/main/resources/Android_qa_testRailRunId.properties)

@@ -1,0 +1,24 @@
+version: v1.0
+name: Android FATE
+
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+
+execution_time_limit:
+  minutes: 60
+
+auto_cancel:
+  running:
+    when: true
+
+blocks:
+  - name: Android FATE
+    dependencies: []
+    task:
+      jobs:
+        - name: Android FATE
+          commands:
+            - checkout
+            - docker compose up android-fate
