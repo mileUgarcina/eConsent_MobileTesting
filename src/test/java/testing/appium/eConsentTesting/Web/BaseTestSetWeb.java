@@ -1,5 +1,6 @@
 package testing.appium.eConsentTesting.Web;
 
+import org.testng.Assert;
 import testing.appium.pageObjects.eConsentTesting.WebApp.*;
 import testing.appium.runner.Init_Android;
 import testing.appium.runner.Init_iOS;
@@ -12,18 +13,21 @@ import org.testng.annotations.*;
 import java.lang.reflect.Method;
 
 import static testing.appium.helpers.TCLogger.*;
-import static testing.appium.helpers.Utils.deleteAllCookies_WebElement;
-import static testing.appium.runner.jiraXrayReporting.JiraXrayAPI.setTcRun_Xray;
+import static testing.appium.helpers.Utils.*;
+import static testing.appium.runner.browserStack.BrowserStackAPI.getTestRunDetails_BrowserStack;
+import static testing.appium.runner.eConsent_HealthCheckResponse.eConsent_HC_API.*;
+import static testing.appium.runner.jiraXrayReporting.JiraXrayAPI.setTestRun_Xray;
 import static testing.appium.runner.propertyFile.DataProvider.*;
 import static testing.appium.runner.propertyFile.DataProvider.environmentData.appEnvironment;
-import static testing.appium.runner.sauceLabs.SauceLabsAPI.getTestRunDetailsRD;
+import static testing.appium.runner.sauceLabs.SauceLabsAPI.*;
+
 
 
 public class BaseTestSetWeb {
 
     public AppiumDriver<MobileElement> driver;
     public String suiteName;
-    String sauceLabsTestRunDetails;
+    String testRunDetails;
     Init_Android initAndroid;
     Init_iOS iniOS;
 
@@ -40,28 +44,41 @@ public class BaseTestSetWeb {
     public ViewStudyPage vsp;
     public StudyPage sp;
 
-    @Parameters({"deviceParameter", "platformParameter", "browserName", "crete_Xray_Test_Run"})
+    @Parameters({"deviceParameter", "platformParameter", "browserName"})
     @BeforeSuite(alwaysRun=true,
                  description = "Set capabilities depending on the platformParameter, Initiate driver and Page Objects, Create Xray Test Run")
-    public void startSession(String deviceParameter, String platformParameter, String browserName, boolean crete_Xray_Test_Run, ITestContext context, ITestResult result) {
+    public void startSession(String deviceParameter, String platformParameter, String browserName, ITestContext context, ITestResult result){
 
-        setTcRun_Xray(crete_Xray_Test_Run, platformParameter);
+//        eConsent Participant App Health Check Response
+        getAppHealthCheckResponse();
 
 //        Get Suite Name from TestNG xml file
         suiteName = context.getCurrentXmlTest().getSuite().getName();
-        LoggerInformation("Running Suite: " + suiteName + ", one \"" + ENVIRONMENT + "\" environment" );
+        LoggerInformation("Running Suite: " + suiteName + ", one \"" + ENVIRONMENT + "\" environment, " + "App Version: " + appVersion + ", App Revision: " + appRevision);
+
+//        Set Xray Test Run
+        setTestRun_Xray(browserName, PLATFORM_PARAMETER, suiteName);
 
         initAndroid = new Init_Android();
         iniOS = new Init_iOS();
 
 //        Driver initialization
-        if (platformParameter.contains("Android")) {
-            driver = initAndroid.getDriverAndroid(deviceParameter, suiteName, platformParameter, browserName);
-        } else {
-            driver = iniOS.getDriveriOS(deviceParameter, suiteName, platformParameter, browserName);
+        if (PLATFORM_PARAMETER.contains("Android")) {
+            driver = initAndroid.getDriverAndroid(deviceParameter, suiteName, PLATFORM_PARAMETER, browserName);
+        } else if(PLATFORM_PARAMETER.contains("iOS")){
+            driver = iniOS.getDriveriOS(deviceParameter, suiteName, PLATFORM_PARAMETER, browserName);
+        }else{
+            LoggerInformation("Test Parameter: " + PLATFORM_PARAMETER + " not recognized" );
+            Assert.fail();
         }
 
-        sauceLabsTestRunDetails = getTestRunDetailsRD();
+//        Get Details of Sauce Labs/Browser Stack Run - device name, platform name, OS version...
+        if (deviceParameter.contains("SauceLabs")) {
+            testRunDetails = getTestRunDetails_SauceLabs_RD();
+        }else if(deviceParameter.contains("BrowserStack")){
+            testRunDetails = getTestRunDetails_BrowserStack(String.valueOf(driver.getSessionId()));
+        }
+
         LoggerAction("Open Browser: " + browserName);
         deleteAllCookies_WebElement(driver);
 
@@ -79,14 +96,15 @@ public class BaseTestSetWeb {
         vsp = new ViewStudyPage(driver);
     }
 
-    @Parameters({"browserName", "deviceParameter", "platformParameter"})
+
+
+    @Parameters({"browserName", "deviceParameter"})
     @BeforeMethod(alwaysRun=true,
                   description = "Set the Diver attribute for the needs of the result")
-    public void beforeMethod(Method method, String browserName, String deviceParameter, String platformParameter,  ITestResult result) {
+    public void beforeMethod(Method method, String browserName, String deviceParameter,  ITestResult result) {
 
         result.setAttribute("driver", driver);
-        result.setAttribute("platformParameter", platformParameter);
-        result.setAttribute("sauceLabsTestRunDetails", sauceLabsTestRunDetails);
+        result.setAttribute("testRunDetails", testRunDetails);
         result.setAttribute("browserName", browserName);
         result.setAttribute("deviceParameter", deviceParameter);
         result.setAttribute("appUrl", appEnvironment());
@@ -100,8 +118,8 @@ public class BaseTestSetWeb {
         driver.quit();
         LoggerAction("Driver quit");
 
-
-//        System.out.println("getPageSource" + driver.getPageSource());
+//        Thread.sleep(5000);
+//        System.out.println("getPageSource: " + driver.getPageSource());
     }
 
  }

@@ -4,13 +4,12 @@
 
 <!--Device Parameter-->
 <!--    <parameter name="deviceParameter" value="localAndroidCapsWeb"/>-->
-<!--    <parameter name="deviceParameter" value="SauceLabs_Android_RealDevice_Web"/>-->
-    <parameter name="deviceParameter" value="BrowserStack_Android_RealDevice_Web"/>
+    <parameter name="deviceParameter" value="SauceLabs_Android_RealDevice_Web"/>
+<!--    <parameter name="deviceParameter" value="BrowserStack_Android_RealDevice_Web"/>-->
     <parameter name="platformParameter" value="Android"/>
     <parameter name="browserName" value="Chrome"/>
 <!--TC Parameter-->
     <parameter name="user" value="Participant"/>
-    <parameter name="crete_Xray_Test_Run" value="false"/>
 
     <test name="Profile Settings">
         <classes>

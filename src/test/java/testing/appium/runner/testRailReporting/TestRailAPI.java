@@ -34,12 +34,12 @@ import static testing.appium.runner.propertyFile.DataProvider.SliOSConfigData.na
 import static testing.appium.runner.propertyFile.DataProvider.environmentData.*;
 import static testing.appium.runner.propertyFile.DataProvider.slAuthorisationData.*;
 import static testing.appium.runner.propertyFile.DataProvider.testRailData.*;
-import static testing.appium.runner.propertyFile.DataProvider.testrailRunIdDataAndroidDev.XRAY_RUN_ID_ANDROID_FATE;
-import static testing.appium.runner.propertyFile.DataProvider.testrailRunIdDataAndroidQa.XRAY_RUN_ID_ANDROID_QA;
-import static testing.appium.runner.propertyFile.DataProvider.testrailRunIdDataAndroidSit.XRAY_RUN_ID_ANDROID_UAT;
-import static testing.appium.runner.propertyFile.DataProvider.testrailRunIdDataiOSSit.XRAY_RUN_ID_IOS_UAT;
-import static testing.appium.runner.propertyFile.DataProvider.testrailRunIdDataiOSdev.XRAY_RUN_ID_IOS_FATE;
-import static testing.appium.runner.propertyFile.DataProvider.testrailRunIdDataiOSqa.XRAY_RUN_ID_IOS_QA;
+import static testing.appium.runner.propertyFile.DataProvider.testrailRunIdDataAndroidDev.XRAY_RUN_ID_ANDROID_FATE_REGRESSION;
+import static testing.appium.runner.propertyFile.DataProvider.testrailRunIdDataAndroidQa.XRAY_RUN_ID_ANDROID_QA_REGRESSION;
+import static testing.appium.runner.propertyFile.DataProvider.testrailRunIdDataAndroidSit.XRAY_RUN_ID_ANDROID_UAT_REGRESSION;
+import static testing.appium.runner.propertyFile.DataProvider.testrailRunIdDataiOSSit.XRAY_RUN_ID_IOS_UAT_REGRESSION;
+import static testing.appium.runner.propertyFile.DataProvider.testrailRunIdDataiOSdev.XRAY_RUN_ID_IOS_FATE_REGRESSION;
+import static testing.appium.runner.propertyFile.DataProvider.testrailRunIdDataiOSqa.XRAY_RUN_ID_IOS_QA_REGRESSION;
 import static testing.appium.runner.sauceLabs.SauceLabsAPI.getTestRunDetailsVD;
 
 
@@ -53,20 +53,20 @@ public class TestRailAPI {
     switch (platformParameter) {
       case "Android":
         if (env.equals(ENV_VARIABLE_QA)) {
-          xRayRunId = XRAY_RUN_ID_ANDROID_QA;
+          xRayRunId = XRAY_RUN_ID_ANDROID_QA_REGRESSION;
         } else if (env.equals(ENV_VARIABLE_FATE)) {
-          xRayRunId = XRAY_RUN_ID_ANDROID_FATE;
+          xRayRunId = XRAY_RUN_ID_ANDROID_FATE_REGRESSION;
         } else if (env.equals(ENV_VARIABLE_UAT)) {
-          xRayRunId = XRAY_RUN_ID_ANDROID_UAT;
+          xRayRunId = XRAY_RUN_ID_ANDROID_UAT_REGRESSION;
         }
         break;
       case "iOS":
         if (env.equals(ENV_VARIABLE_QA)) {
-          xRayRunId = XRAY_RUN_ID_IOS_QA;
+          xRayRunId = XRAY_RUN_ID_IOS_QA_REGRESSION;
         } else if (env.equals(ENV_VARIABLE_FATE)) {
-          xRayRunId = XRAY_RUN_ID_IOS_FATE;
+          xRayRunId = XRAY_RUN_ID_IOS_FATE_REGRESSION;
         } else if (env.equals(ENV_VARIABLE_UAT)) {
-          xRayRunId = XRAY_RUN_ID_IOS_UAT;
+          xRayRunId = XRAY_RUN_ID_IOS_UAT_REGRESSION;
         }
         break;
     }
@@ -114,7 +114,7 @@ public class TestRailAPI {
     String description;
     String descriptionTRRun1 = null;
     if (platformParameter.contains("remoteAndroidCapsDefault") || platformParameter.contains("remoteiOSCapsDefault")) {
-      descriptionTRRun1 = SauceLabsAPI.getTestRunDetailsRD();
+      descriptionTRRun1 = SauceLabsAPI.getTestRunDetails_SauceLabs_RD();
     } else if (platformParameter.contains("remoteAndroidCapsEmulator") || platformParameter.contains("remoteiOSCapsSimulator")) {
       descriptionTRRun1 = getTestRunDetailsVD();
     }
@@ -375,7 +375,7 @@ public class TestRailAPI {
     String sauceLabsRunDetails;
     String descriptionTRRun1 = null;
     if (platformParameter.contains("remoteAndroidCapsDefault") || platformParameter.contains("remoteiOSCapsDefault")) {
-      descriptionTRRun1 = SauceLabsAPI.getTestRunDetailsRD();
+      descriptionTRRun1 = SauceLabsAPI.getTestRunDetails_SauceLabs_RD();
     } else if (platformParameter.contains("remoteAndroidCapsEmulator") || platformParameter.contains("remoteiOSCapsSimulator")) {
       descriptionTRRun1 = getTestRunDetailsVD();
     }

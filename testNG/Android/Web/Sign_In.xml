@@ -3,14 +3,13 @@
 <suite name="Test Set - Sign In">
 
 <!--Device Parameter-->
-    <parameter name="deviceParameter" value="Local_Android_Emulator_Web"/>
+<!--    <parameter name="deviceParameter" value="Local_Android_Emulator_Web"/>-->
 <!--    <parameter name="deviceParameter" value="SauceLabs_Android_RealDevice_Web"/>-->
-<!--    <parameter name="deviceParameter" value="BrowserStack_Android_RealDevice_Web"/>-->
+    <parameter name="deviceParameter" value="BrowserStack_Android_RealDevice_Web"/>
     <parameter name="platformParameter" value="Android"/>
     <parameter name="browserName" value="Chrome"/>
 <!--TC Parameter-->
     <parameter name="user" value="Participant"/>
-    <parameter name="crete_Xray_Test_Run" value="false"/>
     <parameter name="unactivatedUsername" value="mobile.automation+unactivated_android@florencehc.com"/>
     <parameter name="unactivatedPassword" value="Unactivated123*"/>
     <parameter name="incorrectUsername" value="incorrect"/>
@@ -29,19 +28,19 @@
 
                 <methods>
                     <include name="participant_Auth_Mobile_Sign_in_with_incorrect_email"/>
-<!--                    <include name="Participant_Auth_Mobile_Sign_in_with_incorrect_password"/>-->
-<!--                    <include name="participant_Auth_Mobile_Sign_In_Fields_respond_with_valid_data"/>-->
-<!--                    <include name="participant_Auth_Mobile_Sign_In_Fields_respond_with_invalid_data"/>-->
-<!--                    <include name="participant_Auth_Mobile_Sign_In_Fields_respond_with_cleared_data"/>-->
-<!--                    <include name="participant_Auth_Mobile_Sign_In_Show_Password"/>-->
-<!--                    <include name="participant_Auth_Mobile_Sign_In_Privacy_Policy_Link"/>-->
-<!--                    <include name="participant_Auth_Mobile_Sign_In_Terms_And_Conditions_Link"/>-->
-<!--                    <include name="participant_Auth_Mobile_Sign_In_Forgot_Password_Link"/>-->
-<!--                    <include name="participant_Auth_Mobile_Sign_In_Forgot_password_action_with_populated_Email_field"/>-->
-<!--                    <include name="participant_Auth_Mobile_Sign_in_with_inactive_participant"/>-->
-<!--                    <include name="participant_Auth_Mobile_Sign_in_with_inactive_Additional_Signer"/>-->
-<!--                    <include name="participant_Auth_Mobile_Sign_in_with_participant"/>-->
-<!--                    <include name="participant_Auth_Mobile_Sign_In_Additional_Signer"/>-->
+                    <include name="Participant_Auth_Mobile_Sign_in_with_incorrect_password"/>
+                    <include name="participant_Auth_Mobile_Sign_In_Fields_respond_with_valid_data"/>
+                    <include name="participant_Auth_Mobile_Sign_In_Fields_respond_with_invalid_data"/>
+                    <include name="participant_Auth_Mobile_Sign_In_Fields_respond_with_cleared_data"/>
+                    <include name="participant_Auth_Mobile_Sign_In_Show_Password"/>
+                    <include name="participant_Auth_Mobile_Sign_In_Privacy_Policy_Link"/>
+                    <include name="participant_Auth_Mobile_Sign_In_Terms_And_Conditions_Link"/>
+                    <include name="participant_Auth_Mobile_Sign_In_Forgot_Password_Link"/>
+                    <include name="participant_Auth_Mobile_Sign_In_Forgot_password_action_with_populated_Email_field"/>
+                    <include name="participant_Auth_Mobile_Sign_in_with_inactive_participant"/>
+                    <include name="participant_Auth_Mobile_Sign_in_with_inactive_Additional_Signer"/>
+                    <include name="participant_Auth_Mobile_Sign_in_with_participant"/>
+                    <include name="participant_Auth_Mobile_Sign_In_Additional_Signer"/>
                 </methods>
 
             </class>

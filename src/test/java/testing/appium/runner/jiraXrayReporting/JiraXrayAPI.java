@@ -1,7 +1,10 @@
 package testing.appium.runner.jiraXrayReporting;
 import java.io.*;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Base64;
 import java.util.Properties;
 
@@ -29,39 +32,112 @@ import testing.appium.helpers.Utils;
 import static testing.appium.helpers.TCLogger.LoggerInformation;
 import static testing.appium.helpers.TCLogger.LoggerStep_Failed;
 import static testing.appium.helpers.Utils.*;
-import static testing.appium.runner.propertyFile.DataProvider.ENVIRONMENT;
+import static testing.appium.runner.eConsent_HealthCheckResponse.eConsent_HC_API.appRevision;
+import static testing.appium.runner.eConsent_HealthCheckResponse.eConsent_HC_API.appVersion;
+import static testing.appium.runner.propertyFile.DataProvider.*;
 import static testing.appium.runner.propertyFile.DataProvider.environmentData.*;
 import static testing.appium.runner.propertyFile.DataProvider.environmentData.ENV_VARIABLE_UAT;
 import static testing.appium.runner.propertyFile.DataProvider.testRailData.*;
-import static testing.appium.runner.propertyFile.DataProvider.testrailRunIdDataAndroidDev.XRAY_RUN_ID_ANDROID_FATE;
-import static testing.appium.runner.propertyFile.DataProvider.testrailRunIdDataAndroidQa.XRAY_RUN_ID_ANDROID_QA;
-import static testing.appium.runner.propertyFile.DataProvider.testrailRunIdDataAndroidSit.XRAY_RUN_ID_ANDROID_UAT;
-import static testing.appium.runner.propertyFile.DataProvider.testrailRunIdDataiOSSit.XRAY_RUN_ID_IOS_UAT;
-import static testing.appium.runner.propertyFile.DataProvider.testrailRunIdDataiOSdev.XRAY_RUN_ID_IOS_FATE;
-import static testing.appium.runner.propertyFile.DataProvider.testrailRunIdDataiOSqa.XRAY_RUN_ID_IOS_QA;
+
+import static testing.appium.runner.propertyFile.DataProvider.testrailRunIdDataAndroidDev.XRAY_RUN_ID_ANDROID_FATE_REGRESSION;
+import static testing.appium.runner.propertyFile.DataProvider.testrailRunIdDataAndroidDev.XRAY_RUN_ID_ANDROID_FATE_SMOKE;
+import static testing.appium.runner.propertyFile.DataProvider.testrailRunIdDataAndroidQa.XRAY_RUN_ID_ANDROID_QA_REGRESSION;
+import static testing.appium.runner.propertyFile.DataProvider.testrailRunIdDataAndroidQa.XRAY_RUN_ID_ANDROID_QA_SMOKE;
+import static testing.appium.runner.propertyFile.DataProvider.testrailRunIdDataAndroidSit.XRAY_RUN_ID_ANDROID_UAT_REGRESSION;
+import static testing.appium.runner.propertyFile.DataProvider.testrailRunIdDataAndroidSit.XRAY_RUN_ID_ANDROID_UAT_SMOKE;
+import static testing.appium.runner.propertyFile.DataProvider.testrailRunIdDataiOSSit.XRAY_RUN_ID_IOS_UAT_REGRESSION;
+import static testing.appium.runner.propertyFile.DataProvider.testrailRunIdDataiOSSit.XRAY_RUN_ID_IOS_UAT_SMOKE;
+import static testing.appium.runner.propertyFile.DataProvider.testrailRunIdDataiOSdev.XRAY_RUN_ID_IOS_FATE_REGRESSION;
+import static testing.appium.runner.propertyFile.DataProvider.testrailRunIdDataiOSdev.XRAY_RUN_ID_IOS_FATE_SMOKE;
+import static testing.appium.runner.propertyFile.DataProvider.testrailRunIdDataiOSqa.XRAY_RUN_ID_IOS_QA_REGRESSION;
+import static testing.appium.runner.propertyFile.DataProvider.testrailRunIdDataiOSqa.XRAY_RUN_ID_IOS_QA_SMOKE;
+
 
 public class JiraXrayAPI {
     static private String xRayRunId;
     static private final String env = ENVIRONMENT;
+    static private final String testRun  = TEST_RUN;
+
     public static String getXRayRunId(String platformParameter) {
         switch (platformParameter) {
             case "Android":
-                if (env.equals(ENV_VARIABLE_QA)) {
-                    xRayRunId = XRAY_RUN_ID_ANDROID_QA;
-                } else if (env.equals(ENV_VARIABLE_FATE)) {
-                    xRayRunId = XRAY_RUN_ID_ANDROID_FATE;
-                } else if (env.equals(ENV_VARIABLE_UAT)) {
-                    xRayRunId = XRAY_RUN_ID_ANDROID_UAT;
-                }
+                if(testRun.equals("regression")) {
+                    if (env.equals(ENV_VARIABLE_QA)) {
+                        xRayRunId = XRAY_RUN_ID_ANDROID_QA_REGRESSION;
+                    } else if (env.equals(ENV_VARIABLE_FATE)) {
+                        xRayRunId = XRAY_RUN_ID_ANDROID_FATE_REGRESSION;
+                    } else if (env.equals(ENV_VARIABLE_UAT)) {
+                        xRayRunId = XRAY_RUN_ID_ANDROID_UAT_REGRESSION;
+                    }
+                }else if(testRun.equals("smoke"))
+                    if (env.equals(ENV_VARIABLE_QA)) {
+                        xRayRunId = XRAY_RUN_ID_ANDROID_QA_SMOKE;
+                    } else if (env.equals(ENV_VARIABLE_FATE)) {
+                        xRayRunId = XRAY_RUN_ID_ANDROID_FATE_SMOKE;
+                    } else if (env.equals(ENV_VARIABLE_UAT)) {
+                        xRayRunId = XRAY_RUN_ID_ANDROID_UAT_SMOKE;
+                    }
                 break;
             case "iOS":
-                if (env.equals(ENV_VARIABLE_QA)) {
-                    xRayRunId = XRAY_RUN_ID_IOS_QA;
-                } else if (env.equals(ENV_VARIABLE_FATE)) {
-                    xRayRunId = XRAY_RUN_ID_IOS_FATE;
-                } else if (env.equals(ENV_VARIABLE_UAT)) {
-                    xRayRunId = XRAY_RUN_ID_IOS_UAT;
-                }
+                if(testRun.equals("regression")) {
+                    if (env.equals(ENV_VARIABLE_QA)) {
+                        xRayRunId = XRAY_RUN_ID_IOS_QA_REGRESSION;
+                    } else if (env.equals(ENV_VARIABLE_FATE)) {
+                        xRayRunId = XRAY_RUN_ID_IOS_FATE_REGRESSION;
+                    } else if (env.equals(ENV_VARIABLE_UAT)) {
+                        xRayRunId = XRAY_RUN_ID_IOS_UAT_REGRESSION;
+                    }}
+                else if(testRun.equals("smoke")){
+                    if (env.equals(ENV_VARIABLE_QA)) {
+                        xRayRunId = XRAY_RUN_ID_IOS_QA_SMOKE;
+                    } else if (env.equals(ENV_VARIABLE_FATE)) {
+                        xRayRunId = XRAY_RUN_ID_IOS_FATE_SMOKE;
+                    } else if (env.equals(ENV_VARIABLE_UAT)) {
+                        xRayRunId = XRAY_RUN_ID_IOS_UAT_SMOKE;
+                    }}
+                break;
+        }
+        LoggerInformation("Xray Run ID: " + xRayRunId);
+        return xRayRunId;
+    }
+
+    public static String getXRayTestRun(String platformParameter) {
+        switch (platformParameter) {
+            case "Android":
+                if(testRun.equals("regression")) {
+                    if (env.equals(ENV_VARIABLE_QA)) {
+                        xRayRunId = XRAY_RUN_ID_ANDROID_QA_REGRESSION;
+                    } else if (env.equals(ENV_VARIABLE_FATE)) {
+                        xRayRunId = XRAY_RUN_ID_ANDROID_FATE_REGRESSION;
+                    } else if (env.equals(ENV_VARIABLE_UAT)) {
+                        xRayRunId = XRAY_RUN_ID_ANDROID_UAT_REGRESSION;
+                    }
+                }else if(testRun.equals("smoke"))
+                    if (env.equals(ENV_VARIABLE_QA)) {
+                        xRayRunId = XRAY_RUN_ID_ANDROID_QA_SMOKE;
+                    } else if (env.equals(ENV_VARIABLE_FATE)) {
+                        xRayRunId = XRAY_RUN_ID_ANDROID_FATE_SMOKE;
+                    } else if (env.equals(ENV_VARIABLE_UAT)) {
+                        xRayRunId = XRAY_RUN_ID_ANDROID_UAT_SMOKE;
+                    }
+                break;
+            case "iOS":
+                if(testRun.equals("regression")) {
+                    if (env.equals(ENV_VARIABLE_QA)) {
+                        xRayRunId = XRAY_RUN_ID_IOS_QA_REGRESSION;
+                    } else if (env.equals(ENV_VARIABLE_FATE)) {
+                        xRayRunId = XRAY_RUN_ID_IOS_FATE_REGRESSION;
+                    } else if (env.equals(ENV_VARIABLE_UAT)) {
+                        xRayRunId = XRAY_RUN_ID_IOS_UAT_REGRESSION;
+                    }}
+                else if(testRun.equals("smoke")){
+                    if (env.equals(ENV_VARIABLE_QA)) {
+                        xRayRunId = XRAY_RUN_ID_IOS_QA_SMOKE;
+                    } else if (env.equals(ENV_VARIABLE_FATE)) {
+                        xRayRunId = XRAY_RUN_ID_IOS_FATE_SMOKE;
+                    } else if (env.equals(ENV_VARIABLE_UAT)) {
+                        xRayRunId = XRAY_RUN_ID_IOS_UAT_SMOKE;
+                    }}
                 break;
         }
 //        LoggerInformation("Xray Run ID: " + xRayRunId);
@@ -71,11 +147,11 @@ public class JiraXrayAPI {
     public static void xRayAPI() throws IOException {
 
         String evidencePath = "files/CLX_photo.jpg";
-        String evidences[] = evidencePath.split(",");
+        String[] evidences = evidencePath.split(",");
         JsonArray evidencesJson = new JsonArray();
 
-        for (int i = 0; i < evidences.length; i++) {
-            File evidenceFile = new File(evidences[i]);
+        for (String s : evidences) {
+            File evidenceFile = new File(s);
             byte[] filecontent = FileUtils.readFileToByteArray(evidenceFile);
             String encoded_FileContent = Base64.getEncoder().encodeToString(filecontent);
             JsonObject evidence = new JsonObject();
@@ -174,24 +250,39 @@ public class JiraXrayAPI {
         return null;
     }
 
-    public static void setTcRun_Xray(boolean crete_Xray_Test_Run, String platformParameter) {
 
-        if (XRAY.equals("true") & crete_Xray_Test_Run) {
-            String testRun_summary = TEST_RUN_TEST_SUMMARY;
-            String testRun_description = TEST_RUN_TEST_DESCRIPTION;
+
+    public static void setTestRun_Xray(String browserName, String platformParameter, String suiteName) {
+
+        if (XRAY.equals("true") & !TEST_RUN.equals("null") & suiteName.contains("Sign In")) {
+            String testRun_summary;
+            String testRun_description;
             String testRun_user = XRAY_USER;
-            String testRun_testPlanKey = TEST_PLAN_KEY;
-            String testRun_testEnvironments;
+            String testRun_testPlanKey;
             String testRun_testKey = TEST_KEY;
-            String testRun_status ="EXECUTING";
+            String testRun_status = "EXECUTING";
+            DateTimeFormatter instantTime = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+            String time = LocalDateTime.now().format(instantTime);
             String testRun_key = null;
             String id;
             String self;
 
-            if(platformParameter.equals("Android")){
-                testRun_testEnvironments = TEST_RUN_TEST_ENVIRONMENTS_ANDROID + ENVIRONMENT;
-            }else{
-                testRun_testEnvironments = TEST_RUN_TEST_ENVIRONMENTS_IOS + ENVIRONMENT;;
+            if(TEST_RUN.equals("regression")){
+                testRun_testPlanKey = REGRESSION_TEST_PLAN_KEY;
+                testRun_summary = REGRESSION_TEST_RUN_TEST_SUMMARY;
+                testRun_description = REGRESSION_TEST_RUN_TEST_DESCRIPTION;
+            }else if(TEST_RUN.equals("smoke")) {
+                testRun_testPlanKey = SMOKE_TEST_PLAN_KEY;
+                testRun_summary = SMOKE_TEST_RUN_TEST_SUMMARY;
+                testRun_description = SMOKE_TEST_RUN_TEST_DESCRIPTION;
+            } else{
+                testRun_testPlanKey = null;
+                LoggerInformation("Test Plan for Test Run: " + TEST_RUN + "Not Found");
+                testRun_summary = null;
+                LoggerInformation("Test Run Summary for Test Run: " + TEST_RUN + "Not Found");
+                testRun_description = null;
+                LoggerInformation("Test Run Description for Test Run: " + TEST_RUN + "Not Found");
+                Assert.fail();
             }
 
             String authToken = getXrayToken();
@@ -200,8 +291,9 @@ public class JiraXrayAPI {
                 HttpClient httpClient = HttpClientBuilder.create().build();
                 HttpPost httpPost;
                 httpPost = new HttpPost(XRAY_EXECUTION_URL);
-                String resultPayload = "{\"info\":{\"summary\":\"" + testRun_summary + "\",\"description\":\"" + testRun_description + "\",\"user\":\"" + testRun_user + "\",\"testPlanKey\":\"" + testRun_testPlanKey + "\",\"testEnvironments\":[\"" + testRun_testEnvironments + "\"]},\"tests\":[{\"testKey\":\"" + testRun_testKey +"\",\"status\":\"" + testRun_status +"\"}]}";
-    //            LoggerInformation("resultPayload: " + resultPayload);
+//                TODO Swap Json String for Property Builder
+                String resultPayload = "{\"info\":{\"summary\":\"" + testRun_summary + " --> Mobile Web App - " + PLATFORM_PARAMETER + "/" + browserName + " - " + APP_NAME + " " + "Participant" + " - v:" + appVersion + ", r:" + appRevision + " - " + ENVIRONMENT + " - " + time + "\",\"description\":\"" + testRun_description + "\",\"user\":\"" + testRun_user + "\",\"testPlanKey\":\"" +  testRun_testPlanKey + "\"},\"tests\":[{\"testKey\":\"" + testRun_testKey + "\",\"status\":\"EXECUTING\",\"comment\":\"" + testRun_status + "\"}]}";
+//                LoggerInformation("resultPayload: " + resultPayload);
                 StringEntity requestEntity = new StringEntity(resultPayload);
                 httpPost.setEntity(requestEntity);
                 httpPost.setHeader("Content-type", "application/json");
@@ -211,25 +303,27 @@ public class JiraXrayAPI {
                 String statusString = Integer.toString(status);
 
                 HttpEntity responseEntity = response.getEntity();
+                InputStream inputStream = responseEntity.getContent();
+                JSONObject jsonObject = (JSONObject) new JSONParser().parse(new InputStreamReader(inputStream, StandardCharsets.UTF_8));
+
                 if (statusString.equals("200")) {
                     LoggerInformation("Xray Create Test Run API status: " + statusString);
-                    InputStream inputStream = responseEntity.getContent();
-                    JSONObject jsonObject = (JSONObject) new JSONParser().parse(new InputStreamReader(inputStream, "UTF-8"));
                     id = jsonObject.get("id").toString();
                     testRun_key = jsonObject.get("key").toString();
                     self = jsonObject.get("self").toString();
-    //                LoggerInformation("Test Case Result ID: " + id);
+                    //                LoggerInformation("Test Case Result ID: " + id);
                     LoggerInformation("Test Case Result key: " + testRun_key);
-    //                LoggerInformation("Test Case Result self: " + self);
+                    //                LoggerInformation("Test Case Result self: " + self);
                 } else {
                     LoggerInformation("XRay Create Test Run  status: " + statusString);
+                    LoggerInformation("eConsent POST API Response Body: " + jsonObject);
                 }
             } catch (Exception ex) {
                 LoggerStep_Failed("Create Test Run Field: ", ex.getMessage(), true);
             }
             if(testRun_key != null) {
                 String projectPath = System.getProperty("user.dir");
-                String path = projectPath + "/src/main/resources/" + platformParameter + "_" + env + "_xRayRunId.properties";
+                String path = projectPath + "/src/main/resources/" + testRun + "/" + platformParameter + "/" + platformParameter + "_" + env + "_xRayRunId.properties";
                 try {
                     //Instantiating the properties file
                     Properties props = new Properties();
@@ -238,7 +332,7 @@ public class JiraXrayAPI {
                     //Instantiating the FileInputStream for output file
                     FileOutputStream outputStrem = new FileOutputStream(path);
                     //Storing the properties file
-                    props.store(outputStrem, "This is " + platformParameter + "_" + env + "_xRayRunId.properties file");
+                    props.store(outputStrem, "This is " + testRun + platformParameter + "_" + env + "_xRayRunId.properties file");
                     LoggerInformation("Properties file created: " + path);
                 } catch (Exception ex) {
                     LoggerInformation("Properties file: " + path + " -Not created");
@@ -259,7 +353,6 @@ public class JiraXrayAPI {
                 testStatus_data = "KNOWN_ISSUE";
             }else{
                 testStatus_data = testStatus;
-
             }
 
             String screenshotPath = null;
@@ -267,7 +360,7 @@ public class JiraXrayAPI {
             Timestamp timestamp = new Timestamp(System.currentTimeMillis());
             Long ts = timestamp.getTime();
             String fileName = "screenshot_" + ts + "_" + testKey + ".jpg";
-            if(testStatus.equals("FAILED") ||testStatus.equals("KNOWN_ISSUE") ){
+            if(testStatus.equals("FAILED") || testStatus.equals("KNOWN_ISSUE") ){
                 screenshotPath = getScreenshotPath((AppiumDriver<MobileElement>) result.getAttribute("driver"), testKey, platformParameter);
                 encoded_FileContent = encodeFile(screenshotPath);
             }
@@ -289,21 +382,24 @@ public class JiraXrayAPI {
                 String statusString = Integer.toString(status);
 
                 HttpEntity responseEntity = response.getEntity();
+                InputStream inputStream = responseEntity.getContent();
+                JSONObject jsonObject = (JSONObject) new JSONParser().parse(new InputStreamReader(inputStream, StandardCharsets.UTF_8));
+
                 if (statusString.equals("200")) {
                     LoggerInformation("Xray Set Test Result API status: " + statusString);
-                    InputStream inputStream = responseEntity.getContent();
-                    JSONObject jsonObject = (JSONObject) new JSONParser().parse(new InputStreamReader(inputStream, "UTF-8"));
+
                     String id = jsonObject.get("id").toString();
                     String key = jsonObject.get("key").toString();
                     String self = jsonObject.get("self").toString();
 //                    LoggerInformation("Test Case Result ID: " + id);
-    //                LoggerInformation("Test Case Result key: " + key);
-    //                LoggerInformation("Test Case Result self: " + self);
+//                    LoggerInformation("Test Case Result key: " + key);
+//                    LoggerInformation("Test Case Result self: " + self);
                     if (testStatus.equals("FAILED") ||testStatus.equals("KNOWN_ISSUE")) {
                         Utils.deleteFile(screenshotPath);
                     }
                 } else {
                     LoggerInformation("XRay set Test Result status: " + statusString);
+                    LoggerInformation("eConsent POST API Response Body: " + jsonObject);
                 }
             } catch (Exception ex) {
                 LoggerStep_Failed("Add New Test Result Field: ", ex.getMessage(), true);
@@ -320,6 +416,7 @@ public class JiraXrayAPI {
         String testCaseLogEnd = "\\n\\n=====\\n\\n";
         String testCaseLogEndScreenshot = "Failed Test Step Screenshot";
 
+//                TODO Swap Json String for Property Builder
         String json_Passed_No_BugID = "{\"testExecutionKey\":\"" + testRunId + "\",\"tests\":[{\"testKey\":\"" + testKey + "\",\"status\":\"" + testStatus + "\",\"comment\":\"" + testCaseLogStart + comment + testCaseLogEnd + "\"}]}";
         String jsonFailed_No_BugID_screenshot = "{\"testExecutionKey\":\"" + testRunId + "\",\"tests\":[{\"testKey\":\"" + testKey + "\",\"status\":\"" + testStatus + "\",\"comment\":\"" + testCaseLogStart + comment + testCaseLogEnd + "\",\"evidence\":[{\"data\":\"" + encodedFile + "\",\"filename\":\"" + fileName + "\",\"contentType\":\"image/jpeg\"}]}]}";
         String jsonFailed_BugID_screenshot = "{\"testExecutionKey\":\"" + testRunId + "\",\"tests\":[{\"testKey\":\"" + testKey + "\",\"status\":\"" + testStatus+ "\",\"comment\":\"" + testCaseLogStart+ comment + testCaseLogEnd + "\",\"defects\":[\"" + ticketNo + "\"],\"evidence\":[{\"data\":\"" + encodedFile + "\",\"filename\":\"" + fileName + "\",\"contentType\":\"image/jpeg\"}]}]}";

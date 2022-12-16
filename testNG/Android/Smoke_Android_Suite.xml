@@ -9,7 +9,6 @@
     <parameter name="browserName" value="Chrome"/>
 <!--TC Parameter-->
     <parameter name="user" value="Participant"/>
-    <parameter name="crete_Xray_Test_Run" value="false"/>
     <parameter name="unactivatedUsername" value="mobile.automation+unactivated_android@florencehc.com"/>
     <parameter name="unactivatedPassword" value="Unactivated123*"/>
     <parameter name="incorrectUsername" value="incorrect"/>

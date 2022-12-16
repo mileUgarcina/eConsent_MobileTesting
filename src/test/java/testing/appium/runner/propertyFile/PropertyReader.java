@@ -143,7 +143,7 @@ public class PropertyReader {
 
         static {
             try {
-                String path = "src/main/resources/SauceLabs_Config.properties";
+                String path = "src/main/resources/sauceLabs_Config.properties";
                 FileInputStream input = new FileInputStream(path);
                 properties = new Properties();
                 properties.load(input);
@@ -169,7 +169,7 @@ public class PropertyReader {
 
         static {
             try {
-                String path = "src/main/resources/BrowserStack_Config.properties";
+                String path = "src/main/resources/browserStack_Config.properties";
                 FileInputStream input = new FileInputStream(path);
                 properties = new Properties();
                 properties.load(input);
@@ -255,17 +255,19 @@ public class PropertyReader {
         public static String get(String keyName) {return properties.getProperty(keyName);}
     }
 
+
+//    Regression Android
     /**
      * This method reads and extracts the value of a variable from AndroidtestRailRunId.properties file.
      *
      * @keyName
      */
-    public static class xRayIdAndroidQa {
+    public static class xRayIdAndroidQaRegression {
         private static Properties  properties;
 
         static  {
             try {
-                String path = "src/main/resources/Android_QA_xRayRunId.properties";
+                String path = "src/main/resources/regression/Android/Android_QA_xRayRunId.properties";
                 FileInputStream input = new FileInputStream(path);
                 properties = new Properties();
                 properties.load(input);
@@ -277,12 +279,13 @@ public class PropertyReader {
         public static String get(String keyName) {return properties.getProperty(keyName);}
     }
 
-    public static class xRayAndroidFate {
+
+    public static class xRayAndroidFateRegression {
         private static Properties properties;
 
         static {
             try {
-                String path = "src/main/resources/Android_FATE_xRayRunId.properties";
+                String path = "src/main/resources/regression/Android/Android_FATE_xRayRunId.properties";
                 FileInputStream input = new FileInputStream(path);
                 properties = new Properties();
                 properties.load(input);
@@ -292,14 +295,14 @@ public class PropertyReader {
             }
         }
         public static String get(String keyName) {return properties.getProperty(keyName);}
-}
+    }
 
-    public static class xRayAndroidUat {
+    public static class xRayAndroidUatRegression {
         private static Properties properties;
 
         static {
             try {
-                String path = "src/main/resources/Android_UAT_xRayRunId.properties";
+                String path = "src/main/resources/regression/Android/Android_UAT_xRayRunId.properties";
                 FileInputStream input = new FileInputStream(path);
                 properties = new Properties();
                 properties.load(input);
@@ -311,60 +314,197 @@ public class PropertyReader {
         public static String get(String keyName) {return properties.getProperty(keyName);}
     }
 
-        /**
-         * This method reads and extracts the value of a variable from iOStestRailRunId.properties file.
-         *
-         * @keyName
-         */
-        public static class xRayRunIdiOSQa {
-            private static Properties properties;
+//    Smoke Android
 
-            static {
-                try {
-                    String path = "src/main/resources/iOS_QA_xRayRunId.properties";
-                    FileInputStream input = new FileInputStream(path);
-                    properties = new Properties();
-                    properties.load(input);
-                    input.close();
-                } catch (Exception ex) {
-                    TCLogger.LoggerStep_Failed("File Input Stream -iOS_qa_testRailRunId- failed: ", ex.getMessage(), true);
-                }
-            }
-            public static String get(String keyName) {return properties.getProperty(keyName);}
-        }
+    /**
+     * This method reads and extracts the value of a variable from AndroidtestRailRunId.properties file.
+     *
+     * @keyName
+     */
+    public static class xRayIdAndroidQaSmoke {
+        private static Properties  properties;
 
-    public static class xRayRunIdiOSFate {
-        private static Properties properties;
-
-        static {
+        static  {
             try {
-                String path = "src/main/resources/iOS_FATE_XRay.properties";
+                String path = "src/main/resources/smoke/Android/Android_QA_xRayRunId.properties";
                 FileInputStream input = new FileInputStream(path);
                 properties = new Properties();
                 properties.load(input);
                 input.close();
             } catch (Exception ex) {
-                TCLogger.LoggerStep_Failed("2File Input Stream -iOS_dev_testRailRunId- failed: ", ex.getMessage(), true);
+                TCLogger.LoggerStep_Failed( "File Input Stream -Android_qa_testRailRunId- failed: " , ex.getMessage(), true);
             }
         }
         public static String get(String keyName) {return properties.getProperty(keyName);}
     }
 
 
-public static class xRayRunIdiOSSit {
-    private static Properties properties;
+    public static class xRayAndroidFateSmoke {
+        private static Properties properties;
 
-    static {
-        try {
-            String path = "src/main/resources/iOS_UAT_xRayRunId.properties";
-            FileInputStream input = new FileInputStream(path);
-            properties = new Properties();
-            properties.load(input);
-            input.close();
-        } catch (Exception ex) {
-            TCLogger.LoggerStep_Failed("2File Input Stream -iOS_sit_testRailRunId- failed: ", ex.getMessage(), true);
+        static {
+            try {
+                String path = "src/main/resources/smoke/Android/Android_FATE_xRayRunId.properties";
+                FileInputStream input = new FileInputStream(path);
+                properties = new Properties();
+                properties.load(input);
+                input.close();
+            } catch (Exception ex) {
+                TCLogger.LoggerStep_Failed("File Input Stream -Android_dev_testRailRunId- failed: ", ex.getMessage(), true);
+            }
         }
+        public static String get(String keyName) {return properties.getProperty(keyName);}
     }
-    public static String get(String keyName) {return properties.getProperty(keyName);}
-}
+
+    public static class xRayAndroidUatSmoke {
+        private static Properties properties;
+
+        static {
+            try {
+                String path = "src/main/resources/smoke/Android/Android_UAT_xRayRunId.properties";
+                FileInputStream input = new FileInputStream(path);
+                properties = new Properties();
+                properties.load(input);
+                input.close();
+            } catch (Exception ex) {
+                TCLogger.LoggerStep_Failed("File Input Stream -Android_sit_testRailRunId- failed: ", ex.getMessage(), true);
+            }
+        }
+        public static String get(String keyName) {return properties.getProperty(keyName);}
+    }
+
+//    Regression iOS
+    /**
+     * This method reads and extracts the value of a variable from iOStestRailRunId.properties file.
+     *
+     * @keyName
+     */
+    public static class xRayRunIdiOSQaRegression {
+        private static Properties properties;
+
+        static {
+            try {
+                String path = "src/main/resources/regression/iOS/iOS_QA_xRayRunId.properties";
+                FileInputStream input = new FileInputStream(path);
+                properties = new Properties();
+                properties.load(input);
+                input.close();
+            } catch (Exception ex) {
+                TCLogger.LoggerStep_Failed("File Input Stream -iOS_qa_testRailRunId- failed: ", ex.getMessage(), true);
+            }
+        }
+        public static String get(String keyName) {return properties.getProperty(keyName);}
+    }
+
+    public static class xRayRunIdiOSFateRegression {
+        private static Properties properties;
+
+        static {
+            try {
+                String path = "src/main/resources/regression/iOS/iOS_FATE_XRay.properties";
+                FileInputStream input = new FileInputStream(path);
+                properties = new Properties();
+                properties.load(input);
+                input.close();
+            } catch (Exception ex) {
+                TCLogger.LoggerStep_Failed("File Input Stream -iOS_dev_testRailRunId- failed: ", ex.getMessage(), true);
+            }
+        }
+        public static String get(String keyName) {return properties.getProperty(keyName);}
+    }
+
+
+    public static class xRayRunIdiOSUatRegression {
+        private static Properties properties;
+
+        static {
+            try {
+                String path = "src/main/resources/regression/iOS/iOS_UAT_xRayRunId.properties";
+                FileInputStream input = new FileInputStream(path);
+                properties = new Properties();
+                properties.load(input);
+                input.close();
+            } catch (Exception ex) {
+                TCLogger.LoggerStep_Failed("File Input Stream -iOS_sit_testRailRunId- failed: ", ex.getMessage(), true);
+            }
+        }
+        public static String get(String keyName) {return properties.getProperty(keyName);}
+    }
+
+//    Smoke iOS
+    /**
+     * This method reads and extracts the value of a variable from iOStestRailRunId.properties file.
+     *
+     * @keyName
+     */
+    public static class xRayRunIdiOSQaSmoke {
+        private static Properties properties;
+
+        static {
+            try {
+                String path = "src/main/resources/smoke/iOS/iOS_QA_xRayRunId.properties";
+                FileInputStream input = new FileInputStream(path);
+                properties = new Properties();
+                properties.load(input);
+                input.close();
+            } catch (Exception ex) {
+                TCLogger.LoggerStep_Failed("File Input Stream -iOS_qa_testRailRunId- failed: ", ex.getMessage(), true);
+            }
+        }
+        public static String get(String keyName) {return properties.getProperty(keyName);}
+    }
+
+    public static class xRayRunIdiOSFateSmoke {
+        private static Properties properties;
+
+        static {
+            try {
+                String path = "src/main/resources/smoke/iOS/iOS_FATE_XRay.properties";
+                FileInputStream input = new FileInputStream(path);
+                properties = new Properties();
+                properties.load(input);
+                input.close();
+            } catch (Exception ex) {
+                TCLogger.LoggerStep_Failed("File Input Stream -iOS_dev_testRailRunId- failed: ", ex.getMessage(), true);
+            }
+        }
+        public static String get(String keyName) {return properties.getProperty(keyName);}
+    }
+
+
+    public static class xRayRunIdiOSUatSmoke {
+        private static Properties properties;
+
+        static {
+            try {
+                String path = "src/main/resources/smoke/iOS/iOS_UAT_xRayRunId.properties";
+                FileInputStream input = new FileInputStream(path);
+                properties = new Properties();
+                properties.load(input);
+                input.close();
+            } catch (Exception ex) {
+                TCLogger.LoggerStep_Failed("File Input Stream -iOS_sit_testRailRunId- failed: ", ex.getMessage(), true);
+            }
+        }
+        public static String get(String keyName) {return properties.getProperty(keyName);}
+    }
+
+
+
+    public static class eConsentAPI_Data {
+        private static Properties properties;
+
+        static {
+            try {
+                String path = "src/main/resources/eConsentAPI_Data.properties";
+                FileInputStream input = new FileInputStream(path);
+                properties = new Properties();
+                properties.load(input);
+                input.close();
+            } catch (Exception ex) {
+                TCLogger.LoggerStep_Failed("File Input Stream -eConsentAPI_Data- failed: ", ex.getMessage(), true);
+            }
+        }
+        public static String get(String keyName) {return properties.getProperty(keyName);}
+    }
 }

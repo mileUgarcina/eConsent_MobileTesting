@@ -33,6 +33,7 @@ public class SauceLabsAPI {
 
     public static String appVersionBuild;
     public static String slAppId;
+    public static String entitiesVersion;
 
     /**
      * Sends status to SauceLabs test
@@ -56,7 +57,7 @@ public class SauceLabsAPI {
     /**
      * Get Sauce Labs Test Run Details for Real Device
      */
-    public static String getTestRunDetailsRD() {
+    public static String getTestRunDetails_SauceLabs_RD() {
 
         String entities;
 
@@ -90,12 +91,14 @@ public class SauceLabsAPI {
                     String entitiesCreation_time = convertUnixTime(start_time, "GMT+1", false);
                     String shareableLink = getShareableLink(id);
 
-                    entities = " --- *Test Environment* ---  \\n"
-                            + "Test Execution video: [" + shareableLink + "|" + shareableLink + "]" + "\\n"
+                    entities = " --- *Test Environment* ---  \\n \\n\""
+                            + " --- Test Device \\n"
+                            + "Test Execution video: [" + "SauceLabs Execution Video" + "|" + shareableLink + "]" + "\\n"
                             + "Suite name: " + name + "\\n"
                             + "Platform: " + os + "\\n"
                             + "OS version: " + os_version + "\\n"
-                            + "Device name: " + device_name;
+                            + "Device name: " + device_name +  "\\n" + "\\n"
+                            + " --- Test Application \\n";
 
                     return entities;
                 } else {
@@ -186,7 +189,7 @@ public class SauceLabsAPI {
         return null;
     }
 
-    public static void getAppStorageFile(String platformParameter, String testRailParameter){
+    public static void getAppStorageFile_SauceLabs(String platformParameter){
 
         if (DataProvider.environmentData.MANUAL_SAUCELABS_DATA.equals("false")) {
             String statusString;
@@ -197,7 +200,7 @@ public class SauceLabsAPI {
             String keyVersion;
             String keyBuild;
 
-            if(testRailParameter.equals("Android")){
+            if(platformParameter.equals("Android")){
                 keyBuild = "version_code";
                 keyVersion = "version";
             }else{
@@ -209,7 +212,7 @@ public class SauceLabsAPI {
             }
 
             try (CloseableHttpClient httpclient = HttpClientBuilder.create().build()) {
-                HttpGet httpget = new HttpGet(DataProvider.slAuthorisationData.GET_APP_STORAGE_FILES + "?q=" + DataProvider.environmentData.APP_NAME + "." + DataProvider.ENVIRONMENT + "&kind=" + testRailParameter);
+                HttpGet httpget = new HttpGet(DataProvider.slAuthorisationData.GET_APP_STORAGE_FILES + "?q=" + DataProvider.environmentData.APP_NAME + "." + DataProvider.ENVIRONMENT + "&kind=" + platformParameter);
 //                LoggerInformation("SL API Get File URL:  " + GET_APP_STORAGE_FILES + "?q=" + APP_NAME + "." + ENVIRONMENT + "&kind=" + testRailParameter);
 
                 httpget.setHeader("Accept", "application/json");
@@ -226,6 +229,7 @@ public class SauceLabsAPI {
                 statusString = Integer.toString(status);
 
                 if (statusString.contains("200")) {
+                    LoggerInformation("SauceLabs Get App Details Status: " + statusString);
                     LoggerInformation("App File ID, Name and Version will be taken from SauceLabs");
                     if (entity != null) {
 

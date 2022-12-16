@@ -4,14 +4,12 @@
 
 <!--Device Parameter-->
 <!--    <parameter name="deviceParameter" value="localiOSimulatorSCapsWeb"/>-->
-<!--    <parameter name="deviceParameter" value="SauceLabs_iOS_RealDevice_Web"/>-->
-    <parameter name="deviceParameter" value="BrowserStack_iOS_RealDevice_Web"/>
+    <parameter name="deviceParameter" value="SauceLabs_iOS_RealDevice_Web"/>
+<!--    <parameter name="deviceParameter" value="BrowserStack_iOS_RealDevice_Web"/>-->
     <parameter name="platformParameter" value="iOS"/>
     <parameter name="browserName" value="Safari"/>
 <!--TC Parameter-->
     <parameter name="user" value="Participant"/>
-    <parameter name="crete_Xray_Test_Run" value="false"/>
-
 
     <test name="Session Activity">
         <classes>
