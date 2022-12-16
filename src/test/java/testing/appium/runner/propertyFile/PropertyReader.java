@@ -401,7 +401,7 @@ public class PropertyReader {
 
         static {
             try {
-                String path = "src/main/resources/regression/iOS/iOS_FATE_XRay.properties";
+                String path = "src/main/resources/regression/iOS/iOS_FATE_xRayRunId.properties";
                 FileInputStream input = new FileInputStream(path);
                 properties = new Properties();
                 properties.load(input);
@@ -459,7 +459,7 @@ public class PropertyReader {
 
         static {
             try {
-                String path = "src/main/resources/smoke/iOS/iOS_FATE_XRay.properties";
+                String path = "src/main/resources/smoke/iOS/iOS_FATE_xRayRunId.properties";
                 FileInputStream input = new FileInputStream(path);
                 properties = new Properties();
                 properties.load(input);
