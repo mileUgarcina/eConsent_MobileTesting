@@ -11,7 +11,7 @@ services:
   #
   android-qa:
     <<: *image-config
-    command: "gradle clean test -Pregression_Android_QA"
+    command: "gradle clean test -PRegression_Android_QA"
 
   ios-qa:
     <<: *image-config
@@ -21,7 +21,7 @@ services:
   #
   android-fate:
     <<: *image-config
-    command: "gradle clean test -Pregression_Android_FATE"
+    command: "gradle clean test -PRegression_Android_FATE"
 
   ios-fate:
     <<: *image-config
