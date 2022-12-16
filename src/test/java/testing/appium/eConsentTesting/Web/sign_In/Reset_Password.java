@@ -18,7 +18,7 @@ import static testing.appium.runner.propertyFile.DataProvider.tcData.*;
 public class Reset_Password extends BaseTestSetWeb {
 
 //        TODO waiting for TC Data
-    private final String appUrl = "https://us-participant-auth.se.qav2.researchbinders.com/#/reset-password?resetPrinciple=mobile.automation%20active_android@florencehc.com&resetToken=IwrmUm8KObGzThJPaqN9kFMx8g7CxaZF%2FpEqJ7WEXte%2Bth1RuDRImJ6oeunZs6o7TjO0hPSn9OB1l0imRa7jE6rPa7Hb1nnVL9Uy7HU2y6k%3D&resetType=email&language=en";
+    private final String appUrl = "https://us-participant-auth.se.qav2.researchbinders.com/#/reset-password?resetPrinciple=mobile.automation+active_android@florencehc.com&resetToken=IwrmUm8KObGzThJPaqN9kFMx8g7CxaZF%2FpEqJ7WEXte%2Bth1RuDRImJ6oeunZs6o7%2F40cFmSPPjkYwxmPUuV38iTXYlnbhHuuvtdnc8DMZ4A%3D&resetType=email&language=en";
     private final String email_valid = "email." + randomString(4) + "@" + randomString(4) + ".com";
     private final String email_invalid = randomString(6);
     private final String password_valid = "Pass" + randomString(4) + "1*";

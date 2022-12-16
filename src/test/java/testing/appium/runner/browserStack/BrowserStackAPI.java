@@ -114,12 +114,14 @@ public class BrowserStackAPI {
                 String device = jObj.getString("device");
                 String video_url = jObj.getString("video_url");
 
-                entities = " --- *Test Environment* ---  \\n"
+                entities = " --- *Test Environment* ---  \\n \\n"
+                        + " --- Test Device\\n"
                         + "Test Execution video: [" + "BrowserStack Execution Video" + "|" + video_url + "]" + "\\n"
                         + "Execution name: " + name + "\\n"
                         + "Device name: " + device + "\\n"
                         + "Platform: " + os + "\\n"
-                        + "OS version: " + os_version;
+                        + "OS version: " + os_version +  "\\n" + "\\n"
+                        + " --- Test Application";
 
                 LoggerInformation("entities: " + entities);
                 return entities;

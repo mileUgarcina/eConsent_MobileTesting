@@ -11,6 +11,7 @@ import static testing.appium.helpers.Utils.testReport;
 import static testing.appium.helpers.jiraTicket.JiraTicket.*;
 import static testing.appium.helpers.testCaseId.TestCaseId.getTestCaseId;
 import static testing.appium.runner.browserStack.BrowserStackAPI.*;
+import static testing.appium.runner.eConsent_HealthCheckResponse.eConsent_HC_API.*;
 import static testing.appium.runner.jiraXrayReporting.JiraXrayAPI.getXRayRunId;
 import static testing.appium.runner.jiraXrayReporting.JiraXrayAPI.setTcResult_Xray;
 import static testing.appium.runner.propertyFile.DataProvider.ENVIRONMENT;
@@ -43,18 +44,18 @@ public class TestListener implements ITestListener {
         String nameTC = result.getName();
         String testCaseID = getTestCaseId(result);
         Reporter.log("--- Test Case - " + nameTC + " -- Finish --> {color:#36b37e}*PASSED*{color} ---\\n", true);
-        String appVersion = null;
+        String appLink = null;
         String deviceParameter = (String) result.getAttribute("deviceParameter");
         AppiumDriver<MobileElement> driver = (AppiumDriver<MobileElement>) result.getAttribute("driver");
         if(deviceParameter.contains("SauceLabs")) {
             setSauceLabsTestStatus("passed", driver);
-            appVersion =  entitiesVersion;
+            appLink =  entitiesVersion;
         }else if(deviceParameter.contains("BrowserStack")){
 //            setTestName_BrowserStack(driver, testCaseID + " - "+ nameTC);
             setTestStatus_BrowserStack(driver, "passed", "passed");
-            appVersion =  app_version;}
+            appLink =  app_version;}
         String testRunDetails = (String) result.getAttribute("testRunDetails");
-        Reporter.log("\\n" +  testRunDetails + "\\n" + "App Name: " + "Florence - eBinders" + "\\n" + "Environment: " + ENVIRONMENT + "\\n" + "App Version: " + appEnvironment(), true);
+        Reporter.log("\\n" +  testRunDetails + "\\n" + "App Name: " + "Florence - eBinders" + "\\n" + "Environment: " + ENVIRONMENT + "\\n" + "App Link: [" + appEnvironment() + "|" + appEnvironment() + "]" + "\\n" + "App Version: " + appVersion + "\\n" + "App Revision: " + appRevision  + "\\n" + "App Health Check: " + appStatus, true);
         boolean ticketAndroid = getAndroidTicket(result, PLATFORM_PARAMETER, true);
         boolean ticketiOS = getiOSTicket(result, PLATFORM_PARAMETER, true);
         String bugTicketNo = getTicketNumberValue(result, PLATFORM_PARAMETER);
@@ -76,18 +77,18 @@ public class TestListener implements ITestListener {
         String nameTC = result.getName();
         String testCaseID = getTestCaseId(result);
         Reporter.log("--- Test Case - " + nameTC + " -- Finish --> {color:#FF0000}*FAILED*{color}  ---\\n", true);
-        String appVersion = null;
+        String appLink = null;
         String deviceParameter = (String) result.getAttribute("deviceParameter");
         AppiumDriver<MobileElement> driver = (AppiumDriver<MobileElement>) result.getAttribute("driver");
         if(deviceParameter.contains("SauceLabs")) {
             setSauceLabsTestStatus("failed", driver);
-            appVersion =  entitiesVersion;
+            appLink =  entitiesVersion;
         }else if(deviceParameter.contains("BrowserStack")){
 //            setTestName_BrowserStack(driver, testCaseID + " - "+ nameTC);
             setTestStatus_BrowserStack(driver, "failed", "failed");
-            appVersion =  app_version;}
+            appLink =  app_version;}
         String testRunDetails = (String) result.getAttribute("testRunDetails");
-        Reporter.log("\\n" +  testRunDetails + "\\n" + "App Name: " + "Florence - eBinders" + "\\n" + "Environment: " + ENVIRONMENT + "\\n" + "App Version: " + appEnvironment(), true);
+        Reporter.log("\\n" +  testRunDetails + "\\n" + "App Name: " + "Florence - eBinders" + "\\n" + "Environment: " + ENVIRONMENT + "\\n" + "App Link: [" + appEnvironment() + "|" + appEnvironment() + "]" + "\\n" + "App Version: " + appVersion + "\\n" + "App Revision: " + appRevision  + "\\n" + "App Health Check: " + appStatus, true);
         boolean ticketAndroid = getAndroidTicket(result, PLATFORM_PARAMETER, false);
         boolean ticketiOS = getiOSTicket(result, PLATFORM_PARAMETER, false);
         String testRunId = getXRayRunId(PLATFORM_PARAMETER);
@@ -110,18 +111,18 @@ public class TestListener implements ITestListener {
         String nameTC = result.getName();
         String testCaseID = getTestCaseId(result);
         Reporter.log("--- Test Case - " + nameTC + " -- Finish --> {color:#FF8E00}*SKIPPED*{color} ---\\n", true);
-        String appVersion = null;
+        String appLink = null;
         String deviceParameter = (String) result.getAttribute("deviceParameter");
         AppiumDriver<MobileElement> driver = (AppiumDriver<MobileElement>) result.getAttribute("driver");
         if(deviceParameter.contains("SauceLabs")) {
             setSauceLabsTestStatus("failed", driver);
-            appVersion =  entitiesVersion;
+            appLink =  entitiesVersion;
         }else if(deviceParameter.contains("BrowserStack")){
 //            setTestName_BrowserStack(driver, testCaseID + " - "+ nameTC);
             setTestStatus_BrowserStack(driver, "failed", "failed");
-            appVersion =  app_version;}
+            appLink =  app_version;}
         String testRunDetails = (String) result.getAttribute("testRunDetails");
-        Reporter.log("\\n" +  testRunDetails + "\\n" + "App Name: " + "Florence - eBinders" + "\\n" + "Environment: " + ENVIRONMENT + "\\n" + "App Version: " + appEnvironment(), true);
+        Reporter.log("\\n" +  testRunDetails + "\\n" + "App Name: " + "Florence - eBinders" + "\\n" + "Environment: " + ENVIRONMENT + "\\n" + "App Link: [" + appEnvironment() + "|" + appEnvironment() + "]" + "\\n" + "App Version: " + appVersion + "\\n" + "App Revision: " + appRevision  + "\\n" + "App Health Check: " + appStatus, true);
         boolean ticketAndroid = getAndroidTicket(result, PLATFORM_PARAMETER, true);
         boolean ticketiOS = getiOSTicket(result, PLATFORM_PARAMETER, true);
         String bugTicketNo = getTicketNumberValue(result, PLATFORM_PARAMETER);

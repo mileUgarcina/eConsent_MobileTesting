@@ -20,31 +20,31 @@ public class Init_iOS extends BaseInitConfig {
      * Creates a driver object for any test if this object already exists - it just
      * returns the existing one
      */
-    public AppiumDriver<MobileElement> getDriveriOS(String platformParameter, String suiteName, String testRailParameter, String browserName) {
+    public AppiumDriver<MobileElement> getDriveriOS(String deviceParameter, String suiteName, String platformParameter, String browserName) {
 
-        switch (platformParameter) {
+        switch (deviceParameter) {
             case "SauceLabs_iOS_RealDevice_App":
-                sauceLabs_iOS_RealDevice_App(browserName, suiteName, testRailParameter);
+                sauceLabs_iOS_RealDevice_App(browserName, suiteName, platformParameter);
                 LoggerInformation("Capabilities set for SauceLabs iOS Real Device - App, OS: " + DataProvider.SliOSConfigData.platformVersionSliOSRealDevice());
                 break;
             case "SauceLabs_iOS_RealDevice_Web":
-                sauceLabs_iOS_RealDevice_Web(browserName, suiteName, testRailParameter);
+                sauceLabs_iOS_RealDevice_Web(browserName, suiteName, platformParameter);
                 LoggerInformation("Capabilities set for SauceLabs iOS Real Device - App, OS: " + DataProvider.SliOSConfigData.platformVersionSliOSRealDevice());
                 break;
             case "SauceLabs_iOS_RealDevice_App_Biometric":
-                sauceLabs_iOS_RealDevice_App_Biometric(suiteName, testRailParameter);
+                sauceLabs_iOS_RealDevice_App_Biometric(suiteName, platformParameter);
                 LoggerInformation("Capabilities set for SauceLabs iOS Real Device - App - Biometric, OS: " + DataProvider.SliOSConfigData.platformVersionSliOSRealDevice());
                 break;
             case "SauceLabs_iOS_Simulator_App":
-                sauceLabs_iOS_Simulator_App(suiteName, testRailParameter);
+                sauceLabs_iOS_Simulator_App(suiteName, platformParameter);
                 LoggerInformation("Capabilities set for SauceLabs iOS Simulator - App, OS: " + DataProvider.SliOSConfigData.platformVersionSliOSSimulator());
                 break;
             case "BrowserStack_iOS_RealDevice_App":
-                browserStack_iOS_RealDevice_App(browserName, suiteName, testRailParameter);
+                browserStack_iOS_RealDevice_App(browserName, suiteName, platformParameter);
                 LoggerInformation("Capabilities set for BrowserStack iOS - App, OS: " + DataProvider.SliOSConfigData.platformVersionSliOSRealDevice());
                 break;
             case "BrowserStack_iOS_RealDevice_Web":
-                browserStack_iOS_RealDevice_Web(browserName, suiteName, testRailParameter);
+                browserStack_iOS_RealDevice_Web(browserName, suiteName, platformParameter);
                 LoggerInformation("Capabilities set for BrowserStack iOS - Web, OS: " + DataProvider.SliOSConfigData.platformVersionSliOSRealDevice());
                 break;
             case "localiOSimulatorSCapsWeb":
@@ -62,7 +62,7 @@ public class Init_iOS extends BaseInitConfig {
             case "":
                 break;
             default:
-                LoggerInformation("There are no suitable Capabilities set for " + platformParameter);
+                LoggerInformation("There are no suitable Capabilities set for " + deviceParameter);
         }
 
         URL appiumUrl = null;
@@ -72,6 +72,7 @@ public class Init_iOS extends BaseInitConfig {
                     appiumUrl = new URL(DataProvider.slAuthorisationData.SAUCELABSA_URL);
                 }else if(browserStack){
                     appiumUrl = new URL("https://" + BROWSERSTACK_USERNAME + ":" + BROWSERSTACK_ACCESSKEY + BROWSERSTACK_URL);
+                    System.out.println("appiumUrl: " + appiumUrl);
                 }
             } else {
                 appiumUrl = new URL(DataProvider.environmentData.LOCAL_APPIUM_URL);

@@ -38,6 +38,7 @@ public class Sign_In extends BaseTestSetWeb {
                   description = "Wait for the application to boot up")
     public void precondition() throws NoSuchAlgorithmException, UnsupportedEncodingException, InvalidKeyException, DecoderException {
 
+        System.out.println("appUrl: " + appUrl + SIGN_IN_PAGE_LINK);
 
         sip.loadWebPage(appUrl + SIGN_IN_PAGE_LINK);
     }
@@ -155,7 +156,6 @@ public class Sign_In extends BaseTestSetWeb {
         sip.assert_usernameFieldColor(inputFieldBorderColorRed, "Red");
         sip.assert_usernameWarningMsg(errorMsg_emailField_Required);
         sip.assert_passwordFieldColor(inputFieldBorderColorRedV2, "Red");
-
     }
 
     @Bug(androidTicket ="null", iOSTicket="null")
@@ -276,7 +276,7 @@ public class Sign_In extends BaseTestSetWeb {
             testName = "participant_Auth_Mobile_Sign_In_Sign_in_eConsent_Privacy_Link",
             description = "Test case checks if Privacy Policy link work",
             retryAnalyzer = TcRetry.class)
-    public void participant_Auth_Mobile_Sign_In_Privacy_Policy_Link() {
+    public void participant_Auth_Mobile_Sign_In_Privacy_Policy_Link() throws InterruptedException {
         testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
         tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
 
@@ -284,7 +284,7 @@ public class Sign_In extends BaseTestSetWeb {
         originalWindow = assert_oneWindowTabIsPresent(driver);
         scrollDown(driver,1, 40);
         sip.clickOn_privacyPolicyBtn();
-        switchingTabs(driver, 10, originalWindow);
+        switchingTabs(driver, 55, originalWindow);
         pp.assert_pageTitle();
 
     }
@@ -295,7 +295,7 @@ public class Sign_In extends BaseTestSetWeb {
             testName = "participant_Auth_Mobile_Sign_In_Sign_in_eConsent_Terms_And_Conditions_Link",
             description = "Test case checks if Privacy Policy link work",
             retryAnalyzer = TcRetry.class)
-    public void participant_Auth_Mobile_Sign_In_Terms_And_Conditions_Link(){
+    public void participant_Auth_Mobile_Sign_In_Terms_And_Conditions_Link() {
         testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
         tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
 
@@ -303,7 +303,7 @@ public class Sign_In extends BaseTestSetWeb {
         originalWindow = assert_oneWindowTabIsPresent(driver);
         scrollDown(driver,1, 40);
         sip.clickOn_termsAndConditionsBtn();
-        switchingTabs(driver, 10, originalWindow);
+        switchingTabs(driver, 55, originalWindow);
         tp.assert_pageTitle();
 
     }

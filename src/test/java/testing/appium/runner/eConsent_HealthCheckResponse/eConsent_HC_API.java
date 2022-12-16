@@ -11,8 +11,8 @@ import org.testng.Assert;
 
 import static testing.appium.helpers.TCLogger.LoggerInformation;
 import static testing.appium.helpers.TCLogger.LoggerStep_Failed;
-import static testing.appium.runner.propertyFile.DataProvider.environmentData.HEALTH_CHECK_API;
-import static testing.appium.runner.propertyFile.DataProvider.environmentData.appEnvironment;
+import static testing.appium.runner.propertyFile.DataProvider.ENVIRONMENT;
+import static testing.appium.runner.propertyFile.DataProvider.environmentData.*;
 
 public class eConsent_HC_API {
 
@@ -35,12 +35,12 @@ public class eConsent_HC_API {
             String statusString = String.valueOf(response.getStatusLine().getStatusCode());
 
             if (statusString.contains("200")) {
-//                LoggerInformation("eConsent Health Check Status: " + statusString);
+//                LoggerInformation(DEV_TEAM + " Health Check Status: " + statusString);
 
                 JSONObject items = new JSONObject(responseString);
                 org.json.JSONObject result = items.getJSONObject("Result");
                 appStatus = items.getString("Status");
-                LoggerInformation("eConsent Participant App Health Check Response: " + appStatus);
+                LoggerInformation(DEV_TEAM +   " Participant "  +"\""+ ENVIRONMENT + "\"" + " App Health Check Response: " + appStatus);
 
                 if(!appStatus.equals("OK")){
                     Assert.fail();
@@ -50,15 +50,13 @@ public class eConsent_HC_API {
                     appRevision = (String) result.get("AppRevision");
 //                    LoggerInformation("appRevision: " + appRevision);
                 }
-
             } else {
-                LoggerInformation("eConsent Health Check Response Get Details Status: " + statusString);
-                LoggerInformation("eConsent Health Check Response Get Details Entities: " + responseString);
+                LoggerInformation(DEV_TEAM + " Health Check Response Get Details Status: " + statusString);
+                LoggerInformation(DEV_TEAM + " Health Check Response Get Details Entities: " + responseString);
                 Assert.fail();
             }
         } catch (Exception ex) {
-            LoggerStep_Failed("Unable to get eConsent Health Check Response: ", ex.getMessage(), false);
-            Assert.fail();
+            LoggerStep_Failed("Unable to get " + DEV_TEAM + " Health Check Response: ", ex.getMessage(), true);
         }
 
     }

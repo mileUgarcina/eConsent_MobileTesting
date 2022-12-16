@@ -4,20 +4,17 @@
 
     <suite-files>
 
-
+<suite-file path="Web/Sign_In.xml" />
 <!--        <suite-file path="Web/Account_Lock.xml" />--> <!--        TODO waiting for TC Data-->
-<!--        <suite-file path="Web/Registration.xml" />-->
-        <suite-file path="Web/Sign_In.xml" />
-<!--        <suite-file path="Web/Request_Password.xml" />-->
-<!--        <suite-file path="Web/Reset_Password.xml" />-->
-<!--        <suite-file path="Web/Menu.xml" />-->
-<!--        <suite-file path="Web/Log_Out.xml" />-->
-<!--        <suite-file path="Web/Profile_Settings.xml" />-->
-<!--        <suite-file path="Web/Privacy_Settings.xml" />-->
-<!--        <suite-file path="Web/Privacy_Policy.xml" />-->
-<!--        <suite-file path="Web/Tasks.xml" />-->
-
-<!--        <suite-file path="Web/Email.xml" />-->
+        <suite-file path="Web/Registration.xml" />
+        <suite-file path="Web/Request_Password.xml" />
+<!--        <suite-file path="Web/Reset_Password.xml" />--><!--        TODO waiting for TC Data-->
+        <suite-file path="Web/Menu.xml" />
+        <suite-file path="Web/Log_Out.xml" />
+        <suite-file path="Web/Profile_Settings.xml" />
+        <suite-file path="Web/Privacy_Settings.xml" />
+        <suite-file path="Web/Privacy_Policy.xml" />
+<!--        <suite-file path="Web/Tasks.xml" />--><!--        TODO waiting for TC Data-->
 
     </suite-files>
 </suite>

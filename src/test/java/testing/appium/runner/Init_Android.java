@@ -19,27 +19,27 @@ public class Init_Android extends BaseInitConfig {
      * Creates a driver object for any test if this object already exists - it just
      * returns the existing one
      */
-    public AppiumDriver<MobileElement> getDriverAndroid(String platformParameter, String suiteName, String testRailParameter, String browserName) {
+    public AppiumDriver<MobileElement> getDriverAndroid(String deviceParameter, String suiteName, String platformParameter, String browserName) {
 
-        switch (platformParameter) {
+        switch (deviceParameter) {
             case "SauceLabs_Android_RealDevice_App":
-                sauceLabs_Android_RealDevice_App(suiteName, testRailParameter);
+                sauceLabs_Android_RealDevice_App(suiteName, platformParameter);
                 LoggerInformation("Capabilities set for SauceLabs Android Real Device - App,  OS: " + DataProvider.SlAndroidConfigData.platformVersionSlAndroid() );
                 break;
             case "SauceLabs_Android_Emulator_App":
-                SauceLabs_Android_Emulator_App(suiteName, testRailParameter);
+                SauceLabs_Android_Emulator_App(suiteName, platformParameter);
                 LoggerInformation("Capabilities set for SauceLabs Android Emulator - App, OS: " + DataProvider.SlAndroidConfigData.platformVersionSlAndroid());
                 break;
             case "SauceLabs_Android_RealDevice_Web":
-                SauceLabs_Android_RealDevice_Web(browserName, suiteName, testRailParameter);
+                SauceLabs_Android_RealDevice_Web(browserName, suiteName, platformParameter);
                 LoggerInformation("Capabilities set for SauceLabs Android - Web, OS: " +  DataProvider.SlAndroidConfigData.platformVersionSlAndroid());
                 break;
             case "BrowserStack_Android_RealDevice_App":
-                browserStack_Android_RealDevice_App(suiteName, testRailParameter);
+                browserStack_Android_RealDevice_App(suiteName, platformParameter);
                 LoggerInformation("Capabilities set for BrowserStack Android Real Device - App,  OS: " + DataProvider.SlAndroidConfigData.platformVersionSlAndroid() );
                 break;
             case "BrowserStack_Android_RealDevice_Web":
-                browserStack_Android_RealDevice_Web(browserName, suiteName, testRailParameter);
+                browserStack_Android_RealDevice_Web(browserName, suiteName, platformParameter);
                 LoggerInformation("Capabilities set for BrowserStack Android - Web, OS: " +  DataProvider.SlAndroidConfigData.platformVersionSlAndroid());
                 break;
             case "Local_Android_RealDevice_App":
@@ -53,7 +53,7 @@ public class Init_Android extends BaseInitConfig {
             case "":
                 break;
             default:
-                LoggerInformation("There are no suitable Capabilities set for " + platformParameter);
+                LoggerInformation("There are no suitable Capabilities set for " + deviceParameter);
         }
 
         URL appiumUrl = null;

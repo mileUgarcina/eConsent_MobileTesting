@@ -52,12 +52,12 @@ public class BaseTestSetWeb {
 //        eConsent Participant App Health Check Response
         getAppHealthCheckResponse();
 
-//        Set Xray Test Run
-        setTestRun_Xray(PLATFORM_PARAMETER);
-
 //        Get Suite Name from TestNG xml file
         suiteName = context.getCurrentXmlTest().getSuite().getName();
         LoggerInformation("Running Suite: " + suiteName + ", one \"" + ENVIRONMENT + "\" environment, " + "App Version: " + appVersion + ", App Revision: " + appRevision);
+
+//        Set Xray Test Run
+        setTestRun_Xray(browserName, PLATFORM_PARAMETER, suiteName);
 
         initAndroid = new Init_Android();
         iniOS = new Init_iOS();
@@ -118,8 +118,8 @@ public class BaseTestSetWeb {
         driver.quit();
         LoggerAction("Driver quit");
 
-
-//        System.out.println("getPageSource" + driver.getPageSource());
+//        Thread.sleep(5000);
+//        System.out.println("getPageSource: " + driver.getPageSource());
     }
 
  }

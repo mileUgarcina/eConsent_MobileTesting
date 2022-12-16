@@ -12,6 +12,7 @@ import java.util.HashMap;
 import static testing.appium.helpers.TCLogger.LoggerInformation;
 import static testing.appium.runner.browserStack.BrowserStackAPI.app_name;
 import static testing.appium.runner.browserStack.BrowserStackAPI.app_url;
+import static testing.appium.runner.eConsent_HealthCheckResponse.eConsent_HC_API.appVersion;
 import static testing.appium.runner.propertyFile.DataProvider.*;
 import static testing.appium.runner.propertyFile.DataProvider.environmentData.DEV_TEAM;
 
@@ -174,15 +175,16 @@ public class BaseInitConfig {
 //        MutableCapabilities capabilities = new MutableCapabilities();
         capabilities.setCapability("platformName", DataProvider.SlAndroidConfigData.PLATFORM_NAME_SL_ANDROID);
 //        capabilities.setCapability("appium:platformVersion", DataProvider.SlAndroidConfigData.platformVersionSlAndroid());
-        capabilities.setCapability("appiumVersion", DataProvider.SlAndroidConfigData.APPIUM_VERSION_SL_ANDROID_REAL_DEVICE);
+//        capabilities.setCapability("appiumVersion", DataProvider.SlAndroidConfigData.APPIUM_VERSION_SL_ANDROID_REAL_DEVICE);
         capabilities.setCapability("phoneOnly", DataProvider.SlAndroidConfigData.PHONE_ONLY_SL_ANDROID);
         capabilities.setCapability("browserName", browserName);
         capabilities.setCapability("appium:automationName", "UiAutomator2");
         capabilities.setCapability("allowTouchIdEnroll", DataProvider.SlAndroidConfigData.DISABLE_TOUCH_ID_ENROLL_SL_ANDROID);
         capabilities.setCapability("autoGrantPermissions", DataProvider.SlAndroidConfigData.AUTO_GRANT_PERMISSIONS);
         MutableCapabilities sauceOptions = new MutableCapabilities();
-        sauceOptions.setCapability("build", DataProvider.SlAndroidConfigData.nameSlAndroid());
-        sauceOptions.setCapability("name", DataProvider.SlAndroidConfigData.nameSlAndroid() + " - " + PLATFORM_PARAMETER + " --> " + suiteName);
+        sauceOptions.setCapability("build", DataProvider.SliOSConfigData.nameSliOS() + " - " + appVersion);
+        sauceOptions.setCapability("name", DataProvider.SliOSConfigData.nameSliOS() + " - " + PLATFORM_PARAMETER + " - " + appVersion + " --> " + suiteName);
+        sauceOptions.setCapability("appiumVersion", DataProvider.SlAndroidConfigData.APPIUM_VERSION_SL_ANDROID_REAL_DEVICE);
         capabilities.setCapability("sauce:options", sauceOptions);
 //        capabilities.setCapability("username", DataProvider.slAuthorisationData.USERNAME);
 //        capabilities.setCapability("accessKey", DataProvider.slAuthorisationData.ACCESS_KEY);
@@ -196,8 +198,8 @@ public class BaseInitConfig {
 
         HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
         browserstackOptions.put("projectName", DEV_TEAM);
-        browserstackOptions.put("buildName", DataProvider.SlAndroidConfigData.nameSlAndroid() + " - " + PLATFORM_PARAMETER);
-        browserstackOptions.put("sessionName", DataProvider.SlAndroidConfigData.nameSlAndroid() + " - " + PLATFORM_PARAMETER + " --> " + suiteName);
+        browserstackOptions.put("buildName", DataProvider.SlAndroidConfigData.nameSlAndroid() + " - " + PLATFORM_PARAMETER + " - " + appVersion);
+        browserstackOptions.put("sessionName", DataProvider.SlAndroidConfigData.nameSlAndroid() + " - " + PLATFORM_PARAMETER + " - " + appVersion + " --> " + suiteName);
         browserstackOptions.put("appiumVersion", DataProvider.SlAndroidConfigData.APPIUM_VERSION_SL_ANDROID_REAL_DEVICE);
         capabilities.setCapability("bstack:options", browserstackOptions);
         capabilities.setCapability("platformName", DataProvider.SlAndroidConfigData.PLATFORM_NAME_SL_ANDROID);
@@ -205,10 +207,10 @@ public class BaseInitConfig {
         capabilities.setCapability("browserName", browserName);
         capabilities.setCapability("deviceName", device);
         capabilities.setCapability("chromeOptions", ImmutableMap.of("w3c", false));
+        capabilities.setCapability("browserstack.idleTimeout", 300);
 
         LoggerInformation("Capabilities set for BrowserStack iOS - App, Device: " + device );
     }
-
 
     public void browserStack_Android_RealDevice_App(String suiteName, String platformParameter) {
         useRemoteUrl = true;
@@ -228,6 +230,7 @@ public class BaseInitConfig {
         capabilities.setCapability("autoGrantPermissions", DataProvider.SlAndroidConfigData.AUTO_GRANT_PERMISSIONS);
         capabilities.setCapability("sauceLabsNetworkCapture", true);
         capabilities.setCapability("audioCapture", true);
+        capabilities.setCapability("browserstack.idleTimeout", 300);
     }
 
     public void sauceLabs_iOS_RealDevice_Web(String browserName, String suiteName, String platformParameter) {
@@ -235,18 +238,20 @@ public class BaseInitConfig {
         sauceLabs = true;
         capabilities.setCapability("platformName", DataProvider.SliOSConfigData.PLATFORM_NAME_SL_IOS);
 //        capabilities.setCapability("platformVersion", DataProvider.SliOSConfigData.platformVersionSliOSRealDevice());
-        capabilities.setCapability("appiumVersion", DataProvider.SliOSConfigData.APPIUM_VERSION_SL_IOS_REAL_DEVICE);
+//        capabilities.setCapability("appiumVersion", DataProvider.SliOSConfigData.APPIUM_VERSION_SL_IOS_REAL_DEVICE);
         capabilities.setCapability("browserName", browserName);
         capabilities.setCapability("appium:deviceName", DataProvider.SliOSConfigData.DEVICE_NAME_SL_IOS_REAL_DEVICE);
-        capabilities.setCapability("phoneOnly", DataProvider.SliOSConfigData.PHONE_ONLY_SL_IOS);
+//        capabilities.setCapability("phoneOnly", DataProvider.SliOSConfigData.PHONE_ONLY_SL_IOS);
         capabilities.setCapability("appium:automationName", DataProvider.SliOSConfigData.AUTOMATION_NAME_SL_IOS);
         capabilities.setCapability("autoGrantPermissions", DataProvider.SlAndroidConfigData.AUTO_GRANT_PERMISSIONS);
         capabilities.setCapability("appium:autoAcceptAlerts","true");
         capabilities.setCapability("safariAllowPopups", "true");
         capabilities.setCapability("browserVersion", "latest");
         MutableCapabilities sauceOptions = new MutableCapabilities();
-        sauceOptions.setCapability("build", DataProvider.SliOSConfigData.nameSliOS());
-        sauceOptions.setCapability("name", DataProvider.SliOSConfigData.nameSliOS() + " - " + PLATFORM_PARAMETER + " --> " + suiteName);
+        sauceOptions.setCapability("build", DataProvider.SliOSConfigData.nameSliOS() + " - " + appVersion);
+        sauceOptions.setCapability("name", DataProvider.SliOSConfigData.nameSliOS() + " - " + PLATFORM_PARAMETER + " - " + appVersion + " --> " + suiteName);
+        sauceOptions.setCapability("appiumVersion", DataProvider.SlAndroidConfigData.APPIUM_VERSION_SL_ANDROID_REAL_DEVICE);
+        sauceOptions.setCapability("phoneOnly", DataProvider.SliOSConfigData.PHONE_ONLY_SL_IOS);
         capabilities.setCapability("sauce:options", sauceOptions);
     }
 
@@ -279,8 +284,8 @@ public class BaseInitConfig {
 
         HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
         browserstackOptions.put("projectName", DEV_TEAM);
-        browserstackOptions.put("buildName", DataProvider.SliOSConfigData.nameSliOS() + " - " + PLATFORM_PARAMETER );
-        browserstackOptions.put("sessionName", DataProvider.SliOSConfigData.nameSliOS() + " - " + PLATFORM_PARAMETER + " --> " + suiteName);
+        browserstackOptions.put("buildName", DataProvider.SlAndroidConfigData.nameSlAndroid() + " - " + PLATFORM_PARAMETER + " - " + appVersion);
+        browserstackOptions.put("sessionName", DataProvider.SlAndroidConfigData.nameSlAndroid() + " - " + PLATFORM_PARAMETER + " - " + appVersion + " --> " + suiteName);
         browserstackOptions.put("appiumVersion", DataProvider.SliOSConfigData.APPIUM_VERSION_SL_IOS_REAL_DEVICE);
 
         capabilities.setCapability("bstack:options", browserstackOptions);
@@ -288,8 +293,11 @@ public class BaseInitConfig {
         capabilities.setCapability("platformVersion", DataProvider.SliOSConfigData.platformVersionSliOSRealDevice());
         capabilities.setCapability("browserName", browserName);
         capabilities.setCapability("deviceName", device);
-        capabilities.setCapability("autoAcceptAlerts", true);
+        capabilities.setCapability("autoGrantPermissions", "true");
+        capabilities.setCapability("appium:autoAcceptAlerts", true);
         capabilities.setCapability("safariAllowPopups", true);
+        capabilities.setCapability("browserVersion", "latest");
+        capabilities.setCapability("browserstack.idleTimeout", 300);
 
         LoggerInformation("Capabilities set for BrowserStack iOS - App, Device: " + device );
     }
@@ -310,6 +318,7 @@ public class BaseInitConfig {
         capabilities.setCapability("platformVersion", DataProvider.SliOSConfigData.platformVersionSliOSRealDevice());
         capabilities.setCapability("deviceName", device);
         capabilities.setCapability("app", app_url);
+        capabilities.setCapability("browserstack.idleTimeout", 300);
     }
 
 

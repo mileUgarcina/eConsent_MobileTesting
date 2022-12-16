@@ -143,7 +143,7 @@ public class PropertyReader {
 
         static {
             try {
-                String path = "src/main/resources/SauceLabs_Config.properties";
+                String path = "src/main/resources/sauceLabs_Config.properties";
                 FileInputStream input = new FileInputStream(path);
                 properties = new Properties();
                 properties.load(input);
@@ -169,7 +169,7 @@ public class PropertyReader {
 
         static {
             try {
-                String path = "src/main/resources/BrowserStack_Config.properties";
+                String path = "src/main/resources/browserStack_Config.properties";
                 FileInputStream input = new FileInputStream(path);
                 properties = new Properties();
                 properties.load(input);

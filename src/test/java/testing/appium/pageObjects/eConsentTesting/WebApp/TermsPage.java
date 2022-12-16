@@ -3,8 +3,12 @@ package testing.appium.pageObjects.eConsentTesting.WebApp;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import static testing.appium.helpers.TCLogger.LoggerAction;
+import static testing.appium.helpers.TCLogger.LoggerWaiting;
 import static testing.appium.helpers.Utils.assertElementPresence_WebElement;
+import static testing.appium.helpers.Utils.waitForElement;
 
 
 public class TermsPage {

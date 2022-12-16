@@ -252,9 +252,9 @@ public class JiraXrayAPI {
 
 
 
-    public static void setTestRun_Xray(String platformParameter) {
+    public static void setTestRun_Xray(String browserName, String platformParameter, String suiteName) {
 
-        if (XRAY.equals("true") & !TEST_RUN.equals("null")) {
+        if (XRAY.equals("true") & !TEST_RUN.equals("null") & suiteName.contains("Sign In")) {
             String testRun_summary;
             String testRun_description;
             String testRun_user = XRAY_USER;
@@ -285,7 +285,6 @@ public class JiraXrayAPI {
                 Assert.fail();
             }
 
-
             String authToken = getXrayToken();
 
             try {
@@ -293,7 +292,7 @@ public class JiraXrayAPI {
                 HttpPost httpPost;
                 httpPost = new HttpPost(XRAY_EXECUTION_URL);
 //                TODO Swap Json String for Property Builder
-                String resultPayload = "{\"info\":{\"summary\":\"" + testRun_summary + " --> Mobile Web App - " + PLATFORM_PARAMETER  + " - " + APP_NAME + " " + "Participant" + " - v:" + appVersion + ", r:" + appRevision + " - " + ENVIRONMENT + " - " + time + "\",\"description\":\"" + testRun_description + "\",\"user\":\"" + testRun_user + "\",\"testPlanKey\":\"" +  testRun_testPlanKey + "\"},\"tests\":[{\"testKey\":\"" + testRun_testKey + "\",\"status\":\"EXECUTING\",\"comment\":\"" + testRun_status + "\"}]}";
+                String resultPayload = "{\"info\":{\"summary\":\"" + testRun_summary + " --> Mobile Web App - " + PLATFORM_PARAMETER + "/" + browserName + " - " + APP_NAME + " " + "Participant" + " - v:" + appVersion + ", r:" + appRevision + " - " + ENVIRONMENT + " - " + time + "\",\"description\":\"" + testRun_description + "\",\"user\":\"" + testRun_user + "\",\"testPlanKey\":\"" +  testRun_testPlanKey + "\"},\"tests\":[{\"testKey\":\"" + testRun_testKey + "\",\"status\":\"EXECUTING\",\"comment\":\"" + testRun_status + "\"}]}";
 //                LoggerInformation("resultPayload: " + resultPayload);
                 StringEntity requestEntity = new StringEntity(resultPayload);
                 httpPost.setEntity(requestEntity);
@@ -354,7 +353,6 @@ public class JiraXrayAPI {
                 testStatus_data = "KNOWN_ISSUE";
             }else{
                 testStatus_data = testStatus;
-
             }
 
             String screenshotPath = null;
@@ -394,8 +392,8 @@ public class JiraXrayAPI {
                     String key = jsonObject.get("key").toString();
                     String self = jsonObject.get("self").toString();
 //                    LoggerInformation("Test Case Result ID: " + id);
-                    //                LoggerInformation("Test Case Result key: " + key);
-                    //                LoggerInformation("Test Case Result self: " + self);
+//                    LoggerInformation("Test Case Result key: " + key);
+//                    LoggerInformation("Test Case Result self: " + self);
                     if (testStatus.equals("FAILED") ||testStatus.equals("KNOWN_ISSUE")) {
                         Utils.deleteFile(screenshotPath);
                     }

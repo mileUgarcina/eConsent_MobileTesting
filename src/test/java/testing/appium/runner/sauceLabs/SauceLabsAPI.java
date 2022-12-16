@@ -91,12 +91,14 @@ public class SauceLabsAPI {
                     String entitiesCreation_time = convertUnixTime(start_time, "GMT+1", false);
                     String shareableLink = getShareableLink(id);
 
-                    entities = " --- *Test Environment* ---  \\n"
-                            + "Test Execution video: [" + shareableLink + "|" + shareableLink + "]" + "\\n"
+                    entities = " --- *Test Environment* ---  \\n \\n\""
+                            + " --- Test Device \\n"
+                            + "Test Execution video: [" + "SauceLabs Execution Video" + "|" + shareableLink + "]" + "\\n"
                             + "Suite name: " + name + "\\n"
                             + "Platform: " + os + "\\n"
                             + "OS version: " + os_version + "\\n"
-                            + "Device name: " + device_name;
+                            + "Device name: " + device_name +  "\\n" + "\\n"
+                            + " --- Test Application \\n";
 
                     return entities;
                 } else {
