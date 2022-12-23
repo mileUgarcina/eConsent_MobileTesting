@@ -23,6 +23,7 @@ public class Tasks extends BaseTestSetWeb {
     private String middleName;
     private String lastName;
     private String testCaseName;
+    private String tcId;
     private String originalWindow;
 
 
@@ -43,14 +44,13 @@ public class Tasks extends BaseTestSetWeb {
 
     @Bug(androidTicket ="null", iOSTicket="null")
     @TcID(tcId = "EC-944")
-    @Parameters({"user"})
     @Test(groups= {"SmokeTest", "Android", "iOS"},
             testName = "Participant App Mobile - Home Page -  No Assigned Tasks",
             description = "Test case checks Home Page No Assigned Tasks",
             retryAnalyzer = TcRetry.class)
-    public void participant_App_Mobile_Home_Page_No_Assigned_Tasks(String user) {
-
+    public void participant_App_Mobile_Home_Page_No_Assigned_Tasks() {
         testCaseName = new Object() {}.getClass().getEnclosingMethod().getName();
+        tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
 //        TODO Waiting for Test Data Participant, 1 Study
         username = "mobile.automation+active_android@florencehc.com";
         password = "Password123*";
@@ -76,14 +76,13 @@ public class Tasks extends BaseTestSetWeb {
 
     @Bug(androidTicket ="null", iOSTicket="null")
     @TcID(tcId = "EC-941")
-    @Parameters({"user"})
     @Test(groups= {"SmokeTest", "Android", "iOS"},
             testName = "Participant App Mobile - Home Page -  View Tasks Action",
             description = "Test case checks Home Page View Tasks Action",
             retryAnalyzer = TcRetry.class)
-    public void participant_App_Mobile_Home_Page_View_Tasks_Action(String user) {
-
+    public void participant_App_Mobile_Home_Page_View_Tasks_Action() {
         testCaseName = new Object() {}.getClass().getEnclosingMethod().getName();
+        tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
 //        TODO Waiting for Test Data Participant, 1 Study, 1 Form
         username = "mobile.automation+active_android@florencehc.com";
         password = "Password123*";
@@ -104,14 +103,13 @@ public class Tasks extends BaseTestSetWeb {
 
     @Bug(androidTicket ="null", iOSTicket="null")
     @TcID(tcId = "EC-1434")
-    @Parameters({"user"})
     @Test(groups= {"SmokeTest", "Android", "iOS"},
             testName = "Participant App Mobile - Home Page - Resume Tasks Action",
             description = "Test case checks Home Page Resume Tasks Action",
             retryAnalyzer = TcRetry.class)
-    public void participant_App_Mobile_Home_Page_Resume_Tasks_Action(String user) {
-
+    public void participant_App_Mobile_Home_Page_Resume_Tasks_Action() {
         testCaseName = new Object() {}.getClass().getEnclosingMethod().getName();
+        tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
 //        TODO Waiting for Test Data Participant, 1 Study, 1 Form - Resume Status
         username = "mobile.automation+active_android@florencehc.com";
         password = "Password123*";
@@ -131,14 +129,14 @@ public class Tasks extends BaseTestSetWeb {
 
     @Bug(androidTicket ="null", iOSTicket="null")
     @TcID(tcId = "EC-2137")
-    @Parameters({"user"})
+
     @Test(groups= {"SmokeTest", "Android", "iOS"},
             testName = "Participant App Mobile - Home Page - Resume Tasks when Declined study is manually Activated",
             description = "Test case checks Home Page Resume Tasks when Declined study is manually Activated",
             retryAnalyzer = TcRetry.class)
-    public void participant_App_Mobile_Home_Page_Resume_Tasks_when_Declined_study_is_manually_Activated(String user) {
-
+    public void participant_App_Mobile_Home_Page_Resume_Tasks_when_Declined_study_is_manually_Activated() {
         testCaseName = new Object() {}.getClass().getEnclosingMethod().getName();
+        tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
 //        TODO Waiting for Test Data
         username = "mobile.automation+active_android@florencehc.com";
         password = "Password123*";
@@ -161,14 +159,13 @@ public class Tasks extends BaseTestSetWeb {
 
     @Bug(androidTicket ="null", iOSTicket="null")
     @TcID(tcId = "EC-943")
-    @Parameters({"user"})
     @Test(groups= {"SmokeTest", "Android", "iOS"},
             testName = "Participant App Mobile - Home Page - View All Action",
             description = "Test case checks Home Page View All Action",
             retryAnalyzer = TcRetry.class)
-    public void participant_App_Mobile_Home_Page_View_All_Action(String user) {
-
+    public void participant_App_Mobile_Home_Page_View_All_Action() {
         testCaseName = new Object() {}.getClass().getEnclosingMethod().getName();
+        tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
 //        TODO Waiting for Test Data Participant, 2 Study, 2 Forms
         username = "mobile.automation+active_android@florencehc.com";
         password = "Password123*";
@@ -186,14 +183,13 @@ public class Tasks extends BaseTestSetWeb {
 
     @Bug(androidTicket ="null", iOSTicket="null")
     @TcID(tcId = "EC-2706")
-    @Parameters({"user"})
     @Test(groups= {"SmokeTest", "Android", "iOS"},
             testName = "Participant App Mobile - tudy Details Page - View Tasks Action",
             description = "Test case checks tudy Details Page - View Tasks Action",
             retryAnalyzer = TcRetry.class)
-    public void participant_App_Mobile_Study_Details_Page_View_Tasks_Action(String user) {
-
+    public void participant_App_Mobile_Study_Details_Page_View_Tasks_Action() {
         testCaseName = new Object() {}.getClass().getEnclosingMethod().getName();
+        tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
 //        TODO Waiting for Test Data Participant, 1 Study, 1 Forms
         username = "mobile.automation+active_android@florencehc.com";
         password = "Password123*";
@@ -212,14 +208,13 @@ public class Tasks extends BaseTestSetWeb {
 
     @Bug(androidTicket ="null", iOSTicket="null")
     @TcID(tcId = "EC-2707")
-    @Parameters({"user"})
     @Test(groups= {"SmokeTest", "Android", "iOS"},
             testName = "Participant App Mobile - tudy Details Page - Resume Tasks Action",
             description = "Test case checks tudy Details Page - Resume Tasks Action",
             retryAnalyzer = TcRetry.class)
-    public void participant_App_Mobile_Study_Details_Page_Resume_Tasks_Action(String user) {
-
+    public void participant_App_Mobile_Study_Details_Page_Resume_Tasks_Action() {
         testCaseName = new Object() {}.getClass().getEnclosingMethod().getName();
+        tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
 //        TODO Waiting for Test Data Participant, 1 Study, 1 Forms
         username = "mobile.automation+active_android@florencehc.com";
         password = "Password123*";

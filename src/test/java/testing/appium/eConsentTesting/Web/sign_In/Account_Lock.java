@@ -24,6 +24,7 @@ public class Account_Lock extends BaseTestSetWeb {
     private String password;
     private String wrongPassword = "Pass" + randomString(4) + "1*";
     private String testCaseName;
+    private String tcId;
     private String originalWindow;
 
 
@@ -43,19 +44,17 @@ public class Account_Lock extends BaseTestSetWeb {
 
     @Bug(androidTicket ="null", iOSTicket="null")
     @TcID(tcId = "EC-2044")
-    @Parameters({"user","platformParameter"})
+    @Parameters({"user"})
     @Test(groups= {"Android", "iOS"},
             testName = "Participant Auth Mobile - Participant account locked temporarily",
             description = "Test checks for incorrect password entry five times",
             retryAnalyzer = TcRetry.class)
-    public void participant_Auth_Mobile_Participant_account_locked_temporarily(String user, String platformParameter, ITestContext context){
-        context.setAttribute("platformParameter", platformParameter);
-
+    public void participant_Auth_Mobile_Participant_account_locked_temporarily(String user){
         testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
+        tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
 //        TODO waiting for TC Data
-        username = username(user, platformParameter);
-        password = password(user, platformParameter);
-        ;
+        username = username(user, PLATFORM_PARAMETER);
+        password = password(user, PLATFORM_PARAMETER);
         for (int i = 0; i < 5; i++) {
             LoggerInformation("Wrong Password attempt number: " + i);
             refreshPage_WebElement(driver);
@@ -67,18 +66,17 @@ public class Account_Lock extends BaseTestSetWeb {
 
     @Bug(androidTicket ="null", iOSTicket="null")
     @TcID(tcId = "EC-2760")
-    @Parameters({"user","platformParameter"})
+    @Parameters({"user"})
     @Test(groups= {"Android", "iOS"},
             testName = "Participant Auth Mobile - Participant account locked permanently",
             description = "Test checks for incorrect password entry ten times",
             retryAnalyzer = TcRetry.class)
-    public void participant_Auth_Mobile_Participant_account_locked_permanently(String user, String platformParameter, ITestContext context){
-        context.setAttribute("platformParameter", platformParameter);
-
+    public void participant_Auth_Mobile_Participant_account_locked_permanently(String user){
         testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
+        tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
 //        TODO waiting for TC Data
-        username = username(user, platformParameter);
-        password = password(user, platformParameter);
+        username = username(user, PLATFORM_PARAMETER);
+        password = password(user, PLATFORM_PARAMETER);
 
         for (int i = 0; i < 10; i++) {
             LoggerInformation("Wrong Password attempt number: " + i);
@@ -91,18 +89,17 @@ public class Account_Lock extends BaseTestSetWeb {
 
     @Bug(androidTicket ="null", iOSTicket="null")
     @TcID(tcId = "EC-4194")
-    @Parameters({"user","platformParameter"})
+    @Parameters({"user"})
     @Test(groups= {"Android", "iOS"},
             testName = "Participant Auth Mobile - Participant signs in after permanent lockout",
             description = "Test checks is it possible to sign in to the application after permanently locking the account",
             retryAnalyzer = TcRetry.class)
-    public void participant_Auth_Mobile_Participant_signs_in_after_permanent_lockout(String user, String platformParameter, ITestContext context){
-        context.setAttribute("platformParameter", platformParameter);
-
+    public void participant_Auth_Mobile_Participant_signs_in_after_permanent_lockout(String user){
         testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
+        tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
 //        TODO waiting for TC Data
-        username = username(user, platformParameter);
-        password = password(user, platformParameter);
+        username = username(user, PLATFORM_PARAMETER);
+        password = password(user, PLATFORM_PARAMETER);
 
         sip.logInProcedure(username, password);
         sip.assert_toastMsg(errorMsg_recoverAccount);
@@ -110,15 +107,14 @@ public class Account_Lock extends BaseTestSetWeb {
 
     @Bug(androidTicket ="null", iOSTicket="null")
     @TcID(tcId = "EC-4195")
-    @Parameters({"user","platformParameter"})
+    @Parameters({"user"})
     @Test(groups= {"Android", "iOS"},
             testName = "Participant Auth Mobile - Additional signer account locked temporarily",
             description = "Test checks for incorrect password entry five times for Additional signer",
             retryAnalyzer = TcRetry.class)
-    public void participant_Auth_Mobile_Additional_signer_account_locked_temporarily(String user, String platformParameter, ITestContext context){
-        context.setAttribute("platformParameter", platformParameter);
-
+    public void participant_Auth_Mobile_Additional_signer_account_locked_temporarily(String user){
         testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
+
 //        TODO waiting for TC Data
         String larUsername = "mobile.automation+lar_android@florencehc.com";
         String larPassword = "Password123*";
@@ -134,15 +130,14 @@ public class Account_Lock extends BaseTestSetWeb {
 
     @Bug(androidTicket ="null", iOSTicket="null")
     @TcID(tcId = "EC-4196")
-    @Parameters({"user","platformParameter"})
+    @Parameters({"user"})
     @Test(groups= {"Android", "iOS"},
             testName = "Participant Auth Mobile - Additional signer account locked permanently",
             description = "Test checks for incorrect password entry ten times for Additional signer",
             retryAnalyzer = TcRetry.class)
-    public void participant_Auth_Mobile_Additional_signer_account_locked_permanently(String user, String platformParameter, ITestContext context){
-        context.setAttribute("platformParameter", platformParameter);
-
+    public void participant_Auth_Mobile_Additional_signer_account_locked_permanently(String user){
         testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
+        tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
 //        TODO waiting for TC Data
         String larUsername = "mobile.automation+lar_android@florencehc.com";
 
@@ -157,15 +152,14 @@ public class Account_Lock extends BaseTestSetWeb {
 
     @Bug(androidTicket ="null", iOSTicket="null")
     @TcID(tcId = "EC-4197")
-    @Parameters({"user","platformParameter"})
+    @Parameters({"user"})
     @Test(groups= {"Android", "iOS"},
             testName = "Participant Auth Mobile - Additional signer signs in after permanent lockout",
             description = "Test checks is it possible to sign in for Additional signer to the application after permanently locking the account",
             retryAnalyzer = TcRetry.class)
-    public void participant_Auth_Mobile_Additional_signer_signs_in_after_permanent_lockout(String user, String platformParameter, ITestContext context){
-        context.setAttribute("platformParameter", platformParameter);
-
+    public void participant_Auth_Mobile_Additional_signer_signs_in_after_permanent_lockout(String user){
         testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
+        tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
 //        TODO waiting for TC Data
         String larUsername = "mobile.automation+lar_android@florencehc.com";
         String larPassword = "Password1234*";

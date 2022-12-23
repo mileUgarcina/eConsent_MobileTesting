@@ -22,6 +22,7 @@ public class Session_Activity extends BaseTestSetWeb {
     private String username;
     private String password;
     private String testCaseName;
+    private String tcId;
 
 
     @BeforeClass(alwaysRun=true,
@@ -54,6 +55,8 @@ public class Session_Activity extends BaseTestSetWeb {
             description = "Test case checks does the 2 minute warning go out after 13 minutes of inactivity",
             retryAnalyzer = TcRetry.class)
     public void participant_App_Mobile_Participant_Session_Expires_13min() throws InterruptedException {
+        testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
+        tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
 
         testCaseName = new Object() {}.getClass().getEnclosingMethod().getName();
         printingTheRemainingMinutes(60000, 13);
@@ -71,8 +74,8 @@ public class Session_Activity extends BaseTestSetWeb {
             description = "Test case checks does Session Expires after 15 min",
             retryAnalyzer = TcRetry.class)
     public void participant_App_Mobile_Participant_Session_Expires_15min() throws InterruptedException {
-
         testCaseName = new Object() {}.getClass().getEnclosingMethod().getName();
+        tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
 
         printingTheRemainingMinutes(60000, 15);
         sip.assert_pageTitle();

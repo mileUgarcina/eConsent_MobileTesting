@@ -18,52 +18,29 @@ import static testing.appium.runner.propertyFile.DataProvider.*;
 public class Log_Out extends BaseTestSetWeb {
 
     static private final String appUrl = appEnvironment();
-    private String username;
-    private String password;
-    private String firstName;
-    private String middleName;
-    private String lastName;
     private String testCaseName;
-    private String originalWindow;
-
+    private String tcId;
 
     @BeforeClass(alwaysRun=true,
                   description = "Wait for the application to boot up")
     public void precondition(){
+
         sip.loadWebPage(appUrl + SIGN_IN_PAGE_LINK);
     }
 
-//    @Parameters({"browserName"})
-//    @AfterMethod(description = "Restore the application to the minimum common state for all Test Cases")
-//    public void postcondition(String browserName){
-//
-//        LoggerInformation("Postcondition procedure for TC: " + testCaseName);
-//        switch (testCaseName) {
-//            case "participant_App_Mobile_User_Menu_Log_Out_Action":
-//
-//            break;
-//            default:
-//                refreshPage_WebElement(driver);
-//        }
-//    }
-
-
     @Bug(androidTicket ="null", iOSTicket="null")
     @TcID(tcId = "EC-946")
-    @Parameters({"user","platformParameter"})
+    @Parameters({"user"})
     @Test(groups= {"SmokeTest", "Android", "iOS"},
             testName = "Participant App Mobile - User Menu - Log Out Action",
             description = "Test case checks if logging into the application is possible",
             retryAnalyzer = TcRetry.class)
-    public void participant_App_Mobile_User_Menu_Log_Out_Action(String user, String platformParameter, ITestContext context){
-        context.setAttribute("platformParameter", platformParameter);
-
-        testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
-        username = username(user,platformParameter);
-        password = password(user, platformParameter);
-        firstName = firstName(user, platformParameter);
-        middleName = middleName(user, platformParameter);
-        lastName = lastName(user, platformParameter);
+    public void participant_App_Mobile_User_Menu_Log_Out_Action(String user){
+        testCaseName = new Object() {}.getClass().getEnclosingMethod().getName();
+        tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
+        String username = username(user, PLATFORM_PARAMETER);
+        String password = password(user, PLATFORM_PARAMETER);
+        String firstName = firstName(user, PLATFORM_PARAMETER);
 
         sip.logInProcedure(username, password);
         mp.assert_pageTitle();

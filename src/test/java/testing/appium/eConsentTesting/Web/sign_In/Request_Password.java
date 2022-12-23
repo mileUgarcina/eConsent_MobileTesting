@@ -11,6 +11,7 @@ import testing.appium.runner.TestListener;
 import static testing.appium.helpers.TCLogger.LoggerInformation;
 import static testing.appium.helpers.Utils.randomString;
 import static testing.appium.helpers.Utils.*;
+import static testing.appium.runner.propertyFile.DataProvider.PLATFORM_PARAMETER;
 import static testing.appium.runner.propertyFile.DataProvider.environmentData.SIGN_IN_PAGE_LINK;
 import static testing.appium.runner.propertyFile.DataProvider.environmentData.appEnvironment;
 import static testing.appium.runner.propertyFile.DataProvider.tcData.*;
@@ -21,10 +22,10 @@ import static testing.appium.runner.propertyFile.DataProvider.username;
 public class Request_Password extends BaseTestSetWeb {
 
     static private final String appUrl = appEnvironment();
-
     private String email_valid = "email." + randomString(4) + "@" + randomString(4) + ".com";
     private String email_invalid = randomString(6);
     private String testCaseName;
+    private String tcId;
     private String originalWindow;
 
 
@@ -47,15 +48,13 @@ public class Request_Password extends BaseTestSetWeb {
 
     @Bug(androidTicket ="null", iOSTicket="null")
     @TcID(tcId = "EC-4200")
-    @Parameters({"user","platformParameter"})
     @Test(groups= { "Android", "iOS"},
             testName = "Participant Auth Mobile - Request Password - Email field responds with valid data",
             description = "Test case checks whether the email input field responds to valid input",
             retryAnalyzer = TcRetry.class)
-    public void participant_Auth_Mobile_Request_Password_Email_field_responds_with_valid_data(String user, String platformParameter, ITestContext context){
-        context.setAttribute("platformParameter", platformParameter);
-
+    public void participant_Auth_Mobile_Request_Password_Email_field_responds_with_valid_data(){
         testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
+        tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
 
         fpp.clickOn_emailInputField();
         fpp.insert_emailInputField(email_valid);
@@ -64,15 +63,13 @@ public class Request_Password extends BaseTestSetWeb {
 
     @Bug(androidTicket ="null", iOSTicket="null")
     @TcID(tcId = "EC-4201")
-    @Parameters({"user","platformParameter"})
     @Test(groups= { "Android", "iOS"},
             testName = "Participant Auth Mobile - Request Password - Email field responds with invalid data",
             description = "Test case checks whether the email input field responds to invalid input",
             retryAnalyzer = TcRetry.class)
-    public void participant_Auth_Mobile_Request_Password_Email_field_responds_with_invalid_data(String user, String platformParameter, ITestContext context){
-        context.setAttribute("platformParameter", platformParameter);
-
+    public void participant_Auth_Mobile_Request_Password_Email_field_responds_with_invalid_data(){
         testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
+        tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
 
         fpp.clickOn_emailInputField();
         fpp.insert_emailInputField(email_invalid);
@@ -81,15 +78,13 @@ public class Request_Password extends BaseTestSetWeb {
 
     @Bug(androidTicket ="null", iOSTicket="null")
     @TcID(tcId = "EC-4202")
-    @Parameters({"user","platformParameter"})
     @Test(groups= { "Android", "iOS"},
             testName = "Participant Auth Mobile - Request Password - Email field responds with cleared data",
             description = "Test case checks whether the email input field responds to cleared data",
             retryAnalyzer = TcRetry.class)
-    public void participant_Auth_Mobile_Request_Password_Email_field_responds_with_cleared_data(String user, String platformParameter, ITestContext context){
-        context.setAttribute("platformParameter", platformParameter);
-
+    public void participant_Auth_Mobile_Request_Password_Email_field_responds_with_cleared_data(){
         testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
+        tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
 
         fpp.clickOn_emailInputField();
         fpp.insert_emailInputField("a");
@@ -100,17 +95,16 @@ public class Request_Password extends BaseTestSetWeb {
 
     @Bug(androidTicket ="null", iOSTicket="null")
     @TcID(tcId = "EC-4204")
-    @Parameters({"user","platformParameter"})
+    @Parameters({"user"})
     @Test(groups= { "Android", "iOS"},
             testName = "Participant Auth Mobile - Request Password - Password Reset Action",
             description = "Test case checks Password Reset Action",
             retryAnalyzer = TcRetry.class)
-    public void participant_Auth_Mobile_Request_Password_Request_password_reset_action(String user, String platformParameter, ITestContext context){
-        context.setAttribute("platformParameter", platformParameter);
-
+    public void participant_Auth_Mobile_Request_Password_Request_password_reset_action(String user){
         testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
+        tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
 //        TODO waiting for TC Data
-        String email = username(user,platformParameter);
+        String email = username(user,PLATFORM_PARAMETER);
 
         fpp.clickOn_emailInputField();
         fpp.insert_emailInputField(email);
@@ -125,10 +119,10 @@ public class Request_Password extends BaseTestSetWeb {
             testName = "Participant Auth Mobile - Request Password - Sign in action",
             description = "Test case checks Sign in Link",
             retryAnalyzer = TcRetry.class)
-    public void participant_Auth_Mobile_Request_Sign_in_action(String user, String platformParameter, ITestContext context){
-        context.setAttribute("platformParameter", platformParameter);
-
+    public void participant_Auth_Mobile_Request_Sign_in_action(){
+        
         testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
+        tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
 
         fpp.clickOn_signInBtnBtn();
         sip.assert_pageTitle();

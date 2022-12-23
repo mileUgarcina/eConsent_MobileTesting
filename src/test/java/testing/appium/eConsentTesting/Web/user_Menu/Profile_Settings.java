@@ -28,6 +28,7 @@ public class Profile_Settings extends BaseTestSetWeb {
     private String middleName;
     private String lastName;
     private String testCaseName;
+    private String tcId;
     private String originalWindow;
 
 
@@ -85,20 +86,19 @@ public class Profile_Settings extends BaseTestSetWeb {
 
     @Bug(androidTicket ="null", iOSTicket="null")
     @TcID(tcId = "EC-4351")
-    @Parameters({"user","platformParameter"})
+    @Parameters({"user"})
     @Test(groups= {"SmokeTest", "Android", "iOS"},
             testName = "Participant App Mobile - User Menu - Profile Settings option",
             description = "Test case checks if Profile Settings Page opens",
             retryAnalyzer = TcRetry.class)
-    public void participant_App_Mobile_User_Menu_Profile_Settings_Opened(String user, String platformParameter, ITestContext context){
-        context.setAttribute("platformParameter", platformParameter);
-
+    public void participant_App_Mobile_User_Menu_Profile_Settings_Opened(String user){
         testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
-        username = username(user,platformParameter);
-        password = password(user, platformParameter);
-        firstName = firstName(user, platformParameter);
-        middleName = middleName(user, platformParameter);
-        lastName = lastName(user, platformParameter);
+        tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
+        username = username(user,PLATFORM_PARAMETER);
+        password = password(user, PLATFORM_PARAMETER);
+        firstName = firstName(user, PLATFORM_PARAMETER);
+        middleName = middleName(user, PLATFORM_PARAMETER);
+        lastName = lastName(user, PLATFORM_PARAMETER);
 
         prosp.assert_pageTitle();
 //        TODO Waiting TC Data
@@ -111,15 +111,13 @@ public class Profile_Settings extends BaseTestSetWeb {
 
     @Bug(androidTicket ="null", iOSTicket="null")
     @TcID(tcId = "EC-3147")
-    @Parameters({"user","platformParameter"})
     @Test(groups= {"SmokeTest", "Android", "iOS"},
             testName = "Participant App Mobile User Menu Profile Settings Back Button",
             description = "Test case checks if Profile Settings Back Button Works",
             retryAnalyzer = TcRetry.class)
-    public void participant_App_Mobile_User_Menu_Profile_Settings_Back_Button(String user, String platformParameter, ITestContext context){
-        context.setAttribute("platformParameter", platformParameter);
-
+    public void participant_App_Mobile_User_Menu_Profile_Settings_Back_Button(){
         testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
+        tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
 
         prosp.clickOn_backBtn();
 //        TODO Waiting TC Data
@@ -128,15 +126,13 @@ public class Profile_Settings extends BaseTestSetWeb {
 
     @Bug(androidTicket ="null", iOSTicket="null")
     @TcID(tcId = "EC-4356")
-    @Parameters({"user","platformParameter"})
     @Test(groups= {"SmokeTest", "Android", "iOS"},
             testName = "Participant Auth Mobile - User Menu - Profile Settings - Profile Name fields respond to valid data",
             description = "Test case checks if Profile Settings Name Change whether the input fields are Highlighted when they are selected",
             retryAnalyzer = TcRetry.class)
-    public void participant_Auth_Mobile_User_Menu_Profile_Settings_Profile_Name_fields_respond_to_valid_data(String user, String platformParameter, ITestContext context){
-        context.setAttribute("platformParameter", platformParameter);
-
+    public void participant_Auth_Mobile_User_Menu_Profile_Settings_Profile_Name_fields_respond_to_valid_data(){
         testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
+        tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
 
         prosp.clickOn_updateProfileNameBtn();
         prosp.clickOn_firstNameInputField();
@@ -151,15 +147,13 @@ public class Profile_Settings extends BaseTestSetWeb {
 
     @Bug(androidTicket ="null", iOSTicket="null")
     @TcID(tcId = "EC-4357")
-    @Parameters({"user","platformParameter"})
     @Test(groups= {"Android", "iOS"},
             testName = "Participant Auth Mobile - User Menu - Profile Settings - Profile Name  error states - Remove First Name",
             description = "Test case checks if Profile Settings Changing the First name is allowed",
             retryAnalyzer = TcRetry.class)
-    public void participant_Auth_Mobile_User_Menu_Profile_Settings_Profile_Name_fields_cleared(String user, String platformParameter, ITestContext context){
-        context.setAttribute("platformParameter", platformParameter);
-
+    public void participant_Auth_Mobile_User_Menu_Profile_Settings_Profile_Name_fields_cleared(){
         testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
+        tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
 
         prosp.clickOn_updateProfileNameBtn();
         prosp.assert_pageTitleProfilePopUp();
@@ -178,18 +172,17 @@ public class Profile_Settings extends BaseTestSetWeb {
 //        TODO Waiting TC Data
     @Bug(androidTicket ="null", iOSTicket="null")
     @TcID(tcId = "EC-3181")
-    @Parameters({"user","platformParameter"})
+    @Parameters({"user"})
     @Test(groups= {"Android", "iOS"},
             testName = "Participant Auth Mobile - User Menu - Profile Settings - Profile Name updated with the same input",
             description = "Test case checks if Profile Settings Changing the First name is allowed",
             retryAnalyzer = TcRetry.class)
-    public void participant_Auth_Mobile_User_Menu_Profile_Settings_Profile_updated_with_the_same_input(String user, String platformParameter, ITestContext context){
-        context.setAttribute("platformParameter", platformParameter);
-
+    public void participant_Auth_Mobile_User_Menu_Profile_Settings_Profile_updated_with_the_same_input(String user){
         testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
-        firstName = firstName(user, platformParameter);
-        middleName = middleName(user, platformParameter);
-        lastName = lastName(user, platformParameter);
+        tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
+        firstName = firstName(user, PLATFORM_PARAMETER);
+        middleName = middleName(user, PLATFORM_PARAMETER);
+        lastName = lastName(user, PLATFORM_PARAMETER);
 
         prosp.clickOn_updateProfileNameBtn();
         prosp.assert_pageTitleProfilePopUp();
@@ -207,18 +200,17 @@ public class Profile_Settings extends BaseTestSetWeb {
 
     @Bug(androidTicket ="null", iOSTicket="null")
     @TcID(tcId = "EC-4354")
-    @Parameters({"user","platformParameter"})
+    @Parameters({"user"})
     @Test(groups= {"SmokeTest", "Android", "iOS"},
             testName = "Participant Auth Mobile - User Menu - Profile Settings - Profile error states changed - Canceled",
             description = "Test case checks if Profile Settings Cancel Button Works",
             retryAnalyzer = TcRetry.class)
-    public void participant_Auth_Mobile_User_Menu_Profile_Settings_Profile_Name_Changed_Canceled(String user, String platformParameter, ITestContext context){
-        context.setAttribute("platformParameter", platformParameter);
-
+    public void participant_Auth_Mobile_User_Menu_Profile_Settings_Profile_Name_Changed_Canceled(String user){
         testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
-        firstName = firstName(user, platformParameter);
-        middleName = middleName(user, platformParameter);
-        lastName = lastName(user, platformParameter);
+        tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
+        firstName = firstName(user, PLATFORM_PARAMETER);
+        middleName = middleName(user, PLATFORM_PARAMETER);
+        lastName = lastName(user, PLATFORM_PARAMETER);
 
         String newFirstName = randomString(5);
         String newMiddleName = randomString(5);
@@ -239,15 +231,13 @@ public class Profile_Settings extends BaseTestSetWeb {
 
     @Bug(androidTicket ="null", iOSTicket="null")
     @TcID(tcId = "EC-3149")
-    @Parameters({"user","platformParameter"})
     @Test(groups= {"SmokeTest", "Android", "iOS"},
             testName = "Participant Auth Mobile - User Menu - Profile Settings - Profile Name changed",
             description = "Test case checks if Profile Settings, can the user details be changed",
             retryAnalyzer = TcRetry.class)
-    public void participant_Auth_Mobile_User_Menu_Profile_Settings_Profile_Name_Changed(String user, String platformParameter, ITestContext context){
-        context.setAttribute("platformParameter", platformParameter);
-
-        testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();;
+    public void participant_Auth_Mobile_User_Menu_Profile_Settings_Profile_Name_Changed(){
+        testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
+        tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
         String newFirstName = randomString(5);
         String newMiddleName = randomString(5);
         String newLastName = randomString(5);
@@ -264,20 +254,17 @@ public class Profile_Settings extends BaseTestSetWeb {
         prosp.clickOn_saveBtn();
         prosp.assert_toastContainer(toastMessage_successfully);
         prosp.assert_profileName(newFirstName, newMiddleName, newLastName);
-
     }
 
     @Bug(androidTicket ="null", iOSTicket="null")
     @TcID(tcId = "EC-3410")
-    @Parameters({"user","platformParameter"})
     @Test(groups= {"SmokeTest", "Android", "iOS"},
             testName = "Participant Auth Mobile - User Menu - Profile Settings - Language changed",
             description = "Test case checks if Profile Settings, language change is possible",
             retryAnalyzer = TcRetry.class)
-    public void participant_Auth_Mobile_User_Menu_Profile_Settings_Language_changed(String user, String platformParameter, ITestContext context){
-        context.setAttribute("platformParameter", platformParameter);
-
+    public void participant_Auth_Mobile_User_Menu_Profile_Settings_Language_changed(){
         testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
+        tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
 
         prosp.clickOn_updateProfileLanguageBtn();
         prosp.clickOn_espRadioBtn();

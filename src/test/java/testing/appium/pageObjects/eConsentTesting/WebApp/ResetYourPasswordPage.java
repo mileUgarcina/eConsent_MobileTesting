@@ -82,6 +82,7 @@ public class ResetYourPasswordPage {
 
     public void clear_emailInputField() {
         clearInputField_toWebElement(driver, emailInputField, waitInterval, "Username Input Field");
+//        clearInputField_doubleClick_toWebElement(driver, emailInputField, waitInterval, "Username Input Field");
     }
 
     public void clickOn_emailInputField(){

@@ -5,7 +5,6 @@ import testing.appium.eConsentTesting.Web.BaseTestSetWeb;
 import testing.appium.helpers.TcRetry;
 import testing.appium.helpers.jiraTicket.Bug;
 import testing.appium.helpers.testCaseId.TcID;
-import org.testng.ITestContext;
 import org.testng.annotations.*;
 import testing.appium.runner.TestListener;
 
@@ -81,6 +80,7 @@ public class Sign_In extends BaseTestSetWeb {
             retryAnalyzer = TcRetry.class)
     public void participant_Auth_Mobile_Sign_in_with_participant(String user){
         testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
+        tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
         username = username(user,PLATFORM_PARAMETER);
         password = password(user, PLATFORM_PARAMETER);
         firstName = firstName(user, PLATFORM_PARAMETER);
@@ -91,13 +91,14 @@ public class Sign_In extends BaseTestSetWeb {
 
     @Bug(androidTicket ="null", iOSTicket="null")
     @TcID(tcId = "EC-3414")
-    @Parameters({"user",  "additional_LAR_Username", "additional_LAR_Password", "additional_LAR_FirstName", "additional_LAR_MiddleName", "additional_LAR_LastName"})
+    @Parameters({"additional_LAR_Username", "additional_LAR_Password", "additional_LAR_FirstName"})
     @Test(groups= {"SmokeTest", "Android", "iOS"},
             testName = "Participant Auth Mobile Sign In Login with Additional Signer",
             description = "Test case checks if logging into the application with Additional Signer is possible",
             retryAnalyzer = TcRetry.class)
-    public void participant_Auth_Mobile_Sign_In_Additional_Signer(String user,  String additional_LAR_Username, String additional_LAR_Password, String additional_LAR_FirstName, String additional_LAR_MiddleName, String additional_LAR_LastName, ITestContext context){
+    public void participant_Auth_Mobile_Sign_In_Additional_Signer( String additional_LAR_Username, String additional_LAR_Password, String additional_LAR_FirstName){
         testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
+        tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
 
         sip.logInProcedure(additional_LAR_Username, additional_LAR_Password);
         mp.assert_pageTitle();
@@ -106,12 +107,12 @@ public class Sign_In extends BaseTestSetWeb {
 
     @Bug(androidTicket ="null", iOSTicket="null")
     @TcID(tcId = "EC-2035")
-    @Parameters({"user", "unactivatedUsername", "unactivatedPassword"})
+    @Parameters({"unactivatedUsername", "unactivatedPassword"})
     @Test(groups= {"Android", "iOS"},
             testName = "Participant Auth Mobile - Sign in with inactive participant",
             description = "Test case checks if login is possible with Unactivated Account",
             retryAnalyzer = TcRetry.class)
-    public void participant_Auth_Mobile_Sign_in_with_inactive_participant(String user, String unactivatedUsername, String unactivatedPassword, ITestContext context){
+    public void participant_Auth_Mobile_Sign_in_with_inactive_participant(String unactivatedUsername, String unactivatedPassword){
         testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
         tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
 
@@ -122,12 +123,11 @@ public class Sign_In extends BaseTestSetWeb {
 
     @Bug(androidTicket ="EC-3751", iOSTicket="EC-3751")
     @TcID(tcId = "EC-4188")
-    @Parameters({"user"})
     @Test(groups= {"Android", "iOS"},
             testName = "Participant Auth Mobile - Sign in with inactive Additional Signer",
             description = "Test case checks if login is possible with Unactivated Additional Signer Account",
             retryAnalyzer = TcRetry.class)
-    public void participant_Auth_Mobile_Sign_in_with_inactive_Additional_Signer(String user){
+    public void participant_Auth_Mobile_Sign_in_with_inactive_Additional_Signer(){
         testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
         tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
 //        TODO waiting for TC Data
@@ -141,12 +141,12 @@ public class Sign_In extends BaseTestSetWeb {
 
     @Bug(androidTicket ="null", iOSTicket="null")
     @TcID(tcId = "EC-4192")
-    @Parameters({"user", "incorrectUsername", "incorrectPassword"})
+    @Parameters({"incorrectUsername", "incorrectPassword"})
     @Test(groups= {"Android", "iOS"},
             testName = "Participant Auth Mobile - Sign in with incorrect email",
             description = "Test case checks if login is possible with Incorrect Input",
             retryAnalyzer = TcRetry.class)
-    public void participant_Auth_Mobile_Sign_in_with_incorrect_email(String user,  String incorrectUsername, String incorrectPassword){
+    public void participant_Auth_Mobile_Sign_in_with_incorrect_email(String incorrectUsername, String incorrectPassword){
         testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
         tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
 
@@ -204,24 +204,23 @@ public class Sign_In extends BaseTestSetWeb {
 
     @Bug(androidTicket ="null", iOSTicket="null")
     @TcID(tcId = "EC-4190")
-    @Parameters({"user", "incorrectUsername", "incorrectPassword"})
+    @Parameters({"incorrectUsername", "incorrectPassword"})
     @Test(groups= {"Android", "iOS"},
             testName = "participant_Auth_Mobile_Sign_In_Empty_Input_Field",
             description = "Test case checks if login is possible with Empty Input Field",
             retryAnalyzer = TcRetry.class)
-    public void participant_Auth_Mobile_Sign_In_Fields_respond_with_cleared_data(String user,  String incorrectUsername, String incorrectPassword){
+    public void participant_Auth_Mobile_Sign_In_Fields_respond_with_cleared_data(String incorrectUsername, String incorrectPassword){
         testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
         tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
 
         sip.insert_emailInputField(incorrectUsername);
-//        TODO clear on iOS
+
         sip.insert_emailInputField("");
         sip.clear_emailInputField();
         sip.assert_signInBtn_isDisable();
         sip.assert_usernameFieldColor(inputFieldBorderColorRed, "Red");
         sip.assert_usernameWarningMsg(errorMsg_emailField_Required);
         sip.insert_passwordInputField(incorrectPassword);
-//        TODO clear on iOS
         sip.clear_passwordInputField();
         sip.assert_passwordFieldColor(inputFieldBorderColorRed, "Red");
         sip.assert_signInBtn_isDisable();
@@ -269,14 +268,13 @@ public class Sign_In extends BaseTestSetWeb {
     }
 
 
-
     @Bug(androidTicket ="null", iOSTicket="null")
     @TcID(tcId = "EC-2046")
     @Test(groups= {"Android", "iOS"},
             testName = "participant_Auth_Mobile_Sign_In_Sign_in_eConsent_Privacy_Link",
             description = "Test case checks if Privacy Policy link work",
             retryAnalyzer = TcRetry.class)
-    public void participant_Auth_Mobile_Sign_In_Privacy_Policy_Link() throws InterruptedException {
+    public void participant_Auth_Mobile_Sign_In_Privacy_Policy_Link(){
         testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
         tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
 
@@ -330,9 +328,8 @@ public class Sign_In extends BaseTestSetWeb {
             description = "Test case checks if Forgot Password link work with inserted email",
             retryAnalyzer = TcRetry.class)
     public void participant_Auth_Mobile_Sign_In_Forgot_password_action_with_populated_Email_field(String user){
-        
-
         testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
+        tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
         username = username(user,PLATFORM_PARAMETER);
 
         sip.clickOn_emailInputField();

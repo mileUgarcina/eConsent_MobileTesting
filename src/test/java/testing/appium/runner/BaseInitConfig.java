@@ -238,15 +238,15 @@ public class BaseInitConfig {
         sauceLabs = true;
         capabilities.setCapability("platformName", DataProvider.SliOSConfigData.PLATFORM_NAME_SL_IOS);
 //        capabilities.setCapability("platformVersion", DataProvider.SliOSConfigData.platformVersionSliOSRealDevice());
-//        capabilities.setCapability("appiumVersion", DataProvider.SliOSConfigData.APPIUM_VERSION_SL_IOS_REAL_DEVICE);
         capabilities.setCapability("browserName", browserName);
         capabilities.setCapability("appium:deviceName", DataProvider.SliOSConfigData.DEVICE_NAME_SL_IOS_REAL_DEVICE);
-//        capabilities.setCapability("phoneOnly", DataProvider.SliOSConfigData.PHONE_ONLY_SL_IOS);
+        capabilities.setCapability("phoneOnly", DataProvider.SliOSConfigData.PHONE_ONLY_SL_IOS);
         capabilities.setCapability("appium:automationName", DataProvider.SliOSConfigData.AUTOMATION_NAME_SL_IOS);
         capabilities.setCapability("autoGrantPermissions", DataProvider.SlAndroidConfigData.AUTO_GRANT_PERMISSIONS);
         capabilities.setCapability("appium:autoAcceptAlerts","true");
         capabilities.setCapability("safariAllowPopups", "true");
         capabilities.setCapability("browserVersion", "latest");
+//        capabilities.setCapability("appium:nativeWebTap", true);
         MutableCapabilities sauceOptions = new MutableCapabilities();
         sauceOptions.setCapability("build", DataProvider.SliOSConfigData.nameSliOS() + " - " + appVersion);
         sauceOptions.setCapability("name", DataProvider.SliOSConfigData.nameSliOS() + " - " + PLATFORM_PARAMETER + " - " + appVersion + " --> " + suiteName);

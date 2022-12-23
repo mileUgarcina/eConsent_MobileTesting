@@ -677,11 +677,18 @@ public class DataProvider {
     public static class environmentData {
 
         public static String DEV_TEAM = PropertyReader.EnvironmentReader.get("devTeam");
+        public static String COMPANY_NAME = PropertyReader.EnvironmentReader.get("companyName");
+        public static String PARTICIPANT_USERNAME = PropertyReader.EnvironmentReader.get("participant_username");
+
+
         public static String APP_NAME = PropertyReader.EnvironmentReader.get("appName");
         public static String GMAIL_URL = PropertyReader.EnvironmentReader.get("gmailUrl");
         public static String SIGN_IN_PAGE_LINK = PropertyReader.EnvironmentReader.get("signInPageLink");
         public static String PRIVACY_SETTINGS_PAGE_LINK = PropertyReader.EnvironmentReader.get("privacySettingsPageLink");
         public static String PROFILE_SETTINGS_PAGE_LINK = PropertyReader.EnvironmentReader.get("profileSettingsPageLink");
+        public static String INVITES_API = PropertyReader.EnvironmentReader.get("invitesAPI");
+
+
         public static String HEALTH_CHECK_API = PropertyReader.EnvironmentReader.get("healthCheckAPI");
 
 
