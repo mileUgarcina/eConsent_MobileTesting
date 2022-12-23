@@ -22,10 +22,9 @@ public class Registration extends BaseTestSetWeb {
     private String lastName = randomString(5);
     private String invalidPassword = randomString(5);
     private String password = randomString(10);
-
     private String testCaseName;
+    private String tcId;
     private String originalWindow;
-
 
 
     @BeforeClass(alwaysRun=true,
@@ -34,7 +33,6 @@ public class Registration extends BaseTestSetWeb {
 //        TODO Waiting for TC Data
         sip.loadWebPage(appUrl);
     }
-
 
     @AfterMethod(description = "Restore the application to the minimum common state for all Test Cases")
     public void postcondition() throws InterruptedException {
@@ -54,15 +52,13 @@ public class Registration extends BaseTestSetWeb {
 
     @Bug(androidTicket ="null", iOSTicket="null")
     @TcID(tcId = "")
-    @Parameters({"user","platformParameter"})
     @Test(groups= {"SmokeTest", "Android", "iOS"},
             testName = "Participant Auth Mobile - Sign Up - Register With Participant Invited to the Study Info Message",
             description = "Test case checks if Info Message are displayed on Registration Page",
             retryAnalyzer = TcRetry.class)
-    public void participant_Auth_Mobile_Sign_Up_Register_With_Participant_Invited_to_the_Study_Info_Messages(String user, String platformParameter, ITestContext context) throws InterruptedException {
-        context.setAttribute("platformParameter", platformParameter);
-
+    public void participant_Auth_Mobile_Sign_Up_Register_With_Participant_Invited_to_the_Study_Info_Messages() throws InterruptedException {
         testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
+        tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
 
         rp.clickOn_legalNameInfoBtn();
         rp.assert_legalNameTooltip(legalNameTooltipMsg);
@@ -76,42 +72,35 @@ public class Registration extends BaseTestSetWeb {
         assert_submitTooltip.start();
         clickOn_submitBtn.join();
         assert_submitTooltip.join();
-
-
-
     }
 
     @Bug(androidTicket ="null", iOSTicket="null")
     @TcID(tcId = "")
-    @Parameters({"user","platformParameter"})
     @Test(groups= {"Android", "iOS"},
             testName = "Participant Auth Mobile - Sign Up - Register With Participant Invited to the Study Only First And Last Name",
             description = "Test case checks that the first and last name are not enough for registration",
             retryAnalyzer = TcRetry.class)
-    public void participant_Auth_Mobile_Sign_Up_Register_With_Participant_Invited_to_the_Study_Only_First_And_Last_Name(String user, String platformParameter, ITestContext context){
-        context.setAttribute("platformParameter", platformParameter);
-
+    public void participant_Auth_Mobile_Sign_Up_Register_With_Participant_Invited_to_the_Study_Only_First_And_Last_Name(){
         testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
+        tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
 
         rp.clickOn_firstNameInputField();
         rp.insert_firstNameInputField(firstName);
         rp.clickOn_lastNameInputField();
         rp.insert_lastNameInputField(lastName);
         rp.assert_submitInBtn_isDisable();
-
     }
 
     @Bug(androidTicket ="null", iOSTicket="null")
     @TcID(tcId = "")
-    @Parameters({"user","platformParameter"})
+    
     @Test(groups= {"Android", "iOS"},
             testName = "Participant Auth Mobile - Sign Up - Register With Participant Invited to the Study Invalid Password",
             description = "Test case checks error messages for wrong password format",
             retryAnalyzer = TcRetry.class)
-    public void participant_Auth_Mobile_Sign_Up_Register_With_Participant_Invited_to_the_Study_Invalid_Password(String user, String platformParameter, ITestContext context){
-        context.setAttribute("platformParameter", platformParameter);
-
+    public void participant_Auth_Mobile_Sign_Up_Register_With_Participant_Invited_to_the_Study_Invalid_Password(){
         testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
+        tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
 
         rp.clickOn_passwordInputField();
         rp.insert_passwordInputField(invalidPassword);
@@ -121,15 +110,13 @@ public class Registration extends BaseTestSetWeb {
 
     @Bug(androidTicket ="null", iOSTicket="null")
     @TcID(tcId = "")
-    @Parameters({"user","platformParameter"})
     @Test(groups= {"Android", "iOS"},
             testName = "Participant Auth Mobile - Sign Up - Register With Participant Invited to the Study Valid Password",
             description = "Test case checks for entering a valid password",
             retryAnalyzer = TcRetry.class)
-    public void participant_Auth_Mobile_Sign_Up_Register_With_Participant_Invited_to_the_Study_Valid_Password(String user, String platformParameter, ITestContext context){
-        context.setAttribute("platformParameter", platformParameter);
-
+    public void participant_Auth_Mobile_Sign_Up_Register_With_Participant_Invited_to_the_Study_Valid_Password(){
         testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
+        tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
 
         rp.clickOn_passwordInputField();
         rp.insert_passwordInputField(password);
@@ -139,15 +126,13 @@ public class Registration extends BaseTestSetWeb {
 
     @Bug(androidTicket ="null", iOSTicket="null")
     @TcID(tcId = "")
-    @Parameters({"user","platformParameter"})
     @Test(groups= {"Android", "iOS"},
             testName = "Participant Auth Mobile - Sign Up - Register With Participant Invited to the Study Show Password",
             description = "Test case checks whether the password and Re-Password is visible when clicked on Show Password",
             retryAnalyzer = TcRetry.class)
-    public void participant_Auth_Mobile_Sign_Up_Register_With_Participant_Invited_to_the_Study_Show_Password(String user, String platformParameter, ITestContext context){
-        context.setAttribute("platformParameter", platformParameter);
-
+    public void participant_Auth_Mobile_Sign_Up_Register_With_Participant_Invited_to_the_Study_Show_Password(){
         testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
+        tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
 
         rp.clickOn_passwordInputField();
         rp.insert_passwordInputField(password);
@@ -160,15 +145,13 @@ public class Registration extends BaseTestSetWeb {
 
     @Bug(androidTicket ="null", iOSTicket="null")
     @TcID(tcId = "")
-    @Parameters({"user","platformParameter"})
     @Test(groups= {"Android", "iOS"},
             testName = "Participant Auth Mobile - Sign Up - Error States Mandatory Fields Empty",
             description = "Test case checks all mandatory fields",
             retryAnalyzer = TcRetry.class)
-    public void participant_Auth_Mobile_Sign_Up_Error_States_Mandatory_Fields_Empty(String user, String platformParameter, ITestContext context){
-        context.setAttribute("platformParameter", platformParameter);
-
+    public void participant_Auth_Mobile_Sign_Up_Error_States_Mandatory_Fields_Empty(){
         testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
+        tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
 
         rp.clickOn_firstNameInputField();
         rp.clickOn_lastNameInputField();
@@ -189,15 +172,14 @@ public class Registration extends BaseTestSetWeb {
 
     @Bug(androidTicket ="EC-4185", iOSTicket="EC-418")
     @TcID(tcId = "")
-    @Parameters({"user","platformParameter"})
+    
     @Test(groups= {"Android", "iOS"},
             testName = "Participant Auth Mobile - Sign Up - Error States Mandatory Fields Invalid Enter",
             description = "Test case checks all mandatory fields",
             retryAnalyzer = TcRetry.class)
-    public void participant_Auth_Mobile_Sign_Up_Error_States_Mandatory_Fields_Invalid_Enter(String user, String platformParameter, ITestContext context){
-        context.setAttribute("platformParameter", platformParameter);
-
+    public void participant_Auth_Mobile_Sign_Up_Error_States_Mandatory_Fields_Invalid_Enter(){
         testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
+        tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
 
         rp.clickOn_firstNameInputField();
         prosp.insert_firstNameInputField("   ");
@@ -220,15 +202,13 @@ public class Registration extends BaseTestSetWeb {
 
     @Bug(androidTicket ="null", iOSTicket="null")
     @TcID(tcId = "")
-    @Parameters({"user","platformParameter"})
     @Test(groups= {"Android", "iOS"},
             testName = "Participant Auth Mobile - Sign Up - Error States Mandatory Fields Clear",
             description = "Test case checks all mandatory fields fo Clear action",
             retryAnalyzer = TcRetry.class)
-    public void participant_Auth_Mobile_Sign_Up_Error_States_Mandatory_Fields_Clear(String user, String platformParameter, ITestContext context){
-        context.setAttribute("platformParameter", platformParameter);
-
+    public void participant_Auth_Mobile_Sign_Up_Error_States_Mandatory_Fields_Clear(){
         testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
+        tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
 
         rp.clickOn_firstNameInputField();
         rp.insert_firstNameInputField(firstName);
@@ -255,15 +235,13 @@ public class Registration extends BaseTestSetWeb {
 
     @Bug(androidTicket ="null", iOSTicket="null")
     @TcID(tcId = "")
-    @Parameters({"user","platformParameter"})
     @Test(groups= {"Android", "iOS"},
             testName = "Participant Auth Mobile - Sign Up - Error States Wrong Confirmation Password",
             description = "Test case checks wrong entry on the second Password",
             retryAnalyzer = TcRetry.class)
-    public void participant_Auth_Mobile_Sign_Up_Error_States_Wrong_Confirmation_Password(String user, String platformParameter, ITestContext context){
-        context.setAttribute("platformParameter", platformParameter);
-
+    public void participant_Auth_Mobile_Sign_Up_Error_States_Wrong_Confirmation_Password(){
         testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
+        tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
 
         rp.clickOn_firstNameInputField();
         rp.insert_firstNameInputField(firstName);
@@ -274,24 +252,24 @@ public class Registration extends BaseTestSetWeb {
         rp.clickOn_rePasswordInputField();
         rp.insert_rePasswordInputField(invalidPassword);
         rp.clear_rePasswordInputField();
-        rp.assert_rePasswordFieldColor(inputFieldBorderColorRedV2, "Red");
+        rp.assert_rePasswordFieldColor(inputFieldBorderColorRed, "Red");
         rp.assert_rePasswordWarningMsg(errorMsg_rePasswordField_Incorrect);
         rp.assert_submitInBtn_isDisable();
     }
 
     @Bug(androidTicket ="null", iOSTicket="null")
     @TcID(tcId = "EC-2027")
-    @Parameters({"user","platformParameter"})
+    
     @Test(groups= {"Android", "iOS"},
             testName = "Participant Auth Mobile - Sign Up - Privacy Policy Action",
             description = "Test check if the Privacy Policy Action link works",
             retryAnalyzer = TcRetry.class)
-    public void participant_Auth_Mobile_Sign_Up_Privacy_Policy_Action(String user, String platformParameter, ITestContext context){
-        context.setAttribute("platformParameter", platformParameter);
-
+    public void participant_Auth_Mobile_Sign_Up_Privacy_Policy_Action(){
         testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
+        tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
 
-        originalWindow = assert_oneWindowTabIsPresent(driver);;
+        originalWindow = assert_oneWindowTabIsPresent(driver);
+        scrollDown(driver,1, 40);
         rp.clickOn_privacyPolicyBtn();
         switchingTabs(driver, 10, originalWindow);
         pp.assert_pageTitle();
@@ -299,17 +277,18 @@ public class Registration extends BaseTestSetWeb {
 
     @Bug(androidTicket ="null", iOSTicket="null")
     @TcID(tcId = "EC-2028")
-    @Parameters({"user","platformParameter"})
+    
     @Test(groups= {"Android", "iOS"},
             testName = "Participant Auth Mobile - Sign Up - Terms and Conditions Action",
             description = "Test check if the Terms and Conditions Action link works",
             retryAnalyzer = TcRetry.class)
-    public void participant_Auth_Mobile_Sign_Up_Terms_and_Conditions_Action(String user, String platformParameter, ITestContext context){
-        context.setAttribute("platformParameter", platformParameter);
+    public void participant_Auth_Mobile_Sign_Up_Terms_and_Conditions_Action(){
 
         testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
+        tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
 
         originalWindow = assert_oneWindowTabIsPresent(driver);;
+        scrollDown(driver,1, 40);
         rp.clickOn_termsAndConditionsBtn();
         switchingTabs(driver, 10, originalWindow);
         tp.assert_pageTitle();
@@ -317,15 +296,14 @@ public class Registration extends BaseTestSetWeb {
 
     @Bug(androidTicket ="null", iOSTicket="null")
     @TcID(tcId = "EC-2014")
-    @Parameters({"user","platformParameter"})
     @Test(groups= {"Android", "iOS"},
             testName = "Participant Auth Mobile - Sign Up - Register With Participant not Invited to the Study",
             description = "Test case checks is it possible to register with an inactive user",
             retryAnalyzer = TcRetry.class)
-    public void participant_Auth_Mobile_Sign_Up_Register_With_Participant_not_Invited_to_the_Study(String user, String platformParameter, ITestContext context){
-        context.setAttribute("platformParameter", platformParameter);
+    public void participant_Auth_Mobile_Sign_Up_Register_With_Participant_not_Invited_to_the_Study(){
 
         testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
+        tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
         String wrongUrl =  appUrl.replace("@", "_wrong@");
 
         openWebPage_WebElement(driver, wrongUrl);
@@ -346,15 +324,14 @@ public class Registration extends BaseTestSetWeb {
 
     @Bug(androidTicket ="null", iOSTicket="null")
     @TcID(tcId = "EC-2040")
-    @Parameters({"user","platformParameter"})
     @Test(groups= {"Android", "iOS"},
             testName = "Participant Auth Mobile - Sign Up - Register With the Expired Token",
             description = "Test case checks is it possible to register with Expired Token",
             retryAnalyzer = TcRetry.class)
-    public void participant_Auth_Mobile_Sign_Up_Register_With_the_Expired_Token(String user, String platformParameter, ITestContext context){
-        context.setAttribute("platformParameter", platformParameter);
+    public void participant_Auth_Mobile_Sign_Up_Register_With_the_Expired_Token(){
 
         testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
+        tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
 //        TODO Waiting for TC Data
         String expiredUrl = "https://us-participant-auth.se.qav2.researchbinders.com/#/sign-up?email=mobile.automation+unactivated@florencehc.com&inviteToken=IwrmUm8KObGzThJPaqN9kDR8vOmqimAwVscU8xI6solbXd22flP6Ylpdth2RVXTywDe4ZTI4ims0wwjMszNLY4p1punc3N62%2FHUP0gK0LEw%3D&language=en";
 
@@ -375,15 +352,14 @@ public class Registration extends BaseTestSetWeb {
 
     @Bug(androidTicket ="null", iOSTicket="null")
     @TcID(tcId = "EC-3401")
-    @Parameters({"user","platformParameter"})
     @Test(groups= {"Android", "iOS"},
             testName = "Participant Auth Mobile - Sign Up - Additional Signer Creates Account",
             description = "Test case checks is it possible to register with Additional Signer",
             retryAnalyzer = TcRetry.class)
-    public void participant_Auth_Mobile_Sign_Up_Additional_Signer_Creates_Account(String user, String platformParameter, ITestContext context){
-        context.setAttribute("platformParameter", platformParameter);
+    public void participant_Auth_Mobile_Sign_Up_Additional_Signer_Creates_Account(){
 
         testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
+        tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
 //        TODO Waiting for TC Data
         String additionalSigneUrl = "https://us-participant-auth.se.qav2.researchbinders.com/#/sign-up?email=mobile.automation+unactivated@florencehc.com&inviteToken=IwrmUm8KObGzThJPaqN9kDR8vOmqimAwVscU8xI6solbXd22flP6Ylpdth2RVXTywDe4ZTI4ims0wwjMszNLY4p1punc3N62%2FHUP0gK0LEw%3D&language=en";
         String userMail = "mobile.automation+unactivated@florencehc.com";
@@ -395,19 +371,16 @@ public class Registration extends BaseTestSetWeb {
 
     }
 
-
-
     @Bug(androidTicket ="null", iOSTicket="null")
     @TcID(tcId = "")
-    @Parameters({"user","platformParameter"})
     @Test(groups= {"Android", "iOS"},
             testName = "Participant Auth Mobile - Sign Up - Register With Participant Invited to the Study Valid Password",
             description = "Test case checks for entering a valid password",
             retryAnalyzer = TcRetry.class)
-    public void participant_Auth_Mobile_Sign_Up_Register_With_Participant_Invited_to_the_Study(String user, String platformParameter, ITestContext context){
-        context.setAttribute("platformParameter", platformParameter);
+    public void participant_Auth_Mobile_Sign_Up_Register_With_Participant_Invited_to_the_Study(){
 
         testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
+        tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
 
         rp.clickOn_firstNameInputField();
         rp.insert_firstNameInputField(firstName);

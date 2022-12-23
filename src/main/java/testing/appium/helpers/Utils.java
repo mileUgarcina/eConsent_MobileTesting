@@ -373,6 +373,8 @@ public class Utils{
         try {
             driver.navigate().refresh();
             LoggerAction("Refresh Web Page");
+//            Wait for page to refresh
+            Thread.sleep(1000);
         } catch (Exception ex) {
             LoggerStep_Failed("Unable to Refresh Web Page: " , ex.getMessage(), true);
         }
@@ -1289,7 +1291,7 @@ public class Utils{
         try {
             String[] forCutFull = stringForCut.split(regex);
             partOfString = forCutFull[part];
-            LoggerInformation("Cut String value is: " + partOfString);
+//            LoggerInformation("Cut String value is: " + partOfString);
         } catch (Exception ex) {
             LoggerStep_Failed("Unable to Cut String: " , ex.getMessage(), true);
         }

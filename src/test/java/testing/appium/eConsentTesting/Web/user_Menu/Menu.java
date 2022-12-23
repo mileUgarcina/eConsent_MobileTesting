@@ -25,19 +25,20 @@ public class Menu extends BaseTestSetWeb {
     private String middleName;
     private String lastName;
     private String testCaseName;
+    private String tcId;
 
-    @Parameters({"user","platformParameter"})
+    @Parameters({"user"})
     @BeforeClass(alwaysRun=true,
                   description = "Wait for the application to boot up")
-    public void precondition(String user, String platformParameter){
+    public void precondition(String user){
 
         sip.loadWebPage(appUrl + SIGN_IN_PAGE_LINK);
         testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
-        username = username(user,platformParameter);
-        password = password(user, platformParameter);
-        firstName = firstName(user, platformParameter);
-        middleName = middleName(user, platformParameter);
-        lastName = lastName(user, platformParameter);
+        username = username(user,PLATFORM_PARAMETER);
+        password = password(user, PLATFORM_PARAMETER);
+        firstName = firstName(user, PLATFORM_PARAMETER);
+        middleName = middleName(user, PLATFORM_PARAMETER);
+        lastName = lastName(user, PLATFORM_PARAMETER);
 
         sip.logInProcedure(username, password);
         mp.assert_pageTitle();
@@ -55,13 +56,13 @@ public class Menu extends BaseTestSetWeb {
 
     @Bug(androidTicket ="null", iOSTicket="null")
     @TcID(tcId = "EC-4256")
-    @Parameters({"user","platformParameter"})
     @Test(groups= {"SmokeTest", "Android", "iOS"},
             testName = "Participant App Mobile - User Menu - Dropdown Menu opened",
             description = "Test case checks does a dropdown menu open",
             retryAnalyzer = TcRetry.class)
-    public void participant_App_Mobile_User_Menu_Dropdown_Menu_opened(String user, String platformParameter, ITestContext context){
-        context.setAttribute("platformParameter", platformParameter);
+    public void participant_App_Mobile_User_Menu_Dropdown_Menu_opened(){
+        testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
+        tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
 
         mp.clickOn_menuBtn();
         mp.assert_dropDownMenu_isPresent();
@@ -69,13 +70,13 @@ public class Menu extends BaseTestSetWeb {
 
     @Bug(androidTicket ="null", iOSTicket="null")
     @TcID(tcId = "EC-4257")
-    @Parameters({"user","platformParameter"})
     @Test(groups= {"SmokeTest", "Android", "iOS"},
             testName = "Participant App Mobile - User Menu - Menu closed",
             description = "Test case checks does the drop down menu close",
             retryAnalyzer = TcRetry.class)
-    public void participant_App_Mobile_User_Menu_Menu_closed(String user, String platformParameter, ITestContext context){
-        context.setAttribute("platformParameter", platformParameter);
+    public void participant_App_Mobile_User_Menu_Menu_closed(){
+        testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
+        tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
 
         mp.clickOn_menuBtn();
         mp.assert_dropDownMenu_isPresent();

@@ -97,7 +97,7 @@ public class JiraXrayAPI {
                     }}
                 break;
         }
-        LoggerInformation("Xray Run ID: " + xRayRunId);
+//        LoggerInformation("Xray Run ID: " + xRayRunId);
         return xRayRunId;
     }
 
@@ -332,7 +332,7 @@ public class JiraXrayAPI {
                     //Instantiating the FileInputStream for output file
                     FileOutputStream outputStrem = new FileOutputStream(path);
                     //Storing the properties file
-                    props.store(outputStrem, "This is " + testRun + platformParameter + "_" + env + "_xRayRunId.properties file");
+                    props.store(outputStrem, "This is " + testRun + "_" + platformParameter + "_" + env + "_xRayRunId.properties file");
                     LoggerInformation("Properties file created: " + path);
                 } catch (Exception ex) {
                     LoggerInformation("Properties file: " + path + " -Not created");

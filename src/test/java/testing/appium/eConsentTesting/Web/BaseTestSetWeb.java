@@ -22,7 +22,6 @@ import static testing.appium.runner.propertyFile.DataProvider.environmentData.ap
 import static testing.appium.runner.sauceLabs.SauceLabsAPI.*;
 
 
-
 public class BaseTestSetWeb {
 
     public AppiumDriver<MobileElement> driver;
@@ -44,10 +43,10 @@ public class BaseTestSetWeb {
     public ViewStudyPage vsp;
     public StudyPage sp;
 
-    @Parameters({"deviceParameter", "platformParameter", "browserName"})
+    @Parameters({"deviceParameter", "browserName"})
     @BeforeSuite(alwaysRun=true,
                  description = "Set capabilities depending on the platformParameter, Initiate driver and Page Objects, Create Xray Test Run")
-    public void startSession(String deviceParameter, String platformParameter, String browserName, ITestContext context, ITestResult result){
+    public void startSession(String deviceParameter, String browserName, ITestContext context, ITestResult result){
 
 //        eConsent Participant App Health Check Response
         getAppHealthCheckResponse();
@@ -95,7 +94,6 @@ public class BaseTestSetWeb {
         sp = new StudyPage(driver);
         vsp = new ViewStudyPage(driver);
     }
-
 
 
     @Parameters({"browserName", "deviceParameter"})

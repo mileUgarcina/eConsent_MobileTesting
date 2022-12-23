@@ -22,6 +22,7 @@ public class Privacy_Policy extends BaseTestSetWeb {
     private String username;
     private String password;
     private String testCaseName;
+    private String tcId;
     private String originalWindow;
 
 
@@ -53,15 +54,13 @@ public class Privacy_Policy extends BaseTestSetWeb {
 
     @Bug(androidTicket ="null", iOSTicket="null")
     @TcID(tcId = "EC-951")
-    @Parameters({"user","platformParameter"})
     @Test(groups= {"SmokeTest", "Android", "iOS"},
             testName = "Participant App Mobile - Privacy Policy Action",
             description = "Test case checks if Privacy Policy link works",
             retryAnalyzer = TcRetry.class)
-    public void participant_App_Mobile_Privacy_Policy_Action(String user, String platformParameter, ITestContext context){
-        context.setAttribute("platformParameter", platformParameter);
-
+    public void participant_App_Mobile_Privacy_Policy_Action(){
         testCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
+        tcId = new Object(){}.getClass().getEnclosingMethod().getAnnotation(TcID.class).tcId();
 
         originalWindow = assert_oneWindowTabIsPresent(driver);
         mp.clickOn_privacyPolicyBtn();

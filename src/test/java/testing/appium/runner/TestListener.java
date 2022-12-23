@@ -16,7 +16,7 @@ import static testing.appium.runner.jiraXrayReporting.JiraXrayAPI.getXRayRunId;
 import static testing.appium.runner.jiraXrayReporting.JiraXrayAPI.setTcResult_Xray;
 import static testing.appium.runner.propertyFile.DataProvider.ENVIRONMENT;
 import static testing.appium.runner.propertyFile.DataProvider.PLATFORM_PARAMETER;
-import static testing.appium.runner.propertyFile.DataProvider.environmentData.appEnvironment;
+import static testing.appium.runner.propertyFile.DataProvider.environmentData.*;
 import static testing.appium.runner.sauceLabs.SauceLabsAPI.entitiesVersion;
 import static testing.appium.runner.sauceLabs.SauceLabsAPI.setSauceLabsTestStatus;
 
@@ -55,7 +55,7 @@ public class TestListener implements ITestListener {
             setTestStatus_BrowserStack(driver, "passed", "passed");
             appLink =  app_version;}
         String testRunDetails = (String) result.getAttribute("testRunDetails");
-        Reporter.log("\\n" +  testRunDetails + "\\n" + "App Name: " + "Florence - eBinders" + "\\n" + "Environment: " + ENVIRONMENT + "\\n" + "App Link: [" + appEnvironment() + "|" + appEnvironment() + "]" + "\\n" + "App Version: " + appVersion + "\\n" + "App Revision: " + appRevision  + "\\n" + "App Health Check: " + appStatus, true);
+        Reporter.log("\\n" +  testRunDetails + "\\n" + "App Name: " + COMPANY_NAME + " - " + DEV_TEAM + "\\n" + "Environment: " + ENVIRONMENT + "\\n" + "App Link: [" + appEnvironment() + "|" + appEnvironment() + "]" + "\\n" + "App Version: " + appVersion + "\\n" + "App Revision: " + appRevision  + "\\n" + "App Health Check: " + appStatus, true);
         boolean ticketAndroid = getAndroidTicket(result, PLATFORM_PARAMETER, true);
         boolean ticketiOS = getiOSTicket(result, PLATFORM_PARAMETER, true);
         String bugTicketNo = getTicketNumberValue(result, PLATFORM_PARAMETER);
@@ -88,7 +88,7 @@ public class TestListener implements ITestListener {
             setTestStatus_BrowserStack(driver, "failed", "failed");
             appLink =  app_version;}
         String testRunDetails = (String) result.getAttribute("testRunDetails");
-        Reporter.log("\\n" +  testRunDetails + "\\n" + "App Name: " + "Florence - eBinders" + "\\n" + "Environment: " + ENVIRONMENT + "\\n" + "App Link: [" + appEnvironment() + "|" + appEnvironment() + "]" + "\\n" + "App Version: " + appVersion + "\\n" + "App Revision: " + appRevision  + "\\n" + "App Health Check: " + appStatus, true);
+        Reporter.log("\\n" +  testRunDetails + "\\n" + "App Name: " + COMPANY_NAME + " - " + DEV_TEAM + "\\n" + "Environment: " + ENVIRONMENT + "\\n" + "App Link: [" + appEnvironment() + "|" + appEnvironment() + "]" + "\\n" + "App Version: " + appVersion + "\\n" + "App Revision: " + appRevision  + "\\n" + "App Health Check: " + appStatus, true);
         boolean ticketAndroid = getAndroidTicket(result, PLATFORM_PARAMETER, false);
         boolean ticketiOS = getiOSTicket(result, PLATFORM_PARAMETER, false);
         String testRunId = getXRayRunId(PLATFORM_PARAMETER);
@@ -122,7 +122,7 @@ public class TestListener implements ITestListener {
             setTestStatus_BrowserStack(driver, "failed", "failed");
             appLink =  app_version;}
         String testRunDetails = (String) result.getAttribute("testRunDetails");
-        Reporter.log("\\n" +  testRunDetails + "\\n" + "App Name: " + "Florence - eBinders" + "\\n" + "Environment: " + ENVIRONMENT + "\\n" + "App Link: [" + appEnvironment() + "|" + appEnvironment() + "]" + "\\n" + "App Version: " + appVersion + "\\n" + "App Revision: " + appRevision  + "\\n" + "App Health Check: " + appStatus, true);
+        Reporter.log("\\n" +  testRunDetails + "\\n" + "App Name: " + COMPANY_NAME + " - " + DEV_TEAM + "\\n" + "Environment: " + ENVIRONMENT + "\\n" + "App Link: [" + appEnvironment() + "|" + appEnvironment() + "]" + "\\n" + "App Version: " + appVersion + "\\n" + "App Revision: " + appRevision  + "\\n" + "App Health Check: " + appStatus, true);
         boolean ticketAndroid = getAndroidTicket(result, PLATFORM_PARAMETER, true);
         boolean ticketiOS = getiOSTicket(result, PLATFORM_PARAMETER, true);
         String bugTicketNo = getTicketNumberValue(result, PLATFORM_PARAMETER);

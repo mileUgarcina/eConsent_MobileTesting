@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Sign In</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/0/1</td>
+<td>Tests passed/Failed/Skipped:</td><td>10/4/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Dec 16 10:41:08 CET 2022</td>
+<td>Started on:</td><td>Fri Dec 23 07:26:11 CET 2022</td>
 </tr>
-<tr><td>Total time:</td><td>0 seconds (28 ms)</td>
+<tr><td>Total time:</td><td>281 seconds (281221 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -68,97 +68,64 @@ function toggleAllBoxes() {
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
 <table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='testing.appium.eConsentTesting.Web.sign_In.Sign_In.endSession()'><b>endSession</b><br>Test class: testing.appium.eConsentTesting.Web.sign_In.Sign_In<br>Test method: Quit the driver and close the session</td>
-<td><div><pre>java.lang.NullPointerException
-	at testing.appium.eConsentTesting.Web.BaseTestSetWeb.endSession(BaseTestSetWeb.java:118)
-	at com.sun.proxy.$Proxy2.stop(Unknown Source)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-	at java.base/java.lang.Thread.run(Thread.java:830)
-... Removed 45 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace227985985", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace227985985'><pre>java.lang.NullPointerException
-	at testing.appium.eConsentTesting.Web.BaseTestSetWeb.endSession(BaseTestSetWeb.java:118)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
-	at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
-	at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
-	at org.testng.TestRunner.invokeTestConfigurations(TestRunner.java:637)
-	at org.testng.TestRunner.afterRun(TestRunner.java:877)
-	at org.testng.TestRunner.run(TestRunner.java:599)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.runTests(TestNGTestClassProcessor.java:141)
-	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.stop(TestNGTestClassProcessor.java:90)
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
-	at com.sun.proxy.$Proxy2.stop(Unknown Source)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.stop(TestWorker.java:132)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:182)
-	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:164)
-	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:412)
-	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
-	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:48)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
-	at java.base/java.lang.Thread.run(Thread.java:830)
-</pre></div></td>
-<td>0</td>
-<td>testing.appium.eConsentTesting.Web.sign_In.Sign_In@593c03f0</td></tr>
-<tr>
-<td title='testing.appium.eConsentTesting.Web.sign_In.Sign_In.precondition()'><b>precondition</b><br>Test class: testing.appium.eConsentTesting.Web.sign_In.Sign_In<br>Test method: Wait for the application to boot up</td>
-<td><div><pre>java.lang.NullPointerException
-	at testing.appium.eConsentTesting.Web.sign_In.Sign_In.precondition(Sign_In.java:43)
+<td title='testing.appium.eConsentTesting.Web.sign_In.Sign_In.participant_Auth_Mobile_Sign_In_Terms_And_Conditions_Link()'><b>participant_Auth_Mobile_Sign_In_Terms_And_Conditions_Link</b><br>Test class: testing.appium.eConsentTesting.Web.sign_In.Sign_In<br>Test method: Test case checks if Privacy Policy link work<br/>
+<a href="#Output-1501941748" onClick='toggleBox("Output-1501941748", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1501941748" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1501941748">
+2022-12-23 07:28:26.946  Waiting--> To be Visible element: "Sign in Page Title"<br/>
+2022-12-23 07:28:27.169  Assert-->  Verification successful - element: "Sign in Page Title" is Present<br/>
+2022-12-23 07:28:27.359  Information-->  One Tab is Present: 692.1<br/>
+2022-12-23 07:28:28.079  Action-->  Scrolling down -Start:627px -End:8px<br/>
+2022-12-23 07:28:28.080  Waiting--> To be Clickable element: "Terms and Conditions"<br/>
+2022-12-23 07:28:28.581  Action-->  Click on element: "Terms and Conditions"<br/>
+2022-12-23 07:28:28.582  Waiting--> For New Tab to be Visible element<br/>
+2022-12-23 07:29:24.402 *Step FAILED-->*  {color:#FF0000}No New Tab - Expected condition failed: waiting for number of open windows to be 2 (tried for 55 second(s) with 500 milliseconds interval){color}<br/>
+--- Test Case - participant_Auth_Mobile_Sign_In_Terms_And_Conditions_Link -- Finish --> {color:#FF0000}*FAILED*{color}  ---\n<br/>
+\n --- *Test Environment* ---  \n \n" --- Test Device \nTest Execution video: [SauceLabs Execution Video|https://app.eu-central-1.saucelabs.com/tests/2c9985f0de6544c483992daa0a0b0a71?auth=4c1493c4707e5b43e1ff957e7a911a43]\nSuite name: eConsent - Participant - QA - iOS - 5.0.0 --> Test Set - Sign In\nPlatform: iOS\nOS version: 16.1.2\nDevice name: iPhone XR\n\n --- Test Application \n\nApp Name: Florence - eConsent\nEnvironment: QA\nApp Link: [https://us-participant-auth.se.qav2.researchbinders.com|https://us-participant-auth.se.qav2.researchbinders.com]\nApp Version: 5.0.0\nApp Revision: 6513ae3\nApp Health Check: OK<br/>
+2022-12-23 07:29:25.714  Print Screen-->  Screenshot Taken<br/>
+2022-12-23 07:29:25.715  Print Screen-->  Screenshot File Path: /Users/mile_ugarcina/IdeaProjects/eConsent_MobileTesting/screenshots/EC-2047_iOS_1671776964480.jpg<br/>
+2022-12-23 07:29:26.489  Information-->  Xray Authentication Token API status: 200<br/>
+2022-12-23 07:29:34.335  Information-->  Xray Set Test Result API status: 200<br/>
+2022-12-23 07:29:34.337  Information-->  File Deleted: /Users/mile_ugarcina/IdeaProjects/eConsent_MobileTesting/screenshots/EC-2047_iOS_1671776964480.jpg<br/>
+[31m ------------ >>>[ Test FAILED: participant_Auth_Mobile_Sign_In_Terms_And_Conditions_Link ]<<< ------------[0m<br/>
+</div>
+</td>
+<td><div><pre>java.lang.AssertionError: null
+	at testing.appium.helpers.TCLogger.LoggerStep_Failed(TCLogger.java:48)
+	at testing.appium.helpers.Utils.switchingTabs(Utils.java:325)
+	at testing.appium.eConsentTesting.Web.sign_In.Sign_In.participant_Auth_Mobile_Sign_In_Terms_And_Conditions_Link(Sign_In.java:304)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1508)
 	at com.sun.proxy.$Proxy2.stop(Unknown Source)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at java.base/java.lang.Thread.run(Thread.java:830)
-... Removed 46 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1034475440", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1034475440'><pre>java.lang.NullPointerException
-	at testing.appium.eConsentTesting.Web.sign_In.Sign_In.precondition(Sign_In.java:43)
+... Removed 51 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1501941748", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1501941748'><pre>java.lang.AssertionError: null
+	at org.testng.Assert.fail(Assert.java:99)
+	at org.testng.Assert.fail(Assert.java:106)
+	at testing.appium.helpers.TCLogger.LoggerStep_Failed(TCLogger.java:48)
+	at testing.appium.helpers.Utils.switchingTabs(Utils.java:325)
+	at testing.appium.eConsentTesting.Web.sign_In.Sign_In.participant_Auth_Mobile_Sign_In_Terms_And_Conditions_Link(Sign_In.java:304)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
-	at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
-	at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
-	at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:176)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:122)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1508)
 	at org.testng.TestRunner.privateRun(TestRunner.java:794)
 	at org.testng.TestRunner.run(TestRunner.java:596)
@@ -169,6 +136,7 @@ function toggleAllBoxes() {
 	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
 	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
 	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1207)
 	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
 	at org.testng.TestNG.runSuites(TestNG.java:1063)
 	at org.testng.TestNG.run(TestNG.java:1031)
@@ -201,127 +169,71 @@ function toggleAllBoxes() {
 	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
 	at java.base/java.lang.Thread.run(Thread.java:830)
 </pre></div></td>
-<td>0</td>
-<td>testing.appium.eConsentTesting.Web.sign_In.Sign_In@593c03f0</td></tr>
+<td>57</td>
+<td>testing.appium.eConsentTesting.Web.sign_In.Sign_In@586b71ad</td></tr>
 <tr>
-<td title='testing.appium.eConsentTesting.Web.sign_In.Sign_In.startSession()'><b>startSession</b><br>Test class: testing.appium.eConsentTesting.Web.sign_In.Sign_In<br>Test method: Set capabilities depending on the platformParameter, Initiate driver and Page Objects, Create Xray Test Run<br>Parameters: SauceLabs_iOS_RealDevice_Web, iOS, Safari, org.testng.TestRunner@425aed7f, null<br/>
-<a href="#Output-1547734318" onClick='toggleBox("Output-1547734318", this, "Show output", "Hide output");'>Show output</a>
+<td title='testing.appium.eConsentTesting.Web.sign_In.Sign_In.participant_Auth_Mobile_Sign_In_Privacy_Policy_Link()'><b>participant_Auth_Mobile_Sign_In_Privacy_Policy_Link</b><br>Test class: testing.appium.eConsentTesting.Web.sign_In.Sign_In<br>Test method: Test case checks if Privacy Policy link work<br/>
+<a href="#Output-1761126351" onClick='toggleBox("Output-1761126351", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-1547734318" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1547734318">
-2022-12-16 10:26:02.358  Information-->  eConsent Participant "QA" App Health Check Response: OK<br/>
-2022-12-16 10:26:02.364  Information-->  Running Suite: Test Set - Sign In, one "QA" environment, App Version: 5.0.0, App Revision: d868184<br/>
-2022-12-16 10:26:02.367  Information-->  Capabilities set for SauceLabs iOS Real Device - App, OS: 16<br/>
+<a href="#Output-1761126351" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1761126351">
+2022-12-23 07:27:16.455  Waiting--> To be Visible element: "Sign in Page Title"<br/>
+2022-12-23 07:27:16.719  Assert-->  Verification successful - element: "Sign in Page Title" is Present<br/>
+2022-12-23 07:27:17.050  Information-->  One Tab is Present: 692.1<br/>
+2022-12-23 07:27:18.758  Action-->  Scrolling down -Start:627px -End:8px<br/>
+2022-12-23 07:27:18.758  Waiting--> To be Clickable element: "Privacy Policy"<br/>
+2022-12-23 07:27:19.256  Action-->  Click on element: "Privacy Policy"<br/>
+2022-12-23 07:27:19.256  Waiting--> For New Tab to be Visible element<br/>
+2022-12-23 07:28:14.795 *Step FAILED-->*  {color:#FF0000}No New Tab - Expected condition failed: waiting for number of open windows to be 2 (tried for 55 second(s) with 500 milliseconds interval){color}<br/>
+--- Test Case - participant_Auth_Mobile_Sign_In_Privacy_Policy_Link -- Finish --> {color:#FF0000}*FAILED*{color}  ---\n<br/>
+\n --- *Test Environment* ---  \n \n" --- Test Device \nTest Execution video: [SauceLabs Execution Video|https://app.eu-central-1.saucelabs.com/tests/2c9985f0de6544c483992daa0a0b0a71?auth=4c1493c4707e5b43e1ff957e7a911a43]\nSuite name: eConsent - Participant - QA - iOS - 5.0.0 --> Test Set - Sign In\nPlatform: iOS\nOS version: 16.1.2\nDevice name: iPhone XR\n\n --- Test Application \n\nApp Name: Florence - eConsent\nEnvironment: QA\nApp Link: [https://us-participant-auth.se.qav2.researchbinders.com|https://us-participant-auth.se.qav2.researchbinders.com]\nApp Version: 5.0.0\nApp Revision: 6513ae3\nApp Health Check: OK<br/>
+2022-12-23 07:28:15.380  Print Screen-->  Screenshot Taken<br/>
+2022-12-23 07:28:15.381  Print Screen-->  Screenshot File Path: /Users/mile_ugarcina/IdeaProjects/eConsent_MobileTesting/screenshots/EC-2046_iOS_1671776894873.jpg<br/>
+2022-12-23 07:28:16.187  Information-->  Xray Authentication Token API status: 200<br/>
+2022-12-23 07:28:21.632  Information-->  Xray Set Test Result API status: 200<br/>
+2022-12-23 07:28:21.636  Information-->  File Deleted: /Users/mile_ugarcina/IdeaProjects/eConsent_MobileTesting/screenshots/EC-2046_iOS_1671776894873.jpg<br/>
+[31m ------------ >>>[ Test FAILED: participant_Auth_Mobile_Sign_In_Privacy_Policy_Link ]<<< ------------[0m<br/>
 </div>
 </td>
-<td><div><pre>org.openqa.selenium.SessionNotCreatedException: Unable to create a new remote session. Please check the server log for more details. Original error: errorId: 661ccca7-09d3-4691-8242-9fd045e0de62 - Unable to allocate device  within 900000ms or 3 tries. This can happen if there were no available devices within the time or your plan&apos;s max concurrent test run is not corresponding to your usage
-
-
-Detailed Info: Unable to find available device within 900000ms
-
-Build info: version: &apos;unknown&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
-System info: host: &apos;Sauce Labs RDC&apos;, ip: &apos;N/A&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.4.202+&apos;, java.version: &apos;11.0.17&apos;
-Driver info: driver.version: unknown
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Miles-MacBook-Pro.local&apos;, ip: &apos;fe80:0:0:0:21:6a62:4ed3:4607%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;12.6.1&apos;, java.version: &apos;13.0.13&apos;
-Driver info: driver.version: AndroidDriver
-remote stacktrace: 
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Miles-MacBook-Pro.local&apos;, ip: &apos;fe80:0:0:0:21:6a62:4ed3:4607%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;12.6.1&apos;, java.version: &apos;13.0.13&apos;
-Driver info: driver.version: AndroidDriver
-	at io.appium.java_client.remote.AppiumCommandExecutor$1.createSession(AppiumCommandExecutor.java:208)
-	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:217)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:239)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
-	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:336)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at io.appium.java_client.DefaultGenericMobileDriver.&lt;init&gt;(DefaultGenericMobileDriver.java:37)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:88)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:98)
-	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:94)
-	at testing.appium.runner.Init_iOS.getDriveriOS(Init_iOS.java:86)
-	at testing.appium.eConsentTesting.Web.BaseTestSetWeb.startSession(BaseTestSetWeb.java:69)
+<td><div><pre>java.lang.AssertionError: null
+	at testing.appium.helpers.TCLogger.LoggerStep_Failed(TCLogger.java:48)
+	at testing.appium.helpers.Utils.switchingTabs(Utils.java:325)
+	at testing.appium.eConsentTesting.Web.sign_In.Sign_In.participant_Auth_Mobile_Sign_In_Privacy_Policy_Link(Sign_In.java:285)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1508)
 	at com.sun.proxy.$Proxy2.stop(Unknown Source)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at java.base/java.lang.Thread.run(Thread.java:830)
-	at io.appium.java_client.remote.AppiumCommandExecutor$1.createSession(AppiumCommandExecutor.java:186)
-	... 59 more
-Caused by: org.openqa.selenium.SessionNotCreatedException: errorId: 661ccca7-09d3-4691-8242-9fd045e0de62 - Unable to allocate device  within 900000ms or 3 tries. This can happen if there were no available devices within the time or your plan&apos;s max concurrent test run is not corresponding to your usage
-
-
-Detailed Info: Unable to find available device within 900000ms
-
-Build info: version: &apos;unknown&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
-System info: host: &apos;Sauce Labs RDC&apos;, ip: &apos;N/A&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.4.202+&apos;, java.version: &apos;11.0.17&apos;
-Driver info: driver.version: unknown
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Miles-MacBook-Pro.local&apos;, ip: &apos;fe80:0:0:0:21:6a62:4ed3:4607%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;12.6.1&apos;, java.version: &apos;13.0.13&apos;
-Driver info: driver.version: AndroidDriver
-remote stacktrace: 
-	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:62)
-	at org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:30)
-	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:126)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:958)
-	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:127)
-	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:502)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:488)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
-	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:543)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:128)
-	... 64 more
-... Removed 50 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1547734318", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1547734318'><pre>org.openqa.selenium.SessionNotCreatedException: Unable to create a new remote session. Please check the server log for more details. Original error: errorId: 661ccca7-09d3-4691-8242-9fd045e0de62 - Unable to allocate device  within 900000ms or 3 tries. This can happen if there were no available devices within the time or your plan&apos;s max concurrent test run is not corresponding to your usage
-
-
-Detailed Info: Unable to find available device within 900000ms
-
-Build info: version: &apos;unknown&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
-System info: host: &apos;Sauce Labs RDC&apos;, ip: &apos;N/A&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.4.202+&apos;, java.version: &apos;11.0.17&apos;
-Driver info: driver.version: unknown
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Miles-MacBook-Pro.local&apos;, ip: &apos;fe80:0:0:0:21:6a62:4ed3:4607%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;12.6.1&apos;, java.version: &apos;13.0.13&apos;
-Driver info: driver.version: AndroidDriver
-remote stacktrace: 
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Miles-MacBook-Pro.local&apos;, ip: &apos;fe80:0:0:0:21:6a62:4ed3:4607%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;12.6.1&apos;, java.version: &apos;13.0.13&apos;
-Driver info: driver.version: AndroidDriver
-	at io.appium.java_client.remote.AppiumCommandExecutor$1.createSession(AppiumCommandExecutor.java:208)
-	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:217)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:239)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
-	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:336)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at io.appium.java_client.DefaultGenericMobileDriver.&lt;init&gt;(DefaultGenericMobileDriver.java:37)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:88)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:98)
-	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:94)
-	at testing.appium.runner.Init_iOS.getDriveriOS(Init_iOS.java:86)
-	at testing.appium.eConsentTesting.Web.BaseTestSetWeb.startSession(BaseTestSetWeb.java:69)
+... Removed 51 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1761126351", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1761126351'><pre>java.lang.AssertionError: null
+	at org.testng.Assert.fail(Assert.java:99)
+	at org.testng.Assert.fail(Assert.java:106)
+	at testing.appium.helpers.TCLogger.LoggerStep_Failed(TCLogger.java:48)
+	at testing.appium.helpers.Utils.switchingTabs(Utils.java:325)
+	at testing.appium.eConsentTesting.Web.sign_In.Sign_In.participant_Auth_Mobile_Sign_In_Privacy_Policy_Link(Sign_In.java:285)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
-	at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
-	at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:317)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1508)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
 	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
 	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
 	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
 	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1207)
 	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
 	at org.testng.TestNG.runSuites(TestNG.java:1063)
 	at org.testng.TestNG.run(TestNG.java:1031)
@@ -353,129 +265,496 @@ Driver info: driver.version: AndroidDriver
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
 	at java.base/java.lang.Thread.run(Thread.java:830)
-Caused by: java.lang.reflect.InvocationTargetException
+</pre></div></td>
+<td>58</td>
+<td>testing.appium.eConsentTesting.Web.sign_In.Sign_In@586b71ad</td></tr>
+<tr>
+<td title='testing.appium.eConsentTesting.Web.sign_In.Sign_In.participant_Auth_Mobile_Sign_in_with_inactive_participant()'><b>participant_Auth_Mobile_Sign_in_with_inactive_participant</b><br>Test class: testing.appium.eConsentTesting.Web.sign_In.Sign_In<br>Test method: Test case checks if login is possible with Unactivated Account<br>Parameters: mobile.automation+unactivated_android@florencehc.com, Unactivated123*<br/>
+<a href="#Output-1662949348" onClick='toggleBox("Output-1662949348", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1662949348" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1662949348">
+2022-12-23 07:29:54.704  Waiting--> To be Clickable element: "Username Input Field"<br/>
+2022-12-23 07:29:55.861  Action-->  Send Text:  "mobile.automation+unactivated_android@florencehc.com"  on element: "Username Input Field"<br/>
+2022-12-23 07:29:55.861  Waiting--> To be Clickable element: "Password Input Field"<br/>
+2022-12-23 07:29:56.406  Action-->  Send Text:  "Unactivated123*"  on element: "Password Input Field"<br/>
+2022-12-23 07:29:56.406  Waiting--> To be Clickable element: "Sign in Button"<br/>
+2022-12-23 07:29:56.914  Action-->  Click on element: "Sign in Button"<br/>
+2022-12-23 07:29:56.914  Waiting--> To be Visible element: "Toast Message"<br/>
+2022-12-23 07:29:58.297  *Assert FAILED-->*  {color:#FF0000}Verification unsuccessful! expected: Email not confirmed != actual: Your email or password was incorrect. Please try again.{color}<br/>
+--- Test Case - participant_Auth_Mobile_Sign_in_with_inactive_participant -- Finish --> {color:#FF0000}*FAILED*{color}  ---\n<br/>
+\n --- *Test Environment* ---  \n \n" --- Test Device \nTest Execution video: [SauceLabs Execution Video|https://app.eu-central-1.saucelabs.com/tests/2c9985f0de6544c483992daa0a0b0a71?auth=4c1493c4707e5b43e1ff957e7a911a43]\nSuite name: eConsent - Participant - QA - iOS - 5.0.0 --> Test Set - Sign In\nPlatform: iOS\nOS version: 16.1.2\nDevice name: iPhone XR\n\n --- Test Application \n\nApp Name: Florence - eConsent\nEnvironment: QA\nApp Link: [https://us-participant-auth.se.qav2.researchbinders.com|https://us-participant-auth.se.qav2.researchbinders.com]\nApp Version: 5.0.0\nApp Revision: 6513ae3\nApp Health Check: OK<br/>
+2022-12-23 07:29:59.419  Print Screen-->  Screenshot Taken<br/>
+2022-12-23 07:29:59.419  Print Screen-->  Screenshot File Path: /Users/mile_ugarcina/IdeaProjects/eConsent_MobileTesting/screenshots/EC-2035_iOS_1671776998365.jpg<br/>
+2022-12-23 07:30:00.159  Information-->  Xray Authentication Token API status: 200<br/>
+2022-12-23 07:30:05.566  Information-->  Xray Set Test Result API status: 200<br/>
+2022-12-23 07:30:05.568  Information-->  File Deleted: /Users/mile_ugarcina/IdeaProjects/eConsent_MobileTesting/screenshots/EC-2035_iOS_1671776998365.jpg<br/>
+[31m ------------ >>>[ Test FAILED: participant_Auth_Mobile_Sign_in_with_inactive_participant ]<<< ------------[0m<br/>
+</div>
+</td>
+<td><div><pre>java.lang.AssertionError: null
+	at testing.appium.helpers.Utils.assert_getText_WebElement(Utils.java:167)
+	at testing.appium.pageObjects.eConsentTesting.WebApp.SignInPage.assert_toastMsg(SignInPage.java:96)
+	at testing.appium.eConsentTesting.Web.sign_In.Sign_In.participant_Auth_Mobile_Sign_in_with_inactive_participant(Sign_In.java:120)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1508)
+	at com.sun.proxy.$Proxy2.stop(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+... Removed 51 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1662949348", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1662949348'><pre>java.lang.AssertionError: null
+	at org.testng.Assert.fail(Assert.java:99)
+	at org.testng.Assert.fail(Assert.java:106)
+	at testing.appium.helpers.Utils.assert_getText_WebElement(Utils.java:167)
+	at testing.appium.pageObjects.eConsentTesting.WebApp.SignInPage.assert_toastMsg(SignInPage.java:96)
+	at testing.appium.eConsentTesting.Web.sign_In.Sign_In.participant_Auth_Mobile_Sign_in_with_inactive_participant(Sign_In.java:120)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-	at io.appium.java_client.remote.AppiumCommandExecutor$1.createSession(AppiumCommandExecutor.java:186)
-	... 59 more
-Caused by: org.openqa.selenium.SessionNotCreatedException: errorId: 661ccca7-09d3-4691-8242-9fd045e0de62 - Unable to allocate device  within 900000ms or 3 tries. This can happen if there were no available devices within the time or your plan&apos;s max concurrent test run is not corresponding to your usage
-
-
-Detailed Info: Unable to find available device within 900000ms
-
-Build info: version: &apos;unknown&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
-System info: host: &apos;Sauce Labs RDC&apos;, ip: &apos;N/A&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.4.202+&apos;, java.version: &apos;11.0.17&apos;
-Driver info: driver.version: unknown
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Miles-MacBook-Pro.local&apos;, ip: &apos;fe80:0:0:0:21:6a62:4ed3:4607%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;12.6.1&apos;, java.version: &apos;13.0.13&apos;
-Driver info: driver.version: AndroidDriver
-remote stacktrace: 
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:62)
-	at org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:30)
-	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:126)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:958)
-	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:127)
-	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:502)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:488)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
-	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:543)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:128)
-	... 64 more
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1508)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1207)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.runTests(TestNGTestClassProcessor.java:141)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.stop(TestNGTestClassProcessor.java:90)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.stop(TestWorker.java:132)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:182)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:164)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:412)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:48)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
+	at java.base/java.lang.Thread.run(Thread.java:830)
 </pre></div></td>
-<td>907</td>
-<td>testing.appium.eConsentTesting.Web.sign_In.Sign_In@593c03f0</td></tr>
+<td>3</td>
+<td>testing.appium.eConsentTesting.Web.sign_In.Sign_In@586b71ad</td></tr>
+<tr>
+<td title='testing.appium.eConsentTesting.Web.sign_In.Sign_In.participant_Auth_Mobile_Sign_in_with_inactive_Additional_Signer()'><b>participant_Auth_Mobile_Sign_in_with_inactive_Additional_Signer</b><br>Test class: testing.appium.eConsentTesting.Web.sign_In.Sign_In<br>Test method: Test case checks if login is possible with Unactivated Additional Signer Account<br/>
+<a href="#Output-306249102" onClick='toggleBox("Output-306249102", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-306249102" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-306249102">
+2022-12-23 07:30:06.723  Waiting--> To be Clickable element: "Username Input Field"<br/>
+2022-12-23 07:30:07.222  Action-->  Send Text:  "mobile.automation+unactivate_lar_android@florencehc.com"  on element: "Username Input Field"<br/>
+2022-12-23 07:30:07.223  Waiting--> To be Clickable element: "Password Input Field"<br/>
+2022-12-23 07:30:08.320  Action-->  Send Text:  "Password123*"  on element: "Password Input Field"<br/>
+2022-12-23 07:30:08.321  Waiting--> To be Clickable element: "Sign in Button"<br/>
+2022-12-23 07:30:08.970  Action-->  Click on element: "Sign in Button"<br/>
+2022-12-23 07:30:08.970  Waiting--> To be Visible element: "Toast Message"<br/>
+2022-12-23 07:30:10.043  *Assert FAILED-->*  {color:#FF0000}Verification unsuccessful! expected: Email not confirmed != actual: Your email or password was incorrect. Please try again.{color}<br/>
+--- Test Case - participant_Auth_Mobile_Sign_in_with_inactive_Additional_Signer -- Finish --> {color:#FF0000}*FAILED*{color}  ---\n<br/>
+\n --- *Test Environment* ---  \n \n" --- Test Device \nTest Execution video: [SauceLabs Execution Video|https://app.eu-central-1.saucelabs.com/tests/2c9985f0de6544c483992daa0a0b0a71?auth=4c1493c4707e5b43e1ff957e7a911a43]\nSuite name: eConsent - Participant - QA - iOS - 5.0.0 --> Test Set - Sign In\nPlatform: iOS\nOS version: 16.1.2\nDevice name: iPhone XR\n\n --- Test Application \n\nApp Name: Florence - eConsent\nEnvironment: QA\nApp Link: [https://us-participant-auth.se.qav2.researchbinders.com|https://us-participant-auth.se.qav2.researchbinders.com]\nApp Version: 5.0.0\nApp Revision: 6513ae3\nApp Health Check: OK<br/>
+2022-12-23 07:30:10.979  Print Screen-->  Screenshot Taken<br/>
+2022-12-23 07:30:10.980  Print Screen-->  Screenshot File Path: /Users/mile_ugarcina/IdeaProjects/eConsent_MobileTesting/screenshots/EC-4188_iOS_1671777010122.jpg<br/>
+2022-12-23 07:30:11.713  Information-->  Xray Authentication Token API status: 200<br/>
+2022-12-23 07:30:17.239  Information-->  Xray Set Test Result API status: 200<br/>
+2022-12-23 07:30:17.240  Information-->  File Deleted: /Users/mile_ugarcina/IdeaProjects/eConsent_MobileTesting/screenshots/EC-4188_iOS_1671777010122.jpg<br/>
+[31m ------------ >>>[ Test FAILED: participant_Auth_Mobile_Sign_in_with_inactive_Additional_Signer ]<<< ------------[0m<br/>
+</div>
+</td>
+<td><div><pre>java.lang.AssertionError: null
+	at testing.appium.helpers.Utils.assert_getText_WebElement(Utils.java:167)
+	at testing.appium.pageObjects.eConsentTesting.WebApp.SignInPage.assert_toastMsg(SignInPage.java:96)
+	at testing.appium.eConsentTesting.Web.sign_In.Sign_In.participant_Auth_Mobile_Sign_in_with_inactive_Additional_Signer(Sign_In.java:138)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1508)
+	at com.sun.proxy.$Proxy2.stop(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+... Removed 51 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace306249102", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace306249102'><pre>java.lang.AssertionError: null
+	at org.testng.Assert.fail(Assert.java:99)
+	at org.testng.Assert.fail(Assert.java:106)
+	at testing.appium.helpers.Utils.assert_getText_WebElement(Utils.java:167)
+	at testing.appium.pageObjects.eConsentTesting.WebApp.SignInPage.assert_toastMsg(SignInPage.java:96)
+	at testing.appium.eConsentTesting.Web.sign_In.Sign_In.participant_Auth_Mobile_Sign_in_with_inactive_Additional_Signer(Sign_In.java:138)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1508)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1207)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.runTests(TestNGTestClassProcessor.java:141)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.stop(TestNGTestClassProcessor.java:90)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.stop(TestWorker.java:132)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:182)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:164)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:412)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:48)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+</pre></div></td>
+<td>3</td>
+<td>testing.appium.eConsentTesting.Web.sign_In.Sign_In@586b71ad</td></tr>
 </table><p>
-<table width='100%' border='1' class='invocation-skipped'>
-<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='testing.appium.eConsentTesting.Web.sign_In.Sign_In.participant_Auth_Mobile_Sign_in_with_incorrect_email()'><b>participant_Auth_Mobile_Sign_in_with_incorrect_email</b><br>Test class: testing.appium.eConsentTesting.Web.sign_In.Sign_In<br>Test method: Test case checks if login is possible with Incorrect Input<br>Parameters: Participant, incorrect, incorrect<br/>
-<a href="#Output-1159101718" onClick='toggleBox("Output-1159101718", this, "Show output", "Hide output");'>Show output</a>
+<td title='testing.appium.eConsentTesting.Web.sign_In.Sign_In.participant_Auth_Mobile_Sign_in_with_participant()'><b>participant_Auth_Mobile_Sign_in_with_participant</b><br>Test class: testing.appium.eConsentTesting.Web.sign_In.Sign_In<br>Test method: Test case checks if logging into the application is possible<br>Parameters: Participant<br/>
+<a href="#Output-1566861829" onClick='toggleBox("Output-1566861829", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-1159101718" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1159101718">
---- Test Case - participant_Auth_Mobile_Sign_in_with_incorrect_email -- Finish --> {color:#FF8E00}*SKIPPED*{color} ---\n<br/>
---- Test Case - participant_Auth_Mobile_Sign_in_with_incorrect_email -- Finish --> {color:#FF0000}*FAILED*{color}  ---\n<br/>
+<a href="#Output-1566861829" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1566861829">
+2022-12-23 07:30:18.376  Information-->  Participant credentials --environment: QA --platform: iOS --Username: mobile.automation+active_ios@florencehc.com<br/>
+2022-12-23 07:30:18.376  Information-->  Participant credentials --environment: QA --platform: iOS --Password: Password123*<br/>
+2022-12-23 07:30:18.377  Information-->  Participant credentials --environment: QA --platform: iOS --First Name: Active<br/>
+2022-12-23 07:30:18.377  Waiting--> To be Clickable element: "Username Input Field"<br/>
+2022-12-23 07:30:18.890  Action-->  Send Text:  "mobile.automation+active_ios@florencehc.com"  on element: "Username Input Field"<br/>
+2022-12-23 07:30:18.891  Waiting--> To be Clickable element: "Password Input Field"<br/>
+2022-12-23 07:30:19.390  Action-->  Send Text:  "Password123*"  on element: "Password Input Field"<br/>
+2022-12-23 07:30:19.390  Waiting--> To be Clickable element: "Sign in Button"<br/>
+2022-12-23 07:30:19.834  Action-->  Click on element: "Sign in Button"<br/>
+2022-12-23 07:30:19.835  Waiting--> To be Visible element: "Main Page Image"<br/>
+2022-12-23 07:30:26.420  Assert-->  Verification successful - element: "Main Page Image" is Present<br/>
+--- Test Case - participant_Auth_Mobile_Sign_in_with_participant -- Finish --> {color:#36b37e}*PASSED*{color} ---\n<br/>
+\n --- *Test Environment* ---  \n \n" --- Test Device \nTest Execution video: [SauceLabs Execution Video|https://app.eu-central-1.saucelabs.com/tests/2c9985f0de6544c483992daa0a0b0a71?auth=4c1493c4707e5b43e1ff957e7a911a43]\nSuite name: eConsent - Participant - QA - iOS - 5.0.0 --> Test Set - Sign In\nPlatform: iOS\nOS version: 16.1.2\nDevice name: iPhone XR\n\n --- Test Application \n\nApp Name: Florence - eConsent\nEnvironment: QA\nApp Link: [https://us-participant-auth.se.qav2.researchbinders.com|https://us-participant-auth.se.qav2.researchbinders.com]\nApp Version: 5.0.0\nApp Revision: 6513ae3\nApp Health Check: OK<br/>
+2022-12-23 07:30:27.199  Information-->  Xray Authentication Token API status: 200<br/>
+2022-12-23 07:30:31.882  Information-->  Xray Set Test Result API status: 200<br/>
+[32m------------ >>>[ Test PASSED: participant_Auth_Mobile_Sign_in_with_participant ]<<< ------------[0m<br/>
 </div>
 </td>
-<td><div><pre>java.lang.NullPointerException
-	at testing.appium.eConsentTesting.Web.sign_In.Sign_In.precondition(Sign_In.java:43)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1508)
-	at com.sun.proxy.$Proxy2.stop(Unknown Source)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-	at java.base/java.lang.Thread.run(Thread.java:830)
-... Removed 46 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1159101718", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1159101718'><pre>java.lang.NullPointerException
-	at testing.appium.eConsentTesting.Web.sign_In.Sign_In.precondition(Sign_In.java:43)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
-	at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
-	at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
-	at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:176)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:122)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1508)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.runTests(TestNGTestClassProcessor.java:141)
-	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.stop(TestNGTestClassProcessor.java:90)
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
-	at com.sun.proxy.$Proxy2.stop(Unknown Source)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.stop(TestWorker.java:132)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:182)
-	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:164)
-	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:412)
-	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
-	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:48)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
-	at java.base/java.lang.Thread.run(Thread.java:830)
-</pre></div></td>
-<td>0</td>
-<td>testing.appium.eConsentTesting.Web.sign_In.Sign_In@593c03f0</td></tr>
+<td></td>
+<td>8</td>
+<td>testing.appium.eConsentTesting.Web.sign_In.Sign_In@586b71ad</td></tr>
+<tr>
+<td title='testing.appium.eConsentTesting.Web.sign_In.Sign_In.participant_Auth_Mobile_Sign_In_Show_Password()'><b>participant_Auth_Mobile_Sign_In_Show_Password</b><br>Test class: testing.appium.eConsentTesting.Web.sign_In.Sign_In<br>Test method: Test case checks if check box Show Password works<br>Parameters: Participant<br/>
+<a href="#Output-1712228700" onClick='toggleBox("Output-1712228700", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1712228700" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1712228700">
+2022-12-23 07:27:07.226  Information-->  Participant credentials --environment: QA --platform: iOS --Password: Password123*<br/>
+2022-12-23 07:27:07.227  Waiting--> To be Clickable element: "Password Input Field"<br/>
+2022-12-23 07:27:07.835  Action-->  Send Text:  "Password123*"  on element: "Password Input Field"<br/>
+2022-12-23 07:27:07.835  Action-->  Verification of Password Input Field Type<br/>
+2022-12-23 07:27:07.835  Waiting--> To be Visible element: "Password Input Field"<br/>
+2022-12-23 07:27:08.301  Assert-->  Verification successful. expected: password == actual: password<br/>
+2022-12-23 07:27:08.301  Waiting--> To be Clickable element: "Show Password Checkbox"<br/>
+2022-12-23 07:27:08.802  Action-->  Click on element: "Show Password Checkbox"<br/>
+2022-12-23 07:27:08.802  Action-->  Verification of Password Input Field Type<br/>
+2022-12-23 07:27:08.803  Waiting--> To be Visible element: "Password Input Field"<br/>
+2022-12-23 07:27:09.266  Assert-->  Verification successful. expected: text == actual: text<br/>
+2022-12-23 07:27:09.267  Waiting--> To be Clickable element: "Password Input Field"<br/>
+2022-12-23 07:27:09.846  Information-->  Buffered value is: Password123*<br/>
+2022-12-23 07:27:09.847  Assert-->  Verification successful. expected: Password123* == actual: Password123*<br/>
+--- Test Case - participant_Auth_Mobile_Sign_In_Show_Password -- Finish --> {color:#36b37e}*PASSED*{color} ---\n<br/>
+\n --- *Test Environment* ---  \n \n" --- Test Device \nTest Execution video: [SauceLabs Execution Video|https://app.eu-central-1.saucelabs.com/tests/2c9985f0de6544c483992daa0a0b0a71?auth=4c1493c4707e5b43e1ff957e7a911a43]\nSuite name: eConsent - Participant - QA - iOS - 5.0.0 --> Test Set - Sign In\nPlatform: iOS\nOS version: 16.1.2\nDevice name: iPhone XR\n\n --- Test Application \n\nApp Name: Florence - eConsent\nEnvironment: QA\nApp Link: [https://us-participant-auth.se.qav2.researchbinders.com|https://us-participant-auth.se.qav2.researchbinders.com]\nApp Version: 5.0.0\nApp Revision: 6513ae3\nApp Health Check: OK<br/>
+2022-12-23 07:27:10.661  Information-->  Xray Authentication Token API status: 200<br/>
+2022-12-23 07:27:15.301  Information-->  Xray Set Test Result API status: 200<br/>
+[32m------------ >>>[ Test PASSED: participant_Auth_Mobile_Sign_In_Show_Password ]<<< ------------[0m<br/>
+</div>
+</td>
+<td></td>
+<td>2</td>
+<td>testing.appium.eConsentTesting.Web.sign_In.Sign_In@586b71ad</td></tr>
+<tr>
+<td title='testing.appium.eConsentTesting.Web.sign_In.Sign_In.participant_Auth_Mobile_Sign_In_Forgot_Password_Link()'><b>participant_Auth_Mobile_Sign_In_Forgot_Password_Link</b><br>Test class: testing.appium.eConsentTesting.Web.sign_In.Sign_In<br>Test method: Test case checks if Forgot Password link work<br/>
+<a href="#Output-1356888530" onClick='toggleBox("Output-1356888530", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1356888530" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1356888530">
+2022-12-23 07:29:39.661  Waiting--> To be Clickable element: "Forgot Password"<br/>
+2022-12-23 07:29:40.477  Action-->  Click on element: "Forgot Password"<br/>
+2022-12-23 07:29:40.477  Waiting--> To be Visible element: "Forgot Password Page Title"<br/>
+2022-12-23 07:29:40.731  Assert-->  Verification successful - element: "Forgot Password Page Title" is Present<br/>
+--- Test Case - participant_Auth_Mobile_Sign_In_Forgot_Password_Link -- Finish --> {color:#36b37e}*PASSED*{color} ---\n<br/>
+\n --- *Test Environment* ---  \n \n" --- Test Device \nTest Execution video: [SauceLabs Execution Video|https://app.eu-central-1.saucelabs.com/tests/2c9985f0de6544c483992daa0a0b0a71?auth=4c1493c4707e5b43e1ff957e7a911a43]\nSuite name: eConsent - Participant - QA - iOS - 5.0.0 --> Test Set - Sign In\nPlatform: iOS\nOS version: 16.1.2\nDevice name: iPhone XR\n\n --- Test Application \n\nApp Name: Florence - eConsent\nEnvironment: QA\nApp Link: [https://us-participant-auth.se.qav2.researchbinders.com|https://us-participant-auth.se.qav2.researchbinders.com]\nApp Version: 5.0.0\nApp Revision: 6513ae3\nApp Health Check: OK<br/>
+2022-12-23 07:29:41.533  Information-->  Xray Authentication Token API status: 200<br/>
+2022-12-23 07:29:47.342  Information-->  Xray Set Test Result API status: 200<br/>
+[32m------------ >>>[ Test PASSED: participant_Auth_Mobile_Sign_In_Forgot_Password_Link ]<<< ------------[0m<br/>
+</div>
+</td>
+<td></td>
+<td>1</td>
+<td>testing.appium.eConsentTesting.Web.sign_In.Sign_In@586b71ad</td></tr>
+<tr>
+<td title='testing.appium.eConsentTesting.Web.sign_In.Sign_In.participant_Auth_Mobile_Sign_In_Additional_Signer()'><b>participant_Auth_Mobile_Sign_In_Additional_Signer</b><br>Test class: testing.appium.eConsentTesting.Web.sign_In.Sign_In<br>Test method: Test case checks if logging into the application with Additional Signer is possible<br>Parameters: mobile.automation+lar_android@florencehc.com, Password123*, Active_LAR<br/>
+<a href="#Output-79068181" onClick='toggleBox("Output-79068181", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-79068181" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-79068181">
+2022-12-23 07:30:35.810  Waiting--> To be Clickable element: "Username Input Field"<br/>
+2022-12-23 07:30:36.505  Action-->  Send Text:  "mobile.automation+lar_android@florencehc.com"  on element: "Username Input Field"<br/>
+2022-12-23 07:30:36.505  Waiting--> To be Clickable element: "Password Input Field"<br/>
+2022-12-23 07:30:37.210  Action-->  Send Text:  "Password123*"  on element: "Password Input Field"<br/>
+2022-12-23 07:30:37.211  Waiting--> To be Clickable element: "Sign in Button"<br/>
+2022-12-23 07:30:37.711  Action-->  Click on element: "Sign in Button"<br/>
+2022-12-23 07:30:37.711  Waiting--> To be Visible element: "Main Page Image"<br/>
+2022-12-23 07:30:41.675  Assert-->  Verification successful - element: "Main Page Image" is Present<br/>
+2022-12-23 07:30:41.676  Waiting--> To be Visible element: "Welcome Message"<br/>
+2022-12-23 07:30:43.439  Assert-->  Verification successful. expected: Active_LAR == actual: Welcome, Active_LAR! There are no studies that need your attention right now.<br/>
+--- Test Case - participant_Auth_Mobile_Sign_In_Additional_Signer -- Finish --> {color:#36b37e}*PASSED*{color} ---\n<br/>
+\n --- *Test Environment* ---  \n \n" --- Test Device \nTest Execution video: [SauceLabs Execution Video|https://app.eu-central-1.saucelabs.com/tests/2c9985f0de6544c483992daa0a0b0a71?auth=4c1493c4707e5b43e1ff957e7a911a43]\nSuite name: eConsent - Participant - QA - iOS - 5.0.0 --> Test Set - Sign In\nPlatform: iOS\nOS version: 16.1.2\nDevice name: iPhone XR\n\n --- Test Application \n\nApp Name: Florence - eConsent\nEnvironment: QA\nApp Link: [https://us-participant-auth.se.qav2.researchbinders.com|https://us-participant-auth.se.qav2.researchbinders.com]\nApp Version: 5.0.0\nApp Revision: 6513ae3\nApp Health Check: OK<br/>
+2022-12-23 07:30:44.244  Information-->  Xray Authentication Token API status: 200<br/>
+2022-12-23 07:30:48.935  Information-->  Xray Set Test Result API status: 200<br/>
+[32m------------ >>>[ Test PASSED: participant_Auth_Mobile_Sign_In_Additional_Signer ]<<< ------------[0m<br/>
+</div>
+</td>
+<td></td>
+<td>7</td>
+<td>testing.appium.eConsentTesting.Web.sign_In.Sign_In@586b71ad</td></tr>
+<tr>
+<td title='testing.appium.eConsentTesting.Web.sign_In.Sign_In.participant_Auth_Mobile_Sign_In_Fields_respond_with_valid_data()'><b>participant_Auth_Mobile_Sign_In_Fields_respond_with_valid_data</b><br>Test class: testing.appium.eConsentTesting.Web.sign_In.Sign_In<br>Test method: Test case checks if login is possible with Valid Input<br>Parameters: Participant<br/>
+<a href="#Output-2057211147" onClick='toggleBox("Output-2057211147", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-2057211147" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-2057211147">
+2022-12-23 07:26:33.590  Information-->  Participant credentials --environment: QA --platform: iOS --Username: mobile.automation+active_ios@florencehc.com<br/>
+2022-12-23 07:26:33.592  Information-->  Participant credentials --environment: QA --platform: iOS --Password: Password123*<br/>
+2022-12-23 07:26:33.592  Waiting--> To be Clickable element: "Email Input Field"<br/>
+2022-12-23 07:26:34.157  Action-->  Click on element: "Email Input Field"<br/>
+2022-12-23 07:26:34.157  Waiting--> To be Clickable element: "Username Input Field"<br/>
+2022-12-23 07:26:34.700  Action-->  Send Text:  "mobile.automation+active_ios@florencehc.com"  on element: "Username Input Field"<br/>
+2022-12-23 07:26:34.700  Waiting--> To be Visible element: "Username Input field"<br/>
+2022-12-23 07:26:35.162  Assert-->  Verification successful - element: "Username Input field" color is: rgba(102, 175, 233, 1) = Blue<br/>
+2022-12-23 07:26:35.162  Waiting--> To be Clickable element: "Password Input Field"<br/>
+2022-12-23 07:26:35.681  Action-->  Click on element: "Password Input Field"<br/>
+2022-12-23 07:26:35.681  Waiting--> To be Clickable element: "Password Input Field"<br/>
+2022-12-23 07:26:36.167  Action-->  Send Text:  "Password123*"  on element: "Password Input Field"<br/>
+2022-12-23 07:26:36.168  Waiting--> To be Visible element: "Password Input field"<br/>
+2022-12-23 07:26:36.610  Assert-->  Verification successful - element: "Password Input field" color is: rgba(102, 175, 233, 1) = Blue<br/>
+2022-12-23 07:26:36.610  Waiting--> To be Visible element: "Sign in Button"<br/>
+2022-12-23 07:26:37.088  Assert-->  Verification successful - element: "Sign in Button" is Enabled<br/>
+--- Test Case - participant_Auth_Mobile_Sign_In_Fields_respond_with_valid_data -- Finish --> {color:#36b37e}*PASSED*{color} ---\n<br/>
+\n --- *Test Environment* ---  \n \n" --- Test Device \nTest Execution video: [SauceLabs Execution Video|https://app.eu-central-1.saucelabs.com/tests/2c9985f0de6544c483992daa0a0b0a71?auth=4c1493c4707e5b43e1ff957e7a911a43]\nSuite name: eConsent - Participant - QA - iOS - 5.0.0 --> Test Set - Sign In\nPlatform: iOS\nOS version: 16.1.2\nDevice name: iPhone XR\n\n --- Test Application \n\nApp Name: Florence - eConsent\nEnvironment: QA\nApp Link: [https://us-participant-auth.se.qav2.researchbinders.com|https://us-participant-auth.se.qav2.researchbinders.com]\nApp Version: 5.0.0\nApp Revision: 6513ae3\nApp Health Check: OK<br/>
+2022-12-23 07:26:37.921  Information-->  Xray Authentication Token API status: 200<br/>
+2022-12-23 07:26:42.817  Information-->  Xray Set Test Result API status: 200<br/>
+[32m------------ >>>[ Test PASSED: participant_Auth_Mobile_Sign_In_Fields_respond_with_valid_data ]<<< ------------[0m<br/>
+</div>
+</td>
+<td></td>
+<td>3</td>
+<td>testing.appium.eConsentTesting.Web.sign_In.Sign_In@586b71ad</td></tr>
+<tr>
+<td title='testing.appium.eConsentTesting.Web.sign_In.Sign_In.participant_Auth_Mobile_Sign_In_Fields_respond_with_invalid_data()'><b>participant_Auth_Mobile_Sign_In_Fields_respond_with_invalid_data</b><br>Test class: testing.appium.eConsentTesting.Web.sign_In.Sign_In<br>Test method: Test case checks field response to invalid data input<br>Parameters: Participant, incorrect, incorrect<br/>
+<a href="#Output-1817192790" onClick='toggleBox("Output-1817192790", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1817192790" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1817192790">
+2022-12-23 07:26:43.965  Information-->  Participant credentials --environment: QA --platform: iOS --Username: mobile.automation+active_ios@florencehc.com<br/>
+2022-12-23 07:26:43.966  Information-->  Participant credentials --environment: QA --platform: iOS --Password: Password123*<br/>
+2022-12-23 07:26:43.966  Waiting--> To be Clickable element: "Email Input Field"<br/>
+2022-12-23 07:26:45.055  Action-->  Click on element: "Email Input Field"<br/>
+2022-12-23 07:26:45.055  Waiting--> To be Clickable element: "Username Input Field"<br/>
+2022-12-23 07:26:45.594  Action-->  Send Text:  "incorrect"  on element: "Username Input Field"<br/>
+2022-12-23 07:26:45.594  Waiting--> To be Clickable element: "Password Input Field"<br/>
+2022-12-23 07:26:46.103  Action-->  Click on element: "Password Input Field"<br/>
+2022-12-23 07:26:46.103  Waiting--> To be Clickable element: "Password Input Field"<br/>
+2022-12-23 07:26:46.611  Action-->  Send Text:  "incorrect"  on element: "Password Input Field"<br/>
+2022-12-23 07:26:46.612  Waiting--> To be Visible element: "Username Input field"<br/>
+2022-12-23 07:26:47.038  Assert-->  Verification successful - element: "Username Input field" color is: rgba(229, 28, 35, 1) = Red<br/>
+2022-12-23 07:26:47.038  Waiting--> To be Visible element: "Password Input field"<br/>
+2022-12-23 07:26:47.493  Assert-->  Verification successful - element: "Password Input field" color is: rgba(185, 21, 27, 1) = Red<br/>
+--- Test Case - participant_Auth_Mobile_Sign_In_Fields_respond_with_invalid_data -- Finish --> {color:#36b37e}*PASSED*{color} ---\n<br/>
+\n --- *Test Environment* ---  \n \n" --- Test Device \nTest Execution video: [SauceLabs Execution Video|https://app.eu-central-1.saucelabs.com/tests/2c9985f0de6544c483992daa0a0b0a71?auth=4c1493c4707e5b43e1ff957e7a911a43]\nSuite name: eConsent - Participant - QA - iOS - 5.0.0 --> Test Set - Sign In\nPlatform: iOS\nOS version: 16.1.2\nDevice name: iPhone XR\n\n --- Test Application \n\nApp Name: Florence - eConsent\nEnvironment: QA\nApp Link: [https://us-participant-auth.se.qav2.researchbinders.com|https://us-participant-auth.se.qav2.researchbinders.com]\nApp Version: 5.0.0\nApp Revision: 6513ae3\nApp Health Check: OK<br/>
+2022-12-23 07:26:48.409  Information-->  Xray Authentication Token API status: 200<br/>
+2022-12-23 07:26:53.156  Information-->  Xray Set Test Result API status: 200<br/>
+[32m------------ >>>[ Test PASSED: participant_Auth_Mobile_Sign_In_Fields_respond_with_invalid_data ]<<< ------------[0m<br/>
+</div>
+</td>
+<td></td>
+<td>3</td>
+<td>testing.appium.eConsentTesting.Web.sign_In.Sign_In@586b71ad</td></tr>
+<tr>
+<td title='testing.appium.eConsentTesting.Web.sign_In.Sign_In.participant_Auth_Mobile_Sign_in_with_incorrect_email()'><b>participant_Auth_Mobile_Sign_in_with_incorrect_email</b><br>Test class: testing.appium.eConsentTesting.Web.sign_In.Sign_In<br>Test method: Test case checks if login is possible with Incorrect Input<br>Parameters: incorrect, incorrect<br/>
+<a href="#Output-932376440" onClick='toggleBox("Output-932376440", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-932376440" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-932376440">
+2022-12-23 07:26:14.117  Waiting--> To be Clickable element: "Username Input Field"<br/>
+2022-12-23 07:26:14.682  Action-->  Send Text:  "incorrect"  on element: "Username Input Field"<br/>
+2022-12-23 07:26:14.682  Waiting--> To be Clickable element: "Password Input Field"<br/>
+2022-12-23 07:26:15.230  Action-->  Send Text:  "incorrect"  on element: "Password Input Field"<br/>
+2022-12-23 07:26:15.464  Waiting--> To be Visible element: "Sign in Button"<br/>
+2022-12-23 07:26:16.148  Assert-->  Verification successful - element: "Sign in Button" is Disabled<br/>
+2022-12-23 07:26:16.151  Waiting--> To be Visible element: "Username Input field"<br/>
+2022-12-23 07:26:16.900  Assert-->  Verification successful - element: "Username Input field" color is: rgba(229, 28, 35, 1) = Red<br/>
+2022-12-23 07:26:16.900  Waiting--> To be Visible element: "Username Error Message"<br/>
+2022-12-23 07:26:17.557  Assert-->  Verification successful. expected: Required == actual: Required<br/>
+2022-12-23 07:26:17.557  Waiting--> To be Visible element: "Password Input field"<br/>
+2022-12-23 07:26:18.203  Assert-->  Verification successful - element: "Password Input field" color is: rgba(185, 21, 27, 1) = Red<br/>
+--- Test Case - participant_Auth_Mobile_Sign_in_with_incorrect_email -- Finish --> {color:#36b37e}*PASSED*{color} ---\n<br/>
+\n --- *Test Environment* ---  \n \n" --- Test Device \nTest Execution video: [SauceLabs Execution Video|https://app.eu-central-1.saucelabs.com/tests/2c9985f0de6544c483992daa0a0b0a71?auth=4c1493c4707e5b43e1ff957e7a911a43]\nSuite name: eConsent - Participant - QA - iOS - 5.0.0 --> Test Set - Sign In\nPlatform: iOS\nOS version: 16.1.2\nDevice name: iPhone XR\n\n --- Test Application \n\nApp Name: Florence - eConsent\nEnvironment: QA\nApp Link: [https://us-participant-auth.se.qav2.researchbinders.com|https://us-participant-auth.se.qav2.researchbinders.com]\nApp Version: 5.0.0\nApp Revision: 6513ae3\nApp Health Check: OK<br/>
+2022-12-23 07:26:19.336  Information-->  Xray Authentication Token API status: 200<br/>
+2022-12-23 07:26:22.082  Information-->  Xray Set Test Result API status: 200<br/>
+[32m------------ >>>[ Test PASSED: participant_Auth_Mobile_Sign_in_with_incorrect_email ]<<< ------------[0m<br/>
+</div>
+</td>
+<td></td>
+<td>4</td>
+<td>testing.appium.eConsentTesting.Web.sign_In.Sign_In@586b71ad</td></tr>
+<tr>
+<td title='testing.appium.eConsentTesting.Web.sign_In.Sign_In.Participant_Auth_Mobile_Sign_in_with_incorrect_password()'><b>Participant_Auth_Mobile_Sign_in_with_incorrect_password</b><br>Test class: testing.appium.eConsentTesting.Web.sign_In.Sign_In<br>Test method: Test case checks if login is possible with Incorrect Password<br>Parameters: Participant<br/>
+<a href="#Output-886266281" onClick='toggleBox("Output-886266281", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-886266281" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-886266281">
+2022-12-23 07:26:23.405  Information-->  Participant credentials --environment: QA --platform: iOS --Username: mobile.automation+active_ios@florencehc.com<br/>
+2022-12-23 07:26:23.406  Waiting--> To be Clickable element: "Username Input Field"<br/>
+2022-12-23 07:26:24.189  Action-->  Send Text:  "mobile.automation+active_ios@florencehc.com"  on element: "Username Input Field"<br/>
+2022-12-23 07:26:24.190  Waiting--> To be Clickable element: "Password Input Field"<br/>
+2022-12-23 07:26:24.998  Action-->  Send Text:  "PassHQZo1*"  on element: "Password Input Field"<br/>
+2022-12-23 07:26:24.999  Waiting--> To be Clickable element: "Sign in Button"<br/>
+2022-12-23 07:26:25.706  Action-->  Click on element: "Sign in Button"<br/>
+2022-12-23 07:26:25.707  Waiting--> To be Visible element: "Toast Message"<br/>
+2022-12-23 07:26:27.828  Assert-->  Verification successful. expected: Your email or password was incorrect. Please try again == actual: Your email or password was incorrect. Please try again.<br/>
+2022-12-23 07:26:27.828  Waiting--> To be Visible element: "Password Input field"<br/>
+2022-12-23 07:26:28.267  Assert-->  Verification successful - element: "Password Input field" color is: rgba(229, 28, 35, 1) = Red<br/>
+2022-12-23 07:26:28.475  Waiting--> To be Visible element: "Sign in Button"<br/>
+2022-12-23 07:26:28.884  Assert-->  Verification successful - element: "Sign in Button" is Disabled<br/>
+--- Test Case - Participant_Auth_Mobile_Sign_in_with_incorrect_password -- Finish --> {color:#36b37e}*PASSED*{color} ---\n<br/>
+\n --- *Test Environment* ---  \n \n" --- Test Device \nTest Execution video: [SauceLabs Execution Video|https://app.eu-central-1.saucelabs.com/tests/2c9985f0de6544c483992daa0a0b0a71?auth=4c1493c4707e5b43e1ff957e7a911a43]\nSuite name: eConsent - Participant - QA - iOS - 5.0.0 --> Test Set - Sign In\nPlatform: iOS\nOS version: 16.1.2\nDevice name: iPhone XR\n\n --- Test Application \n\nApp Name: Florence - eConsent\nEnvironment: QA\nApp Link: [https://us-participant-auth.se.qav2.researchbinders.com|https://us-participant-auth.se.qav2.researchbinders.com]\nApp Version: 5.0.0\nApp Revision: 6513ae3\nApp Health Check: OK<br/>
+2022-12-23 07:26:29.781  Information-->  Xray Authentication Token API status: 200<br/>
+2022-12-23 07:26:32.449  Information-->  Xray Set Test Result API status: 200<br/>
+[32m------------ >>>[ Test PASSED: Participant_Auth_Mobile_Sign_in_with_incorrect_password ]<<< ------------[0m<br/>
+</div>
+</td>
+<td></td>
+<td>5</td>
+<td>testing.appium.eConsentTesting.Web.sign_In.Sign_In@586b71ad</td></tr>
+<tr>
+<td title='testing.appium.eConsentTesting.Web.sign_In.Sign_In.participant_Auth_Mobile_Sign_In_Forgot_password_action_with_populated_Email_field()'><b>participant_Auth_Mobile_Sign_In_Forgot_password_action_with_populated_Email_field</b><br>Test class: testing.appium.eConsentTesting.Web.sign_In.Sign_In<br>Test method: Test case checks if Forgot Password link work with inserted email<br>Parameters: Participant<br/>
+<a href="#Output-1083239930" onClick='toggleBox("Output-1083239930", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1083239930" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1083239930">
+2022-12-23 07:29:47.469  Information-->  Participant credentials --environment: QA --platform: iOS --Username: mobile.automation+active_ios@florencehc.com<br/>
+2022-12-23 07:29:47.469  Waiting--> To be Clickable element: "Email Input Field"<br/>
+2022-12-23 07:29:47.963  Action-->  Click on element: "Email Input Field"<br/>
+2022-12-23 07:29:47.964  Waiting--> To be Clickable element: "Username Input Field"<br/>
+2022-12-23 07:29:48.500  Action-->  Send Text:  "mobile.automation+active_ios@florencehc.com"  on element: "Username Input Field"<br/>
+2022-12-23 07:29:48.500  Waiting--> To be Clickable element: "Forgot Password"<br/>
+2022-12-23 07:29:49.221  Action-->  Click on element: "Forgot Password"<br/>
+2022-12-23 07:29:49.221  Waiting--> To be Visible element: "Forgot Password Page Title"<br/>
+2022-12-23 07:29:49.447  Assert-->  Verification successful - element: "Forgot Password Page Title" is Present<br/>
+2022-12-23 07:29:49.448  Waiting--> To be Visible element: "Email Input Field"<br/>
+2022-12-23 07:29:49.909  Assert-->  Verification successful. expected: mobile.automation+active_ios@florencehc.com == actual: mobile.automation+active_ios@florencehc.com<br/>
+--- Test Case - participant_Auth_Mobile_Sign_In_Forgot_password_action_with_populated_Email_field -- Finish --> {color:#36b37e}*PASSED*{color} ---\n<br/>
+\n --- *Test Environment* ---  \n \n" --- Test Device \nTest Execution video: [SauceLabs Execution Video|https://app.eu-central-1.saucelabs.com/tests/2c9985f0de6544c483992daa0a0b0a71?auth=4c1493c4707e5b43e1ff957e7a911a43]\nSuite name: eConsent - Participant - QA - iOS - 5.0.0 --> Test Set - Sign In\nPlatform: iOS\nOS version: 16.1.2\nDevice name: iPhone XR\n\n --- Test Application \n\nApp Name: Florence - eConsent\nEnvironment: QA\nApp Link: [https://us-participant-auth.se.qav2.researchbinders.com|https://us-participant-auth.se.qav2.researchbinders.com]\nApp Version: 5.0.0\nApp Revision: 6513ae3\nApp Health Check: OK<br/>
+2022-12-23 07:29:50.755  Information-->  Xray Authentication Token API status: 200<br/>
+2022-12-23 07:29:53.485  Information-->  Xray Set Test Result API status: 200<br/>
+[32m------------ >>>[ Test PASSED: participant_Auth_Mobile_Sign_In_Forgot_password_action_with_populated_Email_field ]<<< ------------[0m<br/>
+</div>
+</td>
+<td></td>
+<td>2</td>
+<td>testing.appium.eConsentTesting.Web.sign_In.Sign_In@586b71ad</td></tr>
+<tr>
+<td title='testing.appium.eConsentTesting.Web.sign_In.Sign_In.participant_Auth_Mobile_Sign_In_Fields_respond_with_cleared_data()'><b>participant_Auth_Mobile_Sign_In_Fields_respond_with_cleared_data</b><br>Test class: testing.appium.eConsentTesting.Web.sign_In.Sign_In<br>Test method: Test case checks if login is possible with Empty Input Field<br>Parameters: incorrect, incorrect<br/>
+<a href="#Output-1935001342" onClick='toggleBox("Output-1935001342", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1935001342" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1935001342">
+2022-12-23 07:26:54.308  Waiting--> To be Clickable element: "Username Input Field"<br/>
+2022-12-23 07:26:54.881  Action-->  Send Text:  "incorrect"  on element: "Username Input Field"<br/>
+2022-12-23 07:26:54.881  Waiting--> To be Clickable element: "Username Input Field"<br/>
+2022-12-23 07:26:55.406  Action-->  Send Text:  ""  on element: "Username Input Field"<br/>
+2022-12-23 07:26:55.406  Waiting--> To be Clickable element: "Username Input Field"<br/>
+2022-12-23 07:26:55.847  Action-->  Element: "Username Input Field" is cleared<br/>
+2022-12-23 07:26:56.046  Waiting--> To be Visible element: "Sign in Button"<br/>
+2022-12-23 07:26:56.536  Assert-->  Verification successful - element: "Sign in Button" is Disabled<br/>
+2022-12-23 07:26:56.536  Waiting--> To be Visible element: "Username Input field"<br/>
+2022-12-23 07:26:56.987  Assert-->  Verification successful - element: "Username Input field" color is: rgba(229, 28, 35, 1) = Red<br/>
+2022-12-23 07:26:56.987  Waiting--> To be Visible element: "Username Error Message"<br/>
+2022-12-23 07:26:57.488  Assert-->  Verification successful. expected: Required == actual: Required<br/>
+2022-12-23 07:26:57.488  Waiting--> To be Clickable element: "Password Input Field"<br/>
+2022-12-23 07:26:58.018  Action-->  Send Text:  "incorrect"  on element: "Password Input Field"<br/>
+2022-12-23 07:26:58.018  Waiting--> To be Clickable element: "Password Input Field"<br/>
+2022-12-23 07:26:58.464  Action-->  Element: "Password Input Field" is cleared<br/>
+2022-12-23 07:26:58.465  Waiting--> To be Visible element: "Password Input field"<br/>
+2022-12-23 07:26:58.931  Assert-->  Verification successful - element: "Password Input field" color is: rgba(229, 28, 35, 1) = Red<br/>
+2022-12-23 07:26:59.135  Waiting--> To be Visible element: "Sign in Button"<br/>
+2022-12-23 07:27:00.325  Assert-->  Verification successful - element: "Sign in Button" is Disabled<br/>
+--- Test Case - participant_Auth_Mobile_Sign_In_Fields_respond_with_cleared_data -- Finish --> {color:#36b37e}*PASSED*{color} ---\n<br/>
+\n --- *Test Environment* ---  \n \n" --- Test Device \nTest Execution video: [SauceLabs Execution Video|https://app.eu-central-1.saucelabs.com/tests/2c9985f0de6544c483992daa0a0b0a71?auth=4c1493c4707e5b43e1ff957e7a911a43]\nSuite name: eConsent - Participant - QA - iOS - 5.0.0 --> Test Set - Sign In\nPlatform: iOS\nOS version: 16.1.2\nDevice name: iPhone XR\n\n --- Test Application \n\nApp Name: Florence - eConsent\nEnvironment: QA\nApp Link: [https://us-participant-auth.se.qav2.researchbinders.com|https://us-participant-auth.se.qav2.researchbinders.com]\nApp Version: 5.0.0\nApp Revision: 6513ae3\nApp Health Check: OK<br/>
+2022-12-23 07:27:01.354  Information-->  Xray Authentication Token API status: 200<br/>
+2022-12-23 07:27:06.057  Information-->  Xray Set Test Result API status: 200<br/>
+[32m------------ >>>[ Test PASSED: participant_Auth_Mobile_Sign_In_Fields_respond_with_cleared_data ]<<< ------------[0m<br/>
+</div>
+</td>
+<td></td>
+<td>6</td>
+<td>testing.appium.eConsentTesting.Web.sign_In.Sign_In@586b71ad</td></tr>
 </table><p>
 </body>
 </html>

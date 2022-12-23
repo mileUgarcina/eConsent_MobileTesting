@@ -3,7 +3,12 @@ package testing.appium.pageObjects.eConsentTesting.WebApp;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import static testing.appium.helpers.TCLogger.*;
 import static testing.appium.helpers.Utils.*;
 
 
@@ -16,7 +21,7 @@ public class MainPage {
     private final By pageImage = By.xpath("//img[@alt='clipboard-icon']");
     private final By welcomeMsg= By.xpath("//div[@class='landing-header__title-container']");
     private final By menuBtn = By.xpath("//i[@class='fas fa-user-circle fa-lg header__nav-icon']");
-    private final By dropDownMenu = By.xpath("//ul[@id='dropdown-menu']");
+    private final By dropDownMenu = By.cssSelector("#dropdown-menu");
     private final By profileSettingsBtn = By.xpath("//a[normalize-space()='Profile Settings']");
     private final By privacySettingsBtn = By.xpath("//a[normalize-space()='Privacy Settings']");
     private final By logOutBtn = By.xpath("//a[normalize-space()='Log Out']");
@@ -47,7 +52,7 @@ public class MainPage {
     }
 
     public void clickOn_menuBtn(){
-        click_onWebElement_waitClickable(driver, menuBtn, waitInterval,"Menu Button");
+            click_onWebElement_waitClickable(driver, menuBtn, waitInterval,"Menu Button");
     }
 
     public void clickOn_profileSettingsBtn(){
@@ -59,7 +64,7 @@ public class MainPage {
     }
 
     public void clickOn_logOutBtn(){
-        click_onWebElement_waitClickable(driver, logOutBtn, waitInterval,"Sign Out Button");
+        click_onWebElement_waitClickable(driver, logOutBtn, waitInterval,"Log Out Button");
     }
 
     public void assert_WelcomeMsg(String firstName){
